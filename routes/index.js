@@ -38,7 +38,7 @@ router.post('/register', (req, res, next) => {
     });
 });
 
-
+//GET API data - do not use
 router.get('/soccer', (req, res) => {
   fetch('https://apifootball.com/api/?action=get_countries&APIkey=5edd98ce34fbd27acab549e7451bbafcf13f243565ebf20828fdf4625b7e2962')
     .then(res => res.json())
@@ -49,6 +49,7 @@ router.get('/soccer', (req, res) => {
     });
 });
 
+//submit new formation post
 router.post('/newFormation', (req, res) => {
     let formation = new Formation(req.body);
     console.log(req.body, req.user._id);
@@ -70,6 +71,9 @@ router.get('/formation/:id', (req, res) => {
     //res.render('formation');
 
     Formation.findOne({ _id: req.params.id}).exec().then(f => {
+
+            req.app.locals.dots = JSON.stringify(f.dots);
+            //req.app.locals.test = [{'name':'hi'}];
           res.render('formation', {formation:f, user:req.user})
     }).catch(err => { throw err})
 });
@@ -87,11 +91,12 @@ router.get('/profile', (req, res) => {
 
 
 
-
+//render login page
 router.get('/login', (req, res) => {
     res.render('login', { user : req.user, error : req.flash('error')});
 });
 
+//log in the user
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
     req.session.save((err) => {
         if (err) {
@@ -113,6 +118,19 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/ping', (req, res) => {
     res.status(200).send("pong!");
+});
+
+//Save formation
+router.post('/formation/:_id', (req, res) => {
+    console.log(req.body, req.params);
+    let b = {dots: JSON.parse(req.body.dots) }
+    Formation.findOneAndUpdate(req.params, {$set: b}, {new: true}, function(err, doc){
+    if(err){
+        console.log("Something wrong when updating data!");
+    }
+
+    console.log(doc);
+});
 });
 
 module.exports = router;

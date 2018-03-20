@@ -1,0 +1,22 @@
+TeamID,Team-Name,Home-Colour,Home-Accent,Away-Colour,Away-Accent
+0,Ball,White,Black,Orange,Orange
+1,Arsenal,Red,White,GoldenRod,MidnightBlue
+2,Aston Villa,Maroon,LightSkyBlue,Yellow,Black
+3,Bournemouth,Black,Crimson,White,GoldenRod
+4,Chelsea,RoyalBlue,White,White,RoyalBlue
+5,Crystal Palace,Maroon,RoyalBlue,White,Maroon
+6,Everton,DarkBlue,White,White,LightSlateGray
+7,Leicester,DarkBlue,White,Black,White
+8,Liverpool,Crimson,Crimson,White,Crimson
+9,Manchester City,LightSkyBlue,White,#1D1F30,LightSkyBlue
+10,Manchester United,Crimson,White,White,Black
+11,Newcastle ,Black,White,GhostWhite,DodgerBlue
+12,Norwich City,Yellow,SeaGreen,SeaGreen,Yellow
+13,Southampton,Red,White,LightGreen,#1D1F30
+14,Stoke City,Red,White,Black,ForestGreen
+15,Sunderland,Crimson,White,ForestGreen,GreenYellow
+16,Swansea City,White,Tan,MidnightBlue,LawnGreen
+17,Tottenham,White,MidnightBlue,DodgerBlue,MidnightBlue
+18,Watford,Yellow,Black,Black,Yellow
+19,West Brom,White,MidnightBlue,FireBrick,Black
+20,West Ham United,DarkRed,PaleTurquoise,PaleTurquoise,Maroon

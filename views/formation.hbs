@@ -5,5 +5,16 @@
 	{{#if user}}
 	    username: {{user.username}}
 	{{/if}}
-
+	<div>
+	{{cat}}
+	{{formation.dots}}
+	</div>
+	<button id='save-btn'>Save</button>
+	//create buttons for cancel save add player fork
 </div>
+<script type="text/javascript">
+	let dots = {{{dots}}};
+	console.log(dots);
+	
+</script>
+<script src="../javascript/soccer-d3.js"></script>
