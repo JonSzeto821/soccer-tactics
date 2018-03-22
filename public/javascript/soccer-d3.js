@@ -155,6 +155,26 @@ d3.csv("../javascript/dots.txt", dottype, function(error, oldDots) {
       .style("stroke", function(d) { return color1(d.team); })
   		.style("stroke-width", 3)
       .call(drag);
+
+    //add label on click
+    this.dot.on('click', function(){
+      console.log('Node clicked');
+      console.log(this.dot);
+      let playPos = prompt("Enter Position", "Striker");
+
+      //validation to check input value
+      /*if (playPos == null || playPos == "") {
+        txt = "User cancelled the prompt.";
+      } else {
+        txt = "Hello " + playPos + "! How are you today?";
+      }*/
+      //append value onto specific node
+      //if node already has label, do not prompt
+
+      //create a condition to not prompt for label on soccerball node
+
+
+    });
 });
 
 
@@ -189,3 +209,12 @@ function dragended(d) {
 //  .classed("dragging", false);
 ;
 }
+
+//function add label to node 
+/*
+propmt user to enter text
+save value to variable
+append value to node
+
+
+*/

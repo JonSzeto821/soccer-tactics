@@ -29,6 +29,12 @@ $(document).ready(function() {
 		console.log('Formation Deleted!');
 		//redirect the user back to list of formations
 	});
+
+	//Edit button
+	$('button.js-edit-btn').on('click', function() {
+		console.log('Formation Edited!');
+		
+	});
 });
 
 

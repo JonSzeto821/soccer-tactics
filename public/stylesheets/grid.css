@@ -44,3 +44,12 @@ input[type="submit"]{
 #login-form {
 	margin: auto;
 }
+
+
+/*Formation Page*/
+#formationName {
+	color: red;
+	float: left;
+	/*display: inline-block;*/
+}
+

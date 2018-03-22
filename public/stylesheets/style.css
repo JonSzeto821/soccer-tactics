@@ -23,6 +23,15 @@ svg {
 	text-align: center;
 }
 
+.float-r {
+	float: right;
+	color: blue;
+}
+
+.clearfix {
+	clear: both;
+}
+
 .block-center {
 	margin: auto;
 }
@@ -32,8 +41,19 @@ svg {
 	margin: auto;
 }
 
+.i-block {
+	display: inline-block;
+}
+
 .border {
 	border: 1px solid black;
+}
+
+.team-wrap {
+	text-align: center;
+	display: inline-block;
+	/*border: 1px dashed blue;*/
+	width: 49%;
 }
 
 #formSubmit {

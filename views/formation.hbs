@@ -1,7 +1,7 @@
 <div class="container">
-	<h1>Formation</h1>
-	<h4>{{formation.name}}</h4>
-
+	<h1>{{formation.name}}</h1>
+	{{!--<h3 id="formationName">{{formation.name}}</h3>--}}
+	<button id='js-fork-btn' class="float-r">Fork</button>
 	{{#if user}}
 	    username: {{user.username}}
 	{{/if}}
@@ -10,47 +10,53 @@
 	{{!--formation.dots--}}
 	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
-	<button id='js-fork-btn'>Fork</button>
-	
-	<div>Team 1</div>
-	<select id='team1'>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-		<option value="11">11</option>
-	</select>
-	<div>Team 2</div>
-	<select id='team2'>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-		<option value="11">11</option>
-	</select>
-	<br>
-	{{!-- {{create buttons for cancel save add player fork}} --}}
-	<button class='js-save-btn save'>Save</button>
-	{{!-- {{On click of 'cancel', redirect user back to /profile}} --}}
-	<button class='js-cancel-btn'>Cancel</button>
-	<button class='js-delete-btn delete'>Delete</button>
-	
+	<div class="clearfix">
+		<div class="team-wrap">
+			<div class="i-block">Team 1</div>
+			<select id='team1'>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+		</div>
+
+		<div class="team-wrap">
+			<div class="i-block">Team 2</div>
+			<select id='team2'>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+			</select>
+		</div>
+
+		<br>
+		<br>
+		{{!-- {{create buttons for cancel save add player fork}} --}}
+		<button class='js-save-btn save'>Save</button>
+		{{!-- {{On click of 'cancel', redirect user back to /profile}} --}}
+		<button class='js-cancel-btn'>Cancel</button>
+		<button class='js-delete-btn delete'>Delete</button>
+		<button class='js-edit-btn'>Edit</button>
+	</div>
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);
-	
 </script>
 <script src="../javascript/soccer-d3.js"></script>
