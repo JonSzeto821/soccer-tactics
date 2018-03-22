@@ -1,16 +1,52 @@
 <div class="container">
-	<h1>Formation Page</h1>
-	{{formation.name}}
+	<h1>Formation</h1>
+	<h4>{{formation.name}}</h4>
 
 	{{#if user}}
 	    username: {{user.username}}
 	{{/if}}
 	<div>
 	{{cat}}
-	{{formation.dots}}
+	{{!--formation.dots--}}
 	</div>
-	<button id='save-btn'>Save</button>
-	//create buttons for cancel save add player fork
+	{{!-- {{create buttons for cancel save add player fork}} --}}
+	<button id='js-fork-btn'>Fork</button>
+	
+	<div>Team 1</div>
+	<select id='team1'>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+	</select>
+	<div>Team 2</div>
+	<select id='team2'>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+	</select>
+	<br>
+	{{!-- {{create buttons for cancel save add player fork}} --}}
+	<button class='js-save-btn save'>Save</button>
+	{{!-- {{On click of 'cancel', redirect user back to /profile}} --}}
+	<button class='js-cancel-btn'>Cancel</button>
+	<button class='js-delete-btn delete'>Delete</button>
+	
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};

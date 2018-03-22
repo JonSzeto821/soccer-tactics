@@ -1,0 +1,46 @@
+* {
+ 	box-sizing: border-box;
+}
+
+/*Profile Page Breakpoints*/
+h1 {
+	text-align: center;
+}
+
+form {
+	text-align: center;
+}
+
+#formationInput {
+	text-align: center;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	line-height: 40px;
+	width: 100%;
+	font-size: 18px; 
+}
+
+.link-styling {
+	list-style: none;
+	line-height: 32px;
+	padding: 15px 0;
+	font-size: 18px;
+}
+
+input[type="submit"]{ 
+	margin: 0 0 20px 0;
+	padding: 5px 10px;
+	line-height: 40px;
+	width: 35%;
+	font-size: 18px;
+}
+
+
+/*Login Page*/
+#login-container {
+	text-align: center;
+}
+
+#login-form {
+	margin: auto;
+}
