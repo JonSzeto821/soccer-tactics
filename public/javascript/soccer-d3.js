@@ -157,10 +157,10 @@ d3.csv("../javascript/dots.txt", dottype, function(error, oldDots) {
       .call(drag);
 
     //add label on click
-    this.dot.on('click', function(){
+    /*dot.on('click', function(){
       console.log('Node clicked');
-      console.log(this.dot);
-      let playPos = prompt("Enter Position", "Striker");
+      console.log(this);
+      //let playPos = prompt("Enter Position", "Striker");
 
       //validation to check input value
       /*if (playPos == null || playPos == "") {
@@ -174,7 +174,7 @@ d3.csv("../javascript/dots.txt", dottype, function(error, oldDots) {
       //create a condition to not prompt for label on soccerball node
 
 
-    });
+    //});
 });
 
 
@@ -190,9 +190,9 @@ function dottype(d) {
 
 function dragstarted(d) {
   d3.event.sourceEvent.stopPropagation();
+  editDot(d);
   d3.select(this)
   //.classed("dragging", true);
-;
 }
 
 function dragged(d) {
@@ -210,11 +210,6 @@ function dragended(d) {
 ;
 }
 
-//function add label to node 
-/*
-propmt user to enter text
-save value to variable
-append value to node
 
 
-*/
+

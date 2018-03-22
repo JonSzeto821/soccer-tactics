@@ -74,7 +74,7 @@ router.get('/formation/:id', (req, res) => {
 
             req.app.locals.dots = JSON.stringify(f.dots);
             //req.app.locals.test = [{'name':'hi'}];
-          res.render('formation', {formation:f, user:req.user})
+          res.render('formation', {formation:f, user:req.user, dotArray: f.dots})
     }).catch(err => { throw err})
 });
 

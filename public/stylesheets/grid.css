@@ -45,6 +45,15 @@ input[type="submit"]{
 	margin: auto;
 }
 
+/*Register Page*/
+#register-container {
+	text-align: center;
+}
+
+#register-form {
+	margin: auto;
+}
+
 
 /*Formation Page*/
 #formationName {

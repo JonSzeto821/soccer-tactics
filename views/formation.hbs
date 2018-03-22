@@ -3,7 +3,7 @@
 	{{!--<h3 id="formationName">{{formation.name}}</h3>--}}
 	<button id='js-fork-btn' class="float-r">Fork</button>
 	{{#if user}}
-	    username: {{user.username}}
+	    Created by: {{user.username}}
 	{{/if}}
 	<div>
 	{{cat}}
@@ -47,13 +47,25 @@
 
 		<br>
 		<br>
-		{{!-- {{create buttons for cancel save add player fork}} --}}
+
 		<button class='js-save-btn save'>Save</button>
-		{{!-- {{On click of 'cancel', redirect user back to /profile}} --}}
 		<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
 		<button class='js-delete-btn delete'>Delete</button>
 		<button class='js-edit-btn'>Edit</button>
 	</div>
+
+	<table>
+		<th>Team</th>
+		<th>Player</th>
+		{{#each dotArray}}
+			<tr data-player-id="{{this.id}}" contentEditable="true">
+				<td data-team="{{this.team}}">{{this.team}}</td>
+				<td data-player="{{this.player}}">{{this.player}}</td>
+			<tr>
+		{{/each}}
+	</table>
+
+
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};

@@ -35,17 +35,48 @@ $(document).ready(function() {
 		console.log('Formation Edited!');
 		
 	});
+
+	//Get value from dropdown
+	$('#team1, #team2').change(function(){
+    	console.log($(this).val());
+    	console.log($(this).attr('id'));
+	});
+
+	$('tr').keyup(function(e) {
+		console.log($(this).data('player-id'));
+		console.log($(this).find("[data-team]").text());
+		let team = $(this).find("[data-team]").text();
+		let player = $(this).find("[data-player]").text();
+		let id = $(this).data('player-id');
+		updateDots({id:id, player:player, team:team});
+	});
 });
 
 
+function editDot(d) {
+	console.log(d);
 
+};
 
 function updateDots(d) {
+	for(let i=0; i<dots.length; i++) {
+		if(dots[i].id == d.id){
+			console.log(d);
+			for (let key in d) {
+				console.log(key);
+				dots[i][key] = d[key]
+			}
+		}
+	}
+	console.log(dots);
+};
+
+
+/*function updateDots(d) {
 	for(let i=0; i<dots.length; i++) {
 		if(dots[i].id == d.id){
 			dots[i] = d;
 		}
 	}
-};
-
+};*/
 
