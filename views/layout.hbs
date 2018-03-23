@@ -13,6 +13,26 @@
     <script src="../javascript/script.js"></script>
 </head>
   <body>
+    {{!--Navbar for all pages--}}
+    <label for="toggle-1" class="toggle-menu">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    </label>
+    <input type="checkbox" id="toggle-1">
+    <nav>
+      <ul>
+        <li><a href="/profile"><i class="fa fa-home"></i>Profile</a></li>
+        <li><a href="/"><i class="fa fa-user"></i>Home</a></li>
+        <li><a href="#portfolio"><i class="fa fa-thumb-tack"></i>Portfolio</a></li>
+        <li><a href="#services"><i class="fa fa-gears"></i>Services</a></li>
+        <li><a href="#gallery"><i class="fa fa-picture-o"></i>Gallery</a></li>
+        <li><a href="#contact"><i class="fa fa-phone"></i>Contact</a></li>
+      </ul>
+    </nav>
+
     {{{body}}}
   </body>
 </html>

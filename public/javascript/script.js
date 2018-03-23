@@ -36,12 +36,25 @@ $(document).ready(function() {
 		
 	});
 
+	//Add Player button
+	$('button.js-addPlayer-btn').on('click', function() {
+		console.log('Player Node Added!');
+		
+	});
+
 	//Get value from dropdown
 	$('#team1, #team2').change(function(){
     	console.log($(this).val());
     	console.log($(this).attr('id'));
 	});
 
+	//Delete player node
+	$('button#js-remove-player').on('click', function() {
+		console.log('Player Node Deleted!');
+	});
+
+
+	//Update data in player table
 	$('tr').keyup(function(e) {
 		console.log($(this).data('player-id'));
 		console.log($(this).find("[data-team]").text());

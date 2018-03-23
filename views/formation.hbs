@@ -1,17 +1,17 @@
-<div class="container">
-	<h1>{{formation.name}}</h1>
+<div class="container clearfix">
+	<h1>Formation: {{formation.name}}</h1>
 	{{!--<h3 id="formationName">{{formation.name}}</h3>--}}
 	<button id='js-fork-btn' class="float-r">Fork</button>
 	{{#if user}}
 	    Created by: {{user.username}}
 	{{/if}}
-	<div>
-	{{cat}}
-	{{!--formation.dots--}}
+	{{!--<div>
+		{{cat}}
+		{{!--formation.dots--}}
 	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
 	<div class="clearfix">
-		<div class="team-wrap">
+		{{!--<div class="team-wrap">
 			<div class="i-block">Team 1</div>
 			<select id='team1'>
 				<option value="1">1</option>
@@ -43,32 +43,35 @@
 				<option value="10">10</option>
 				<option value="11">11</option>
 			</select>
-		</div>
-
-		<br>
-		<br>
-
-		<button class='js-save-btn save'>Save</button>
-		<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
+		</div>--}}
 		<button class='js-delete-btn delete'>Delete</button>
 		<button class='js-edit-btn'>Edit</button>
+		<button class='js-addPlayer-btn'>+ Player</button>
 	</div>
-
-	<table>
-		<th>Team</th>
-		<th>Player</th>
-		{{#each dotArray}}
-			<tr data-player-id="{{this.id}}" contentEditable="true">
-				<td data-team="{{this.team}}">{{this.team}}</td>
-				<td data-player="{{this.player}}">{{this.player}}</td>
-			<tr>
-		{{/each}}
-	</table>
-
-
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);
 </script>
 <script src="../javascript/soccer-d3.js"></script>
+
+<div class="container">Text Content
+	<table>
+		<tr>
+			<th>Team</th>
+			<th>Player</th>
+			<th>Remove Player</th>
+		</tr>
+		{{#each dotArray}}
+			<tr data-player-id="{{this.id}}" contentEditable="true">
+				<td data-team="{{this.team}}">{{this.team}}</td>
+				<td data-player="{{this.player}}">{{this.player}}</td>
+				<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+			<tr>
+		{{/each}}
+	</table>
+	<button class='js-save-btn save'>Save</button>
+	<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
+
+
+</div>

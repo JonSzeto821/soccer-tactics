@@ -65,6 +65,13 @@ router.post('/newFormation', (req, res) => {
   });  
 });
 
+//Delete formation - *****In progress*****
+router.delete('/formation/:id', (req, res) => {
+  Formation.delete(req.params.id);
+  console.log(`Deleted shopping list item \`${req.params.id}\``);
+});
+
+
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
     console.log(req.params);

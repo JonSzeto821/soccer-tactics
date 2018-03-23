@@ -1,13 +1,14 @@
-
-{{#if user}}
-    username: {{user.username}}
-    <a href="/logout">LogOut</a>
-{{/if}}
-
-
-
-<div class="container">
-    <a href="/login">Login</a>
+<div class="container clearfix">
+	<div>
+		{{#if user}}
+		    username: {{user.username}}
+		    <a href="/logout">Sign Out</a>
+		{{/if}}
+	</div>
+    <a href="/login">Sign In</a>
     <br>
     <a href="/register">Register</a>
+</div>
+<div class="container">
+Main Body
 </div>
