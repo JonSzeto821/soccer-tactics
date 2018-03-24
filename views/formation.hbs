@@ -53,14 +53,25 @@
 	let dots = {{{dots}}};
 	console.log(dots);
 </script>
-<script src="../javascript/soccer-d3.js"></script>
+{{!--<script src="../javascript/soccer-d3.js"></script>--}}
+
+{{!--Remove br after styling--}}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <div class="container">Text Content
 	<table>
 		<tr>
-			<th>Team</th>
-			<th>Player</th>
-			<th>Remove Player</th>
+			<th class="th-dark">Team</th>
+			<th class="th-dark">Player</th>
+			<th class="th-dark">Remove Player</th>
 		</tr>
 		{{#each dotArray}}
 			<tr data-player-id="{{this.id}}" contentEditable="true">

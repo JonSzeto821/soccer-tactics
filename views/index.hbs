@@ -1,14 +1,32 @@
 <div class="container clearfix">
-	<div>
+	{{!--How to get signup/signin hidden when user logged in????????????????--}}
+	<div class='hide-div'>
+	    <a href="/login">Sign In</a>
+	    or
+	    <a href="/register">Sign Up</a>
+    </div>
+    	<div>
 		{{#if user}}
 		    username: {{user.username}}
 		    <a href="/logout">Sign Out</a>
 		{{/if}}
 	</div>
-    <a href="/login">Sign In</a>
-    <br>
-    <a href="/register">Register</a>
 </div>
-<div class="container">
-Main Body
+<div class="container center">
+	<h1>Soccer Tactics Board</h1>
+	<h4>Create and experiment with formations and tactics</h4>
+
+{{!--display all formations within the formation database to public/not signed in users--}}
+
+{{!--fake links to show visual example; 
+	want to loop through similar to profile page formation listing; ***********
+	apply a css reset to remove default stylings(left-padding on links below)--}}
+
+	<ul class="link-styling" id='public-form-link'>
+		<a class='' href="/"><li>Public Formation Link #1</li></a>
+		<a class='' href="/"><li>Public Formation Link #2</li></a>
+		<a class='' href="/"><li>Public Formation Link #3</li></a>
+		<a class='' href="/"><li>Public Formation Link #5</li></a>
+		<a class='' href="/"><li>Public Formation Link #4</li></a>		
+	</ul>
 </div>

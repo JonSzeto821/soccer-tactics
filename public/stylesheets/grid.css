@@ -22,7 +22,7 @@ form {
 
 .link-styling {
 	list-style: none;
-	line-height: 32px;
+	line-height: 40px;
 	padding: 15px 0;
 	font-size: 18px;
 }
@@ -60,5 +60,22 @@ input[type="submit"]{
 	color: red;
 	float: left;
 	/*display: inline-block;*/
+}
+
+table {
+	width: 100%;
+}
+
+/*Home Page*/
+#public-form-link li {
+    /*border: 1px solid black;*/
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+/*NavBar*/
+.nav-link {
+
+	color: green;
 }
 
