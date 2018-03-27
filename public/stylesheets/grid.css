@@ -2,6 +2,12 @@
  	box-sizing: border-box;
 }
 
+.container {
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px dashed red;
+}
+
 /*Profile Page Breakpoints*/
 h1 {
 	text-align: center;
@@ -39,6 +45,7 @@ input[type="submit"]{
 /*Login Page*/
 #login-container {
 	text-align: center;
+	background-color: #00aa5d;
 }
 
 #login-form {
@@ -48,6 +55,7 @@ input[type="submit"]{
 /*Register Page*/
 #register-container {
 	text-align: center;
+	background-color: #00aa5d;
 }
 
 #register-form {
@@ -77,5 +85,9 @@ table {
 .nav-link {
 
 	color: green;
+}
+
+.col-12 {
+	width: 100%;
 }
 

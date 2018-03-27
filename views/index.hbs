@@ -1,9 +1,9 @@
 <div class="container clearfix">
 	{{!--How to get signup/signin hidden when user logged in????????????????--}}
-	<div class='hide-div'>
+	{{!--<div class='hide-div'>
 	    <a href="/login">Sign In</a>
 	    or
-	    <a href="/register">Sign Up</a>
+	    <a href="/register">Sign Up</a>--}}
     </div>
     	<div>
 		{{#if user}}
@@ -22,11 +22,22 @@
 	want to loop through similar to profile page formation listing; ***********
 	apply a css reset to remove default stylings(left-padding on links below)--}}
 
-	<ul class="link-styling" id='public-form-link'>
+	<!--<ul class="link-styling" id='public-form-link'>
 		<a class='' href="/"><li>Public Formation Link #1</li></a>
 		<a class='' href="/"><li>Public Formation Link #2</li></a>
 		<a class='' href="/"><li>Public Formation Link #3</li></a>
 		<a class='' href="/"><li>Public Formation Link #5</li></a>
-		<a class='' href="/"><li>Public Formation Link #4</li></a>		
+		<a class='' href="/"><li>Public Formation Link #4</li></a>	
+
+	</ul>-->
+	
+	<ul class="center">
+	{{#each formations}}
+		<li class="link-styling border box">
+			<a class='' href="/formation/{{this._id}}"><li>{{this.name}}</li></a>
+		</li>
+	{{/each}}
 	</ul>
+
+
 </div>

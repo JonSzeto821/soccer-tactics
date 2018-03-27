@@ -39,7 +39,8 @@ $(document).ready(function() {
 	//Add Player button
 	$('button.js-addPlayer-btn').on('click', function() {
 		console.log('Player Node Added!');
-		
+		dots.push(
+{player: math.random(), team: "Real Madrid", y: 500, x: 321, id: date.now()})
 	});
 
 	//Get value from dropdown
@@ -49,8 +50,29 @@ $(document).ready(function() {
 	});
 
 	//Delete player node
-	$('button#js-remove-player').on('click', function() {
+	/*$('button#js-remove-player').on('click', function() {
+		let id = $(this).parent().parent().data('player-id');
 		console.log('Player Node Deleted!');
+		console.log($(this).parent().parent().data('player-id'));
+
+		$.ajax({
+		    url: `/formation/delete/${id}`,
+		    type: 'DELETE',
+		    success: function(result) {
+		        // Do something with the result
+		        console.log(result, 'hello');
+		        $("table").find(`[data-player-id='${id}']`).remove();
+
+
+	    }
+	});*/
+
+	$('button#js-remove-player').on('click', function() {
+		let id = $(this).parent().parent().data('player-id');
+		dots.splice(dots.findIndex(function(i){
+    		return i.id === id;
+    	}), 1);
+		$("table").find(`[data-player-id='${id}']`).remove();
 	});
 
 

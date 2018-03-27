@@ -1,6 +1,5 @@
 <div class="container clearfix">
 	<h1>Formation: {{formation.name}}</h1>
-	{{!--<h3 id="formationName">{{formation.name}}</h3>--}}
 	<button id='js-fork-btn' class="float-r">Fork</button>
 	{{#if user}}
 	    Created by: {{user.username}}
@@ -10,7 +9,7 @@
 		{{!--formation.dots--}}
 	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
-	<div class="clearfix">
+	<div class="clearfix container">
 		{{!--<div class="team-wrap">
 			<div class="i-block">Team 1</div>
 			<select id='team1'>
@@ -53,20 +52,20 @@
 	let dots = {{{dots}}};
 	console.log(dots);
 </script>
-{{!--<script src="../javascript/soccer-d3.js"></script>--}}
+<script src="../javascript/soccer-d3.js"></script>
 
-{{!--Remove br after styling--}}
+<!--Remove br after styling-->
+{{!--<br>
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
+<br>--}}
 
 
-<div class="container">Text Content
+<div class="container">Table Stats
 	<table>
 		<tr>
 			<th class="th-dark">Team</th>
@@ -81,8 +80,7 @@
 			<tr>
 		{{/each}}
 	</table>
-	<button class='js-save-btn save'>Save</button>
-	<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
-
+	<button class='js-save-btn save block-center'>Save</button>
+	<button class='js-cancel-btn block-center'><a href="/profile/">Cancel</a></button>
 
 </div>

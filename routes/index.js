@@ -14,7 +14,9 @@ const fetch = require('node-fetch');
 
 
 router.get('/', (req, res) => {
-    res.render('index', { user : req.user });
+    Formation.find().exec().then(formations => {
+        res.render('index', {user: req.user, formations: formations});      
+    }).catch(err => { throw err})
 });
 
 router.get('/register', (req, res) => {
@@ -66,10 +68,11 @@ router.post('/newFormation', (req, res) => {
 });
 
 //Delete formation - *****In progress*****
-router.delete('/formation/:id', (req, res) => {
-  Formation.delete(req.params.id);
+/*router.delete('/formation/delete/:id', (req, res) => {
+  Formation.delete(req.params.id).exec().then();
   console.log(`Deleted shopping list item \`${req.params.id}\``);
-});
+  res.end();
+});*/
 
 
 //load the formation based on id

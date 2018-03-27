@@ -22,13 +22,17 @@
     </ul>
     </label>
     <input type="checkbox" id="toggle-1">
-    <nav>
+    <nav class="col-12">
       <ul>
         <li><a href="/" class='nav-link'><i></i>Home</a></li>
         <li><a href="/profile" class='nav-link'><i></i>Profile</a></li>
         <li><a href="#" class='nav-link'><i></i>Random Link</a></li>
-        <li class="show-div"><a href="/login" class='nav-link'><i></i>Sign In</a></li>
-        <li  class="show-div"><a href="/register" class='nav-link'><i></i>Sign Up</a></li>
+        {{!--<li class="show-div"><a href="/login" class='nav-link'><i></i>Sign In</a></li>--}}
+        {{!--<li  class="show-div"><a href="/register" class='nav-link'><i></i>Sign Up</a></li>--}}
+        <div class="float-l">
+          <li><a href="/register">Sign Up</a></li>
+          <li><a href="/login">Sign In</a></li>
+          <div>
       </ul>
     </nav>
 
