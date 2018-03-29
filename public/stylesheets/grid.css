@@ -93,52 +93,94 @@ table {
 
 
 
-
+/*Responsive SVG Media Queries*/
 svg {
-    transform: scale(.285);
+    transform: scale(.295);
 	transform-origin: top left;
-
 }
 
 #soccerField{
-    width: 300px;
-    margin: auto;
+    width: 310px;
+    height: 194px;
+    margin: 10px auto;
+    /*border: 2px dashed red;*/
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 420px) {
 	svg {
-    transform: scale(.5);
+    	transform: scale(.381);
+	}
+
+	#soccerField{
+	    width: 400px;
+	    height: 259px;
+	}
+}
+
+@media only screen and (min-width: 520px) {
+	svg {
+    	transform: scale(.476);
+	}
+
+	#soccerField{
+	    width: 500px;
+	    height: 324px;
+	}
+}
+
+@media only screen and (min-width: 620px) {
+	svg {
+    transform: scale(.571);
 
 	}
 
 	#soccerField{
-	    width: 525px;
+	    width: 600px;
+	    height: 388px;
 	}
-
 }
 
-@media only screen and (min-width: 925px) {
+@media only screen and (min-width: 720px) {
 	svg {
-    transform: scale(.7);
-
+    	transform: scale(.667);
 	}
 
 	#soccerField{
-	    width: 735px;
+	    width: 700px;
+	    height: 454px;
 	}
-
 }
 
+@media only screen and (min-width: 820px) {
+	svg {
+    	transform: scale(.762);
+	}
+
+	#soccerField{
+	    width: 800px;
+	    height: 519px;
+	}
+}
+
+@media only screen and (min-width: 920px) {
+	svg {
+    	transform: scale(.857);
+	}
+
+	#soccerField{
+	    width: 900px;
+	    height: 583px;
+	}
+}
 
 @media only screen and (min-width: 1200px) {
 	svg {
-    transform: scale(1);
-
+    	transform: scale(1);
 	}
 
 	#soccerField{
 	    width: 1050px;
+	    height: 680px;
 	}
-
 }
 
