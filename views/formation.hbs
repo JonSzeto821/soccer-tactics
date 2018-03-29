@@ -1,72 +1,72 @@
-<div class="container clearfix">
+<div class="container">
 	<h1>Formation: {{formation.name}}</h1>
-	<button id='js-fork-btn' class="float-r">Fork</button>
 	{{#if user}}
-	    Created by: {{user.username}}
+	    <div class="center">Created by: {{formation.authorName}}</div>
 	{{/if}}
 	{{!--<div>
 		{{cat}}
 		{{!--formation.dots--}}
 	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
-	<div class="clearfix container">
-		{{!--<div class="team-wrap">
+	<div class="container center">
+		<button id='js-fork-btn' class="fork">Fork</button>
+		<button class='js-edit-btn'>Edit</button>
+		<button class='js-delete-btn delete'>Delete</button>
+		<br>
+		<div class="team-wrap">
 			<div class="i-block">Team 1</div>
-			<select id='team1'>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-			</select>
+			<br>
+			<button class='js-addPlayer-btn'>+ Player</button>
 		</div>
-
 		<div class="team-wrap">
 			<div class="i-block">Team 2</div>
-			<select id='team2'>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-			</select>
-		</div>--}}
-		<button class='js-delete-btn delete'>Delete</button>
-		<button class='js-edit-btn'>Edit</button>
-		<button class='js-addPlayer-btn'>+ Player</button>
+			<br>
+			<button class='js-addPlayer-btn'>+ Player</button>
+		</div>
+
 	</div>
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);
 </script>
-<script src="../javascript/soccer-d3.js"></script>
-
+<div id='soccerField'></div>
+	<script src="../javascript/soccer-d3.js"></script>
 <!--Remove br after styling-->
-{{!--<br>
+<!--<br>
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>--}}
+<br>-->
 
 
-<div class="container">Table Stats
+<div class="container">
+	<h3 class="center">Player Table</h3>
 	<table>
+		<tr>
+			<th colspan="3">Team 1</th>
+		</tr>
+		<tr>
+			<th class="th-dark">Team</th>
+			<th class="th-dark">Player</th>
+			<th class="th-dark">Remove Player</th>
+		</tr>
+		{{#each dotArray}}
+			<tr data-player-id="{{this.id}}" contentEditable="true">
+				<td data-team="{{this.team}}">{{this.team}}</td>
+				<td data-player="{{this.player}}">{{this.player}}</td>
+				<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+			<tr>
+		{{/each}}
+	</table>
+	<br>
+	<table>
+		<tr>
+			<th colspan="3">Team 2</th>
+		</tr>
 		<tr>
 			<th class="th-dark">Team</th>
 			<th class="th-dark">Player</th>

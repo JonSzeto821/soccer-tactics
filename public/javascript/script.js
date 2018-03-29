@@ -14,7 +14,8 @@ $(document).ready(function() {
 	//Cancel button
 	$('button.js-cancel-btn').on('click', function() {
 		console.log('Formation Cancelled!');
-		//redirect the user back to list of formations
+		//create a new post document on click of button
+		
 	});
 
 	//Fork button
@@ -39,9 +40,14 @@ $(document).ready(function() {
 	//Add Player button
 	$('button.js-addPlayer-btn').on('click', function() {
 		console.log('Player Node Added!');
+		const maximum = 99;
+		const minimum = 0;
+		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		
+		console.log(randomNumber);
 		dots.push(
-{player: math.random(), team: "Real Madrid", y: 500, x: 321, id: date.now()})
-	});
+			{player: randomNumber, team: "Real Madrid", y: 500, x: 321, id: 4})
+		});
 
 	//Get value from dropdown
 	$('#team1, #team2').change(function(){

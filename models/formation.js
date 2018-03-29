@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const Formation = new Schema({
     name: String,
     author: String,
+    authorName: String,
     date: String,
     dots: {
     	type: Array,

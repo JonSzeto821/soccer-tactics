@@ -1,9 +1,12 @@
 console.log('soccer-d3 is logging!!!');
 
-var holder = d3.select("body") // select the 'body' element
+
+var holder = d3.select("#soccerField") // select the 'body' element
       .append("svg")           // append an SVG element to the body
       .attr("width", 1050)      
-      .attr("height", 680);   
+      .attr("height", 680)
+      .attr("viewBox", "0 0 1050 680")
+      .attr("preserveAspectRatio", "none"); 
 
 
 // draw a rectangle - pitch

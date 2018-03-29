@@ -35,8 +35,17 @@
           <div>
       </ul>
     </nav>
-
+  <div id="user-logout-display">
+    {{#if user}}
+        username: {{user.username}}
+        <br>
+        <a href="/logout">Sign Out</a>
+    {{/if}}
+  </div>
     {{{body}}}
   </body>
+  <footer>
+    <div id="footer">Jon Szeto 2018</div>
+  </footer>
 </html>
 

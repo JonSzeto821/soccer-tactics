@@ -5,7 +5,7 @@
 .container {
 	padding-left: 10px;
 	padding-right: 10px;
-	border: 1px dashed red;
+	/*border: 1px dashed red;*/
 }
 
 /*Profile Page Breakpoints*/
@@ -89,5 +89,56 @@ table {
 
 .col-12 {
 	width: 100%;
+}
+
+
+
+
+svg {
+    transform: scale(.285);
+	transform-origin: top left;
+
+}
+
+#soccerField{
+    width: 300px;
+    margin: auto;
+}
+
+@media only screen and (min-width: 650px) {
+	svg {
+    transform: scale(.5);
+
+	}
+
+	#soccerField{
+	    width: 525px;
+	}
+
+}
+
+@media only screen and (min-width: 925px) {
+	svg {
+    transform: scale(.7);
+
+	}
+
+	#soccerField{
+	    width: 735px;
+	}
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+	svg {
+    transform: scale(1);
+
+	}
+
+	#soccerField{
+	    width: 1050px;
+	}
+
 }
 

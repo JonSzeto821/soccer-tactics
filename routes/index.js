@@ -57,6 +57,7 @@ router.post('/newFormation', (req, res) => {
     console.log(req.body, req.user._id);
     formation['date'] = new Date();
     formation['author'] = req.user._id;
+    formation['authorName'] = req.user.username;
     formation.save((err, f) => {
         if (err) {
             console.log(err);
@@ -66,14 +67,6 @@ router.post('/newFormation', (req, res) => {
         res.redirect(`/formation/${f._id}`);
   });  
 });
-
-//Delete formation - *****In progress*****
-/*router.delete('/formation/delete/:id', (req, res) => {
-  Formation.delete(req.params.id).exec().then();
-  console.log(`Deleted shopping list item \`${req.params.id}\``);
-  res.end();
-});*/
-
 
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
@@ -116,6 +109,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
     });
 });
 
+//logout and redirect user to home page
 router.get('/logout', (req, res, next) => {
     req.logout();
     req.session.save((err) => {
@@ -141,6 +135,12 @@ router.post('/formation/:_id', (req, res) => {
 
     console.log(doc);
 });
+});
+
+
+//Create new formation document on click of 'fork'
+router.post('/formation/fork/:_id', (req, res) => {
+    
 });
 
 module.exports = router;
