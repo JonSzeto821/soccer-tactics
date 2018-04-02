@@ -225,7 +225,8 @@ nav ul li a i {
 
 .toggle-menu ul {
   display: table;
-  width: 25px;
+  width: 100%;
+  background-clolor: blue;
 }
 
 .toggle-menu ul li {

@@ -1,4 +1,4 @@
-<div class="container clearfix">
+<div class="container clearfix col-12">
 	{{!--How to get signup/signin hidden when user logged in????????????????--}}
 
 
@@ -10,7 +10,7 @@
 			<a class='' href="/formation/{{this._id}}">
 				<li>{{this.name}}</li>
 				<!--Find a way to pass the formation author-->
-				<div>by: {{this.author}}</div>
+				<h6>by: {{this.authorName}}</h6>
 			</a>
 		</ul>
 	{{/each}}

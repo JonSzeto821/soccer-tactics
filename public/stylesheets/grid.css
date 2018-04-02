@@ -28,7 +28,7 @@ form {
 
 .link-styling {
 	list-style: none;
-	line-height: 40px;
+	/*line-height: 40px;*/
 	padding: 15px 0;
 	font-size: 18px;
 }
@@ -64,6 +64,16 @@ input[type="submit"]{
 
 
 /*Formation Page*/
+.col-12 {
+	width: 100%;
+	background-color: blue;
+}
+
+.col-6 {
+	/*border: 2px solid blue;*/
+	width: 100%;
+}
+
 #formationName {
 	color: red;
 	float: left;
@@ -72,6 +82,25 @@ input[type="submit"]{
 
 table {
 	width: 100%;
+	margin: 20px 0;
+}
+
+/*Formation Media Query*/
+@media only screen and (min-width: 900px) {
+	.team1 {
+		float: left;
+		border: 1px solid yellow;
+	}
+
+	.team2 {
+		float: right;
+		border: 1px solid red;
+	}
+
+	.col-6 {
+		width: 49%;
+		color: green;
+	}
 }
 
 /*Home Page*/
@@ -87,10 +116,15 @@ table {
 	color: green;
 }
 
-.col-12 {
-	width: 100%;
-}
 
+
+
+@media only screen and (min-width: 400px) {
+	.col-12 {
+		width: 80%;
+		background-color: red;
+	}
+}
 
 
 /*Responsive SVG Media Queries*/
