@@ -5,8 +5,22 @@
 .container {
 	padding-left: 10px;
 	padding-right: 10px;
+
 	/*border: 1px dashed red;*/
+	max-width: 1200px;
 }
+
+.form-btn-padding {
+	padding: 15px 0;
+}
+
+.form-btn-padding button, .team-wrap button {
+	margin:0 5px;
+	/*line-height: 25px;*/
+	height: 50px;
+	width: 75px;
+}
+
 
 /*Profile Page Breakpoints*/
 h1 {
@@ -66,7 +80,6 @@ input[type="submit"]{
 /*Formation Page*/
 .col-12 {
 	width: 100%;
-	background-color: blue;
 }
 
 .col-6 {
@@ -80,9 +93,13 @@ input[type="submit"]{
 	/*display: inline-block;*/
 }
 
+nav td {
+	padding: 0;
+}
+
 table {
 	width: 100%;
-	margin: 20px 0;
+	margin-bottom: 20px;
 }
 
 /*Formation Media Query*/
@@ -112,18 +129,7 @@ table {
 
 /*NavBar*/
 .nav-link {
-
 	color: green;
-}
-
-
-
-
-@media only screen and (min-width: 400px) {
-	.col-12 {
-		width: 80%;
-		background-color: red;
-	}
 }
 
 

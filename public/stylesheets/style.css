@@ -7,12 +7,14 @@ a {
   color: #00B7FF;
 }
 
-
-
 td, th {
     text-align: center;
     padding: 10px;
     border: 1px solid violet;
+}
+
+table {
+    background-color: white;
 }
 
 #public-form-link {
@@ -81,7 +83,7 @@ td, th {
 
 .float-r {
 	float: right;
-	color: blue;
+	/*color: blue;*/
 }
 
 .float-l {
@@ -92,13 +94,13 @@ td, th {
 	clear: both;
 }
 
-.block-center {
-	margin: auto;
+.inline {
+    display: inline;
 }
 
 .block {
 	display: block;
-	margin: auto;
+
 }
 
 .i-block {
@@ -106,7 +108,7 @@ td, th {
 }
 
 .border {
-	border: 1px solid black;
+	border: 3px dashed red;
 }
 
 .team-wrap {
@@ -192,11 +194,16 @@ nav {
 
 nav ul {
   /*display: table;*/
+  list-style-type: none;
 }
 
-nav ul li { float: right; }
+nav ul li { 
+    float: right; 
+}
 
-nav ul li:last-child { padding-right: 0px; }
+nav ul li:last-child { 
+    padding-right: 0px; 
+}
 
 nav ul li a {
   color: #002e5b;
@@ -244,7 +251,19 @@ input[type=checkbox], label {
     display: none; 
 }
 
-@media only screen and (max-width: 400px) {
+.tile {
+    background-color: rgba(200,50,225,0.6);
+}
+
+.v-center {
+    vertical-align: baseline;
+}
+
+@media only screen and (max-width: 650px) {
+
+    .float-l, .float-r {
+        float: none;
+    }
 
     header { padding: 20px 0px; }
 
@@ -305,15 +324,18 @@ input[type=checkbox], label {
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 650px) {
     .hide-div {
         color: red;
         visibility: hidden; 
     }
 
+    .no-display {
+        display: none;
+    }
 }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 651px) {
     .show-div {
         color: red;
         visibility: hidden; 
