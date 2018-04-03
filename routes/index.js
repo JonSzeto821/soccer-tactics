@@ -12,7 +12,7 @@ const fetch = require('node-fetch');
 
 
 
-
+//load and display home page
 router.get('/', (req, res) => {
     Formation.find().exec().then(formations => {
         res.render('index', {user: req.user, formations: formations});      
@@ -23,6 +23,7 @@ router.get('/register', (req, res) => {
     res.render('register', { });
 });
 
+//Create a new user account
 router.post('/register', (req, res, next) => {
     Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
@@ -54,6 +55,7 @@ router.get('/soccer', (req, res) => {
 //submit new formation post
 router.post('/newFormation', (req, res) => {
     let formation = new Formation(req.body);
+    console.log('penguin');
     console.log(req.body, req.user._id);
     formation['date'] = new Date();
     formation['author'] = req.user._id;
@@ -137,6 +139,29 @@ router.post('/formation/:_id', (req, res) => {
 });
 });
 
+
+//Fork a formation
+router.post('/forkForm', (req, res) => {
+    let formation = new Formation(req.body);
+
+    console.log('Fork Form actually works!')
+    console.log(req.body, req.user._id);
+
+    formation['date'] = new Date();
+    formation['author'] = req.user._id;
+    formation['authorName'] = req.user.username;  
+
+
+    formation.save((err, f) => {
+        if (err) {
+            console.log(err);
+            return next(err);
+        }
+        console.log(f);
+        res.redirect('/profile');
+  });
+
+ });
 
 //Create new formation document on click of 'fork'
 router.post('/formation/fork/:_id', (req, res) => {

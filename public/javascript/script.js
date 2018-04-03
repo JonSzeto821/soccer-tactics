@@ -1,13 +1,14 @@
 $(document).ready(function() {
 	console.log("loading client-side js");
 	console.log(dots);
+
+	//Save Formation changes
 	$('button.js-save-btn').on('click', function() {
 		console.log('Formation Saved!');
 		let newPosition = {'dots':JSON.stringify(dots)}
 
 		$.post('', newPosition, function() {
 			
-
 		});
 	});
 
@@ -43,8 +44,6 @@ $(document).ready(function() {
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-		
-		console.log(randomNumber);
 		dots.push(
 			{player: randomNumber, team: "Real Madrid", y: 500, x: 321, id: 4})
 		});
@@ -91,6 +90,10 @@ $(document).ready(function() {
 		let id = $(this).data('player-id');
 		updateDots({id:id, player:player, team:team});
 	});
+
+	$(".accordion").on("click", ".accordion-header", function() {
+ 		$(this).toggleClass("active").next().slideToggle();
+ 	});
 });
 
 

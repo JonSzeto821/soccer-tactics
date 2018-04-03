@@ -103,7 +103,7 @@ table {
 }
 
 /*Formation Media Query*/
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 650px) {
 	.team1 {
 		float: left;
 		border: 1px solid yellow;
