@@ -150,15 +150,15 @@ router.post('/forkForm', (req, res) => {
     formation['date'] = new Date();
     formation['author'] = req.user._id;
     formation['authorName'] = req.user.username;  
-
-
+    formation['name'] = req.body.name;
+    formation['dots'] = JSON.parse(req.body.dots);
     formation.save((err, f) => {
         if (err) {
             console.log(err);
             return next(err);
         }
         console.log(f);
-        res.redirect('/profile');
+        // res.redirect('/profile');
   });
 
  });

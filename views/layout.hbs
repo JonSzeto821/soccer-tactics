@@ -14,17 +14,18 @@
 </head>
   <body>
     {{!--Navbar for all pages--}}
-    <label for="toggle-1" class="toggle-menu yellow">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <label for="toggle-1" class="toggle-menu">
+      <div id="nav-icon3">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </label>
     <input type="checkbox" id="toggle-1" >
-    <nav class="col-12">
+    <nav class="col-12 clearfix">
       <div>
-        <table class="yellow">
+        <table>
           <tr>
             <td>
         <ul class="center">
@@ -46,13 +47,18 @@
         </table>
       </div>
     </nav>
-  <div id="user-logout-display" class="hide-div">
+  <div id="user-logout-display">
     {{#if user}}
         username: {{user.username}}
         <br>
         <a href="/logout">Sign Out</a>
     {{/if}}
   </div>
+
+<!--Alt Navbar-->
+
+
+
     {{{body}}}
   </body>
   <footer>

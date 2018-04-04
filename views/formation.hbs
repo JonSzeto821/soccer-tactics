@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Formation: {{formation.name}}</h1>
+	<h1>Formation: <span id="formName">{{formation.name}}<span></h1>
 	{{#if user}}
 	    <div class="center">Created by: {{formation.authorName}}</div>
 	{{/if}}
@@ -11,10 +11,6 @@
 	<div class="container center">
 		<div class="form-btn-padding">
 			<button id='js-fork-btn' class="fork">Fork</button>
-			<form action="/forkForm" method="post">
-			  <input type="submit" value="Fork" id='formSubmit'>
-			</form>
-
 
 			<button class='js-edit-btn'>Edit</button>
 			<button class='js-delete-btn delete'>Delete</button>
@@ -96,7 +92,6 @@
 			{{/each}}
 		</table>
 	</div>
-
 	<div class="accordion-header">Team 2</div>
 	<div class="accordion-content">
 		<table>
@@ -114,8 +109,21 @@
 			{{/each}}
 		</table>
 </div>
+	<button class='js-save-btn save block-center'>Save</button>
+	<button class='js-cancel-btn block-center'><a href="/profile/">Cancel</a></button>
 
 <!--Add section to display list of all formations; similar to the home page-->
+	<h4 class="center">See More Formations</h4>
+	<!--Display a random list of 5 links to display-->
+
+{{!-- Create a section for users to leave feedback on a formation --}}
+	<h4 class="center">Comments:</h4>
+	{{!-- setup communication between client and server side --}}
+	<form action="/commentSubmit" method="post">
+		<input type="text" name="userFeedback" id="userFeedback">
+		<input type="submit" name="submitBtn" class="center">
+	</form>
+
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);

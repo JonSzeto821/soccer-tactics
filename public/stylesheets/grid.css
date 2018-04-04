@@ -99,7 +99,11 @@ nav td {
 
 table {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+nav table {
+	background-color: #f4c20d;
 }
 
 /*Formation Media Query*/
@@ -129,7 +133,9 @@ table {
 
 /*NavBar*/
 .nav-link {
-	color: green;
+	color: #db3236;
+	font-weight: 700;
+	font-size: 16px;
 }
 
 

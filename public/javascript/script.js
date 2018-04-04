@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	console.log("loading client-side js");
-	console.log(dots);
 
 	//Save Formation changes
 	$('button.js-save-btn').on('click', function() {
@@ -23,7 +22,15 @@ $(document).ready(function() {
 	/*create a new formation for the user of the current formation*/
 	$('#js-fork-btn').on('click', function() {
 		console.log('Formation Forked!');
+		console.log(dots);
 		//redirect the user back to list of formations
+		let newPosition = {'dots':JSON.stringify(dots)}
+		let name = prompt("Please pick a name", $('#formName').text());
+		newPosition.name = name;
+
+		$.post('/forkForm', newPosition, function() {
+			
+		});
 	});
 
 	//Cancel button
@@ -96,6 +103,14 @@ $(document).ready(function() {
  	});
 });
 
+$(document).ready(function(){
+
+	$('label').click(function(){ 
+		console.log('Navbar logging!');
+		$('#nav-icon3').toggleClass('open')})
+});
+
+	
 
 function editDot(d) {
 	console.log(d);
