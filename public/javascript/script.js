@@ -113,6 +113,7 @@ $(document).ready(function() {
 	});
 });
 
+//toggle navbar open and close
 $(document).ready(function(){
 	toggleTable();
 	$('label').click(function(){ 

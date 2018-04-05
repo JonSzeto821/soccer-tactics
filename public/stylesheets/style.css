@@ -267,9 +267,17 @@ nav ul li:last-child {
 nav ul li a {
   color: #002e5b;
   font-size: 14px;
+  line-height: 28px;
   padding: 15px 10px;
   display: inline-block;
   transition: all 0.5s ease 0s;
+}
+
+#or nav ul li a:hover {
+  border: 1px solid #f4c20d;
+  color: black;
+  display: inline;
+  vertical-align: baseline;
 }
 
 nav ul li a:hover {
@@ -409,13 +417,20 @@ input[type=checkbox], label {
 /*Accordion Styling*/
 .accordion {
   background: linear-gradient(to bottom right, white, #F8F8F8);
-  max-width: 400px;
   background: white;
   max-width: 100%;
   width: 100%;
-  display: flex;
+  display: block;
   margin: 0 auto;
 }
+
+@media only screen and (min-width: 650px) {
+  .accordion {
+    display: flex;
+  }
+}
+
+
 
 .accordion-header {
   border-bottom: 1px solid black;
