@@ -11,7 +11,7 @@
 	<div class="container center">
 		<div class="form-btn-padding">
 			<button id='js-fork-btn' class="fork">Fork</button>
-			<button class='js-edit-btn'>Edit</button>
+			{{!-- <button class='js-edit-btn'>Edit</button> --}}
 			<button class='js-delete-btn delete'>Delete</button>
 		</div>
 		<br>
@@ -133,13 +133,19 @@
 	<h4>Comments:</h4>
 	{{!-- setup communication between client and server side --}}
 	<form action="/submitComment" method="post">
-		<input type="text" name="userFeedback" placeholder="Provide feedback" id="userFeedback" class="center">
+		<input type="textarea" name="userFeedback" placeholder="Provide feedback" id="userFeedback" class="">
 		<br>
 		<input type="submit" name="submitBtn" class="center form-btn-padding">
 	</form>
 	<ul id="comments-provided">
 		{{#each comments}}
-			<li>{{this.feedback}}</li>
+		<div class='comment-design'>
+			<li>
+					<span class="comment-message">{{this.feedback}}</span>
+					<br>
+					<span class="comment-author">{{this.authorName}}</span>
+			</li>
+		</div>
 		{{/each}}
 	</ul>
 

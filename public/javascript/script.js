@@ -9,6 +9,7 @@ $(document).ready(function() {
 		$.post('', newPosition, function() {
 			
 		});
+		alert('Formation Saved!');
 	});
 
 	//Cancel button
@@ -79,6 +80,7 @@ $(document).ready(function() {
 	    }
 	});*/
 
+	//remove player from player table and player node from formation board
 	$('button#js-remove-player').on('click', function() {
 		let id = $(this).parent().parent().data('player-id');
 		dots.splice(dots.findIndex(function(i){
@@ -98,11 +100,13 @@ $(document).ready(function() {
 		updateDots({id:id, player:player, team:team});
 	});
 
+	//toggle the player table accordion to open and close
 	$(".accordion").on("click", ".accordion-header", function() {
  		$(this).toggleClass("active").next().slideToggle();
 
  	});
 
+	//toggle player table based on viewport size gets readjusted
  	$(window).resize(function(e){
         console.log($(this).width())
         toggleTable();

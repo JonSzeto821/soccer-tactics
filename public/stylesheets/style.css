@@ -74,16 +74,39 @@ input[type=text]:focus{
 #userFeedback {
   display: block;
   margin: auto;
+  vertical-align: baseline;
   width: calc(100% - 20px);
   /*background-color: aquamarine;*/
   background-color: white;
-  line-height: 80px;
+  line-height: 40px;
   margin: 0 10px;
 }
 
 /*li {
     list-style-type: none;
 }*/
+
+.comment-design {
+  display: block;
+  /*border: 1px dashed black;*/
+  line-height: 40px;
+  width: calc(100% - 20px);
+  margin: 5px auto;
+  background-color: white;
+  padding: 5px;
+  list-style: none;
+}
+
+/*.comment-message {
+  margin: 0; 
+  color: blue;
+}*/
+
+.comment-author {
+  font-weight: 700;
+  font-style: italic;
+  color: #CCC;
+}
 
 .th-dark {
   background-color: slategrey;
