@@ -2,6 +2,13 @@
  	box-sizing: border-box;
 }
 
+html, body { 
+	max-width: 100%; 
+	overflow-x: hidden; 
+}
+
+
+
 .container {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -43,6 +50,10 @@ form {
 	line-height: 40px;
 	width: 100%;
 	font-size: 18px; 
+}
+
+#comment-section h4, #more-formations h4 {
+	padding: 5px 10px;
 }
 
 .link-styling {
@@ -87,7 +98,8 @@ input[type="submit"]{
 
 .col-6 {
 	/*border: 2px solid blue;*/
-	width: 100%
+	display: block;
+	width: 100%;
 	background-color: red;
 }
 
@@ -124,7 +136,7 @@ nav table {
 
 	.col-6 {
 		display: inline-block;
-		width: calc(50% - 20px);
+		width: 50%;
 		color: green;
 		margin: 0 auto;
 	}

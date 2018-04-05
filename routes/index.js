@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
 const Formation = require('../models/formation');
-// const Feedback = require('../models/feedback');
+const Feedback = require('../models/feedback');
 const router = express.Router();
 
 const fetch = require('node-fetch');
@@ -55,7 +55,7 @@ router.get('/soccer', (req, res) => {
 });
 
 //submit new formation post
-router.post('/newFormation', (req, res) => {
+router.post('/newFormation', isLoggedIn, (req, res) => {
     let formation = new Formation(req.body);
     console.log('penguin');
     console.log(req.body, req.user._id);
@@ -73,33 +73,38 @@ router.post('/newFormation', (req, res) => {
 });
 
 //submit a comment
-// router.post('/submitComment', (req, res) => {
-//     let comment = new Feedback(req.body);
-//     console.log('Giraffe');
-//     comment['feedback'] = 'feedback';
-//     comment['author'] = 'author';
-//     comment['authorName'] = 'authorName';
-//     comment['date'] = 'date';
-//     comment.save((err, f) => {
-//         if (err) {
-//             console.log(err);
-//             return next(err);
-//         }
-//         res.redirect(`/formation/${f._id}`);
-//     });
-// });
+router.post('/submitComment', isLoggedIn, (req, res) => {
+    let comment = new Feedback();
+    console.log('Giraffe');
+    console.log(req.body);
+    comment['feedback'] = req.body.userFeedback;
+    comment['author'] = req.user._id;
+    comment['authorName'] = req.user.username;
+    comment['date'] = new Date();
+    comment.save((err, f) => {
+        if (err) {
+            console.log(err);
+            return next(err);
+        }
+        res.redirect(`back`);
+    });
+});
 
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
     console.log(req.params);
     //res.render('formation');
+    Feedback.find().exec().then(pigeons => {
+        Formation.findOne({ _id: req.params.id}).exec().then(frog => {
 
-    Formation.findOne({ _id: req.params.id}).exec().then(f => {
+            req.app.locals.dots = JSON.stringify(frog.dots);
+            res.render('formation', {formation:frog, user:req.user, dotArray: frog.dots, comments: pigeons})
+        }).catch(err => { throw err})
 
-            req.app.locals.dots = JSON.stringify(f.dots);
-            //req.app.locals.test = [{'name':'hi'}];
-          res.render('formation', {formation:f, user:req.user, dotArray: f.dots})
+    
+            
     }).catch(err => { throw err})
+
 });
 
 //load and display user profile page
@@ -176,5 +181,13 @@ router.post('/forkForm', (req, res) => {
   });
 
  });
+
+// route middleware to ensure user is logged in
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/login');
+};
 
 module.exports = router;

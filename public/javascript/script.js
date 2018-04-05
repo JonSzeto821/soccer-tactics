@@ -100,17 +100,34 @@ $(document).ready(function() {
 
 	$(".accordion").on("click", ".accordion-header", function() {
  		$(this).toggleClass("active").next().slideToggle();
+
  	});
+
+ 	$(window).resize(function(e){
+        console.log($(this).width())
+        toggleTable();
+	});
 });
 
 $(document).ready(function(){
-
+	toggleTable();
 	$('label').click(function(){ 
 		console.log('Navbar logging!');
 		$('#nav-icon3').toggleClass('open')})
 });
 
 	
+
+
+function toggleTable() {
+        if($(window).width() > 600 && !$('.accordion-header').hasClass("active")){
+        	$('.accordion-header').addClass("active").next().slideToggle();
+       }else if($(window).width() < 600 && $('.accordion-header').hasClass("active")) {
+       		$('.accordion-header').removeClass("active").next().slideToggle();
+       }else {
+
+       }
+};
 
 function editDot(d) {
 	console.log(d);

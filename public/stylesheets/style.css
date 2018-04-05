@@ -389,6 +389,8 @@ input[type=checkbox], label {
   max-width: 400px;
   background: white;
   max-width: 100%;
+  width: 100%;
+  display: flex;
   margin: 0 auto;
 }
 

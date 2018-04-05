@@ -11,4 +11,4 @@ const Feedback = new Schema({
 
 
 
-// module.exports = mongoose.model('userFeedback', Feedback);
+module.exports = mongoose.model('userFeedback', Feedback);

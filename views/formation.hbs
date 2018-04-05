@@ -111,31 +111,38 @@
 			</table>
 		</div>
 	</div>
+</div>
 <div class="background-color form-btn-padding center">
 	<button class='js-save-btn save'>Save</button>
 	<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
 </div>
 <!--Add section to display list of all formations; similar to the home page-->
-<div class="background-color center">
+<div class="background-color" id="more-formations">
 	<h4>See More Formations</h4>
-	<ul>
+{{!-- 	<ul>
 		<li>Link 1</li>
 		<li>Link 2</li>
 		<li>Link 3</li>
-	</ul>
+	</ul> --}}
 	<!--Display a random list of 5 links to display-->
 
 </div>
 
 {{!-- Create a section for users to leave feedback on a formation --}}
-<div class="background-color center">
+<div class="background-color" id="comment-section">
 	<h4>Comments:</h4>
 	{{!-- setup communication between client and server side --}}
-	<form action="{{!-- /submitComment --}}" method="post">
+	<form action="/submitComment" method="post">
 		<input type="text" name="userFeedback" placeholder="Provide feedback" id="userFeedback" class="center">
 		<br>
 		<input type="submit" name="submitBtn" class="center form-btn-padding">
 	</form>
+	<ul id="comments-provided">
+		{{#each comments}}
+			<li>{{this.feedback}}</li>
+		{{/each}}
+	</ul>
+
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
