@@ -11,7 +11,6 @@
 	<div class="container center">
 		<div class="form-btn-padding">
 			<button id='js-fork-btn' class="fork">Fork</button>
-
 			<button class='js-edit-btn'>Edit</button>
 			<button class='js-delete-btn delete'>Delete</button>
 		</div>
@@ -72,58 +71,72 @@
 		<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
 	</div>
 </div> --}}
-
-<!--Test Table accordion-->
+<div class="background-color" id="accordion-padding"></div>
 <div class="accordion">
-	<div class="accordion-header">Team 1</div>
-	<div class="accordion-content">
-		<table>
-			<tr>
-				<th class="th-dark">Team</th>
-				<th class="th-dark">Player</th>
-				<th class="th-dark">Remove Player</th>
-			</tr>
-			{{#each dotArray}}
-				<tr data-player-id="{{this.id}}" contentEditable="true">
-					<td data-team="{{this.team}}">{{this.team}}</td>
-					<td data-player="{{this.player}}">{{this.player}}</td>
-					<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+	<div class="col-6">
+		<div class="accordion-header">Team 1</div>
+		<div class="accordion-content bottom-border">
+			<table>
 				<tr>
-			{{/each}}
-		</table>
+					<th class="th-dark">Team</th>
+					<th class="th-dark">Player</th>
+					<th class="th-dark">Remove Player</th>
+				</tr>
+				{{#each dotArray}}
+					<tr data-player-id="{{this.id}}" contentEditable="true">
+						<td data-team="{{this.team}}">{{this.team}}</td>
+						<td data-player="{{this.player}}">{{this.player}}</td>
+						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+					<tr>
+				{{/each}}
+			</table>
+		</div>
 	</div>
-	<div class="accordion-header">Team 2</div>
-	<div class="accordion-content">
-		<table>
-			<tr>
-				<th class="th-dark">Team</th>
-				<th class="th-dark">Player</th>
-				<th class="th-dark">Remove Player</th>
-			</tr>
-			{{#each dotArray}}
-				<tr data-player-id="{{this.id}}" contentEditable="true">
-					<td data-team="{{this.team}}">{{this.team}}</td>
-					<td data-player="{{this.player}}">{{this.player}}</td>
-					<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+	<div class="col-6">
+		<div class="accordion-header">Team 2</div>
+		<div class="accordion-content">
+			<table>
 				<tr>
-			{{/each}}
-		</table>
+					<th class="th-dark">Team</th>
+					<th class="th-dark">Player</th>
+					<th class="th-dark">Remove Player</th>
+				</tr>
+				{{#each dotArray}}
+					<tr data-player-id="{{this.id}}" contentEditable="true">
+						<td data-team="{{this.team}}">{{this.team}}</td>
+						<td data-player="{{this.player}}">{{this.player}}</td>
+						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+					<tr>
+				{{/each}}
+			</table>
+		</div>
+	</div>
+<div class="background-color form-btn-padding center">
+	<button class='js-save-btn save'>Save</button>
+	<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
 </div>
-	<button class='js-save-btn save block-center'>Save</button>
-	<button class='js-cancel-btn block-center'><a href="/profile/">Cancel</a></button>
-
 <!--Add section to display list of all formations; similar to the home page-->
-	<h4 class="center">See More Formations</h4>
+<div class="background-color center">
+	<h4>See More Formations</h4>
+	<ul>
+		<li>Link 1</li>
+		<li>Link 2</li>
+		<li>Link 3</li>
+	</ul>
 	<!--Display a random list of 5 links to display-->
 
-{{!-- Create a section for users to leave feedback on a formation --}}
-	<h4 class="center">Comments:</h4>
-	{{!-- setup communication between client and server side --}}
-	<form action="/commentSubmit" method="post">
-		<input type="text" name="userFeedback" id="userFeedback">
-		<input type="submit" name="submitBtn" class="center">
-	</form>
+</div>
 
+{{!-- Create a section for users to leave feedback on a formation --}}
+<div class="background-color center">
+	<h4>Comments:</h4>
+	{{!-- setup communication between client and server side --}}
+	<form action="{{!-- /submitComment --}}" method="post">
+		<input type="text" name="userFeedback" placeholder="Provide feedback" id="userFeedback" class="center">
+		<br>
+		<input type="submit" name="submitBtn" class="center form-btn-padding">
+	</form>
+</div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);

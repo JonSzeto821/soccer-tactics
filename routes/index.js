@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
 const Formation = require('../models/formation');
+// const Feedback = require('../models/feedback');
 const router = express.Router();
 
 const fetch = require('node-fetch');
@@ -19,6 +20,7 @@ router.get('/', (req, res) => {
     }).catch(err => { throw err})
 });
 
+//load and display register page
 router.get('/register', (req, res) => {
     res.render('register', { });
 });
@@ -70,6 +72,23 @@ router.post('/newFormation', (req, res) => {
   });  
 });
 
+//submit a comment
+// router.post('/submitComment', (req, res) => {
+//     let comment = new Feedback(req.body);
+//     console.log('Giraffe');
+//     comment['feedback'] = 'feedback';
+//     comment['author'] = 'author';
+//     comment['authorName'] = 'authorName';
+//     comment['date'] = 'date';
+//     comment.save((err, f) => {
+//         if (err) {
+//             console.log(err);
+//             return next(err);
+//         }
+//         res.redirect(`/formation/${f._id}`);
+//     });
+// });
+
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
     console.log(req.params);
@@ -83,9 +102,7 @@ router.get('/formation/:id', (req, res) => {
     }).catch(err => { throw err})
 });
 
-
-
-
+//load and display user profile page
 router.get('/profile', (req, res) => { 
     
     Formation.find({ author: req.user._id}).exec().then(f => {
@@ -93,10 +110,7 @@ router.get('/profile', (req, res) => {
     }).catch(err => { throw err})
 });
 
-
-
-
-//render login page
+//load and display login page
 router.get('/login', (req, res) => {
     res.render('login', { user : req.user, error : req.flash('error')});
 });
@@ -122,6 +136,7 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
+//Express test client to server-side connection
 router.get('/ping', (req, res) => {
     res.status(200).send("pong!");
 });
@@ -136,9 +151,8 @@ router.post('/formation/:_id', (req, res) => {
     }
 
     console.log(doc);
+    });
 });
-});
-
 
 //Fork a formation
 router.post('/forkForm', (req, res) => {
@@ -162,10 +176,5 @@ router.post('/forkForm', (req, res) => {
   });
 
  });
-
-//Create new formation document on click of 'fork'
-router.post('/formation/fork/:_id', (req, res) => {
-    
-});
 
 module.exports = router;

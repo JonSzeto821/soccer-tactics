@@ -14,17 +14,22 @@
 	padding: 15px 0;
 }
 
-.form-btn-padding button, .team-wrap button {
+.form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding {
 	margin:0 5px;
 	/*line-height: 25px;*/
 	height: 50px;
 	width: 75px;
+	border-radius: 3px;
 }
 
 
 /*Profile Page Breakpoints*/
 h1 {
 	text-align: center;
+}
+
+h4 {
+	margin: 0px;
 }
 
 form {
@@ -57,25 +62,23 @@ input[type="submit"]{
 
 
 /*Login Page*/
-#login-container {
+#login-container, #register-container {
 	text-align: center;
-	background-color: #00aa5d;
+	background-color: #58BA9F;
 }
 
 #login-form {
 	margin: auto;
 }
 
-/*Register Page*/
-#register-container {
-	text-align: center;
-	background-color: #00aa5d;
-}
-
 #register-form {
 	margin: auto;
 }
 
+#accordion-padding {
+	line-height:10px;
+	padding: 10px; 
+}
 
 /*Formation Page*/
 .col-12 {
@@ -84,7 +87,8 @@ input[type="submit"]{
 
 .col-6 {
 	/*border: 2px solid blue;*/
-	width: 100%;
+	width: 100%
+	background-color: red;
 }
 
 #formationName {
@@ -119,8 +123,10 @@ nav table {
 	}
 
 	.col-6 {
-		width: 49%;
+		display: inline-block;
+		width: calc(50% - 20px);
 		color: green;
+		margin: 0 auto;
 	}
 }
 
@@ -135,7 +141,8 @@ nav table {
 .nav-link {
 	color: #db3236;
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 20px;
+	border-bottom: 1px solid #CCC;
 }
 
 
