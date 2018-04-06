@@ -43,20 +43,30 @@ $(document).ready(function() {
 
 	});
 
-	//Edit button
-	$('button.js-edit-btn').on('click', function() {
-		console.log('Formation Edited!');
-		
-	});
+	// Edit button
+	// $('button.js-edit-btn').on('click', function() {
+	// 	console.log('Formation Edited!');
+	// });
 
-	//Add Player button
+	//Add Player button - team1
 	$('button.js-addPlayer-btn').on('click', function() {
-		console.log('Player Node Added!');
+		console.log('Player Node Added to Team 1!');
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		console.log(dots);
 		dots.push(
-			{player: randomNumber, team: "Real Madrid", y: 500, x: 321, id: 4})
+			{player: randomNumber, team: "Real Madrid", y: 500, x: 321, id: 4});
+		alert('Player Node Added to Team 1!');
+		});
+
+	//Add Player button - team2
+	$('button.js-addPlayer-btn2').on('click', function() {
+		console.log('Player Node Added to Team 2!');
+		//console.log(team2);
+		// team2.push(
+		// 	{player: randomNumber, team: "testPush", y: randomPositionY, x: 321, id: 4});
+		alert('Player Node Added to Team 2!');
 		});
 
 	//Get value from dropdown
@@ -106,7 +116,6 @@ $(document).ready(function() {
 	//toggle the player table accordion to open and close
 	$(".accordion").on("click", ".accordion-header", function() {
  		$(this).toggleClass("active").next().slideToggle();
-
  	});
 
 	//toggle player table based on viewport size gets readjusted

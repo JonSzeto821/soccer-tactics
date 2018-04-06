@@ -98,7 +98,7 @@ router.get('/formation/:id', (req, res) => {
         Formation.findOne({ _id: req.params.id}).exec().then(frog => {
 
             req.app.locals.dots = JSON.stringify(frog.dots);
-            res.render('formation', {formation:frog, user:req.user, dotArray: frog.dots, comments: pigeons})
+            res.render('formation', {formation:frog, user:req.user, team1: frog.dots, team2: frog.team2, comments: pigeons})
         }).catch(err => { throw err})
 
     

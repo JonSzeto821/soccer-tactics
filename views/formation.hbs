@@ -23,7 +23,7 @@
 		<div class="team-wrap">
 			<div class="i-block">Team 2</div>
 			<br>
-			<button class='js-addPlayer-btn'>+ Player</button>
+			<button class='js-addPlayer-btn2'>+ Player</button>
 		</div>
 	</div>
 </div>
@@ -40,7 +40,7 @@
 					<th class="th-dark">Player</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
-				{{#each dotArray}}
+				{{#each team1}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
 						<td data-team="{{this.team}}">{{this.team}}</td>
 						<td data-player="{{this.player}}">{{this.player}}</td>
@@ -59,7 +59,7 @@
 					<th class="th-dark">Player</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
-				{{#each dotArray}}
+				{{#each team2}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
 						<td data-team="{{this.team}}">{{this.team}}</td>
 						<td data-player="{{this.player}}">{{this.player}}</td>
