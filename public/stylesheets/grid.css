@@ -17,16 +17,29 @@ html, body {
 	max-width: 1200px;
 }
 
-.form-btn-padding {
-	padding: 15px 0;
+#formation-btn-padding {
+	padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#comment-section form {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#comment-section form input[type="submit"] {
+	margin-top: 10px;
 }
 
 .form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding {
 	margin:0 5px;
 	/*line-height: 25px;*/
-	height: 50px;
+	height: 40px;
 	width: 75px;
 	border-radius: 3px;
+	/*outline: 0;*/
+	border: 1px solid black; 
+	/*border: 0; */
 }
 
 
@@ -58,17 +71,26 @@ form {
 
 .link-styling {
 	list-style: none;
-	/*line-height: 40px;*/
 	padding: 15px 0;
 	font-size: 18px;
+	border-radius: 3px;
+}
+
+.link-styling li {
+	font-weight: 600;
+    font-size: 26px;
+
+}
+
+#comment-section h4 {
+	margin: 5px 0px;
+	font-size:	20px;
 }
 
 input[type="submit"]{ 
 	margin: 0 0 20px 0;
 	padding: 5px 10px;
-	line-height: 40px;
 	width: 35%;
-	font-size: 18px;
 }
 
 
@@ -119,11 +141,29 @@ table {
 }
 
 nav table {
-	background-color: #f4c20d;
+	background-color: #002e5b;
+}
+
+/*NavBar*/
+.nav-link {
+	color: #C73D16;
+	font-weight: 700;
+	font-size: 20px;
+	border-bottom: 1px solid #CCC;
+}
+
+.accordion hr {
+	display: none;
 }
 
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
+	hr {
+		width: 95%;
+		margin: auto;
+		color: #CCC;
+	}
+
 	.team1 {
 		float: left;
 		border: 1px solid yellow;
@@ -135,10 +175,46 @@ nav table {
 	}
 
 	.col-6 {
-		display: inline-block;
+		/*display: inline-block;*/
 		width: 50%;
-		color: green;
+		/*color: green;*/
+		background-color: #58BA9F;
 		margin: 0 auto;
+	}
+
+	.nav-link {
+		border-bottom: none;
+	}
+
+	#comment-section {
+		width: 95%;
+		text-align: left;
+		margin: auto;
+
+	}
+
+	#comment-section input[type="textarea"] {
+		width: 70%;
+		background-color: yellow;
+
+	}
+
+	.accordion-header, .accordion-content {
+		background-color: #58BA9F;
+		border-bottom: none;
+	}
+
+	.accordion hr {
+		width: 90%;
+		display: block;
+/*		padding-bottom: 10px;*/
+	}
+
+	.accordion-content {
+		border-bottom: none;
+		/*border-top: 2px solid #2F4F4F;*/
+		max-width: 90%;
+		margin: auto;
 	}
 }
 
@@ -148,15 +224,6 @@ nav table {
     padding: 10px 15px;
     margin: 10px 0;
 }
-
-/*NavBar*/
-.nav-link {
-	color: #db3236;
-	font-weight: 700;
-	font-size: 20px;
-	border-bottom: 1px solid #CCC;
-}
-
 
 /*Responsive SVG Media Queries*/
 svg {

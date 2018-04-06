@@ -182,6 +182,14 @@ router.post('/forkForm', (req, res) => {
 
  });
 
+//Delete a formation
+router.delete('/formation/:_id', (req, res) => {
+  Formation.delete(req.params.id);
+  console.log(`Deleted formation \`${req.params.id}\``);
+  res.status(204).end();
+});
+
+
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

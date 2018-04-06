@@ -12,7 +12,7 @@
 		<div class="form-btn-padding">
 			<button id='js-fork-btn' class="fork">Fork</button>
 			{{!-- <button class='js-edit-btn'>Edit</button> --}}
-			<button class='js-delete-btn delete'>Delete</button>
+			<button class='js-delete-btn delete'><a href="/">Delete</a></button>
 		</div>
 		<br>
 		<div class="team-wrap">
@@ -29,52 +29,10 @@
 </div>
 
 <div id='soccerField'></div>
-{{!-- <div class="container tile">
-	<h3 class="center">Player Table</h3>
-	<table class="col-6 team1">
-		<tr>
-			<th colspan="3">Team 1</th>
-		</tr>
-		<tr>
-			<th class="th-dark">Team</th>
-			<th class="th-dark">Player</th>
-			<th class="th-dark">Remove Player</th>
-		</tr>
-		{{#each dotArray}}
-			<tr data-player-id="{{this.id}}" contentEditable="true">
-				<td data-team="{{this.team}}">{{this.team}}</td>
-				<td data-player="{{this.player}}">{{this.player}}</td>
-				<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
-			<tr>
-		{{/each}}
-	</table>
-	
-	<table class="col-6 team2">
-		<tr>
-			<th colspan="3">Team 2</th>
-		</tr>
-		<tr>
-			<th class="th-dark">Team</th>
-			<th class="th-dark">Player</th>
-			<th class="th-dark">Remove Player</th>
-		</tr>
-		{{#each dotArray}}
-			<tr data-player-id="{{this.id}}" contentEditable="true">
-				<td data-team="{{this.team}}">{{this.team}}</td>
-				<td data-player="{{this.player}}">{{this.player}}</td>
-				<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
-			<tr>
-		{{/each}}
-	</table>
-	<div class="form-btn-padding center">
-		<button class='js-save-btn save'>Save</button>
-		<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
-	</div>
-</div> --}}
 <div class="background-color" id="accordion-padding"></div>
 <div class="accordion">
 	<div class="col-6">
-		<div class="accordion-header">Team 1</div>
+		<div class="accordion-header">Team 1<hr></div>
 		<div class="accordion-content bottom-border">
 			<table>
 				<tr>
@@ -93,8 +51,8 @@
 		</div>
 	</div>
 	<div class="col-6">
-		<div class="accordion-header">Team 2</div>
-		<div class="accordion-content">
+		<div class="accordion-header">Team 2 <hr></div>
+		<div class="accordion-content bottom-border">
 			<table>
 				<tr>
 					<th class="th-dark">Team</th>
@@ -112,9 +70,9 @@
 		</div>
 	</div>
 </div>
-<div class="background-color form-btn-padding center">
+<div class="background-color form-btn-padding center" id="formation-btn-padding">
 	<button class='js-save-btn save'>Save</button>
-	<button class='js-cancel-btn'><a href="/profile/">Cancel</a></button>
+	<button class='js-cancel-btn'><a href="/profile">Cancel</a></button>
 </div>
 <!--Add section to display list of all formations; similar to the home page-->
 {{!-- <div class="background-color" id="more-formations">
@@ -122,26 +80,25 @@
 	<!--Display a random list of 5 links to display-->
 </div> --}}
 {{!-- Create a section for users to leave feedback on a formation --}}
+<hr>
 <div class="background-color" id="comment-section">
 	<h4>Comments:</h4>
 	{{!-- setup communication between client and server side --}}
 	<form action="/submitComment" method="post">
-		<input type="textarea" name="userFeedback" placeholder="Provide feedback" id="userFeedback" class="">
-		<br>
-		<input type="submit" name="submitBtn" class="center form-btn-padding">
+		<textarea name="userFeedback" placeholder="Provide feedback" id="userFeedback"></textarea>
+		<input type="submit" name="submitBtn" class="form-btn-padding">
 	</form>
 	<ul id="comments-provided">
 		{{#each comments}}
 		<div class='comment-design'>
 			<li>
-					<span class="comment-message">{{this.feedback}}</span>
-					<br>
-					<span class="comment-author">{{this.authorName}}</span>
+				{{this.feedback}}
+				<br>
+				<span class="comment-author">{{this.authorName}}</span>
 			</li>
 		</div>
 		{{/each}}
 	</ul>
-
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};

@@ -34,10 +34,13 @@ $(document).ready(function() {
 		});
 	});
 
-	//Cancel button
+	//Delete button
 	$('button.js-delete-btn').on('click', function() {
 		console.log('Formation Deleted!');
+		
+
 		//redirect the user back to list of formations
+
 	});
 
 	//Edit button
@@ -121,9 +124,22 @@ $(document).ready(function(){
 		$('#nav-icon3').toggleClass('open')})
 });
 
-	
+//auto resize comment textarea
+$(document)
+    .one('focus.autoExpand', 'textarea.autoExpand', function(){
+        var savedValue = this.value;
+        this.value = '';
+        this.baseScrollHeight = this.scrollHeight;
+        this.value = savedValue;
+    })
+    .on('input.autoExpand', 'textarea.autoExpand', function(){
+        var minRows = this.getAttribute('data-min-rows')|0, rows;
+        this.rows = minRows;
+        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
+        this.rows = minRows + rows;
+    });
 
-
+//function toggles accordion to open and close
 function toggleTable() {
         if($(window).width() > 600 && !$('.accordion-header').hasClass("active")){
         	$('.accordion-header').addClass("active").next().slideToggle();
