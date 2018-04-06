@@ -7,7 +7,9 @@ html, body {
 	overflow-x: hidden; 
 }
 
-
+label {
+	margin: 0;
+}
 
 .container {
 	padding-left: 10px;
@@ -97,7 +99,9 @@ input[type="submit"]{
 /*Login Page*/
 #login-container, #register-container {
 	text-align: center;
-	background-color: #58BA9F;
+	/*background-color: #58BA9F;*/
+	background-color: #F5E3A6;
+	margin-top: 0;
 }
 
 #login-form {
@@ -122,7 +126,6 @@ input[type="submit"]{
 	/*border: 2px solid blue;*/
 	display: block;
 	width: 100%;
-	background-color: red;
 }
 
 #formationName {
@@ -158,6 +161,10 @@ nav table {
 
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
+	.container, .lrg-max-width {
+		width: 95%;
+	}
+
 	hr {
 		width: 95%;
 		margin: auto;
@@ -195,8 +202,6 @@ nav table {
 
 	#comment-section input[type="textarea"] {
 		width: 70%;
-		background-color: yellow;
-
 	}
 
 	.accordion-header, .accordion-content {
