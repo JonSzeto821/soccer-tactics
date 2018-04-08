@@ -37,13 +37,19 @@
 			<table>
 				<tr>
 					<th class="th-dark">Team</th>
-					<th class="th-dark">Player</th>
+					<th class="th-dark">Number</th>
+					<th class="th-dark">Name</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team1}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
 						<td data-team="{{this.team}}">{{this.team}}</td>
 						<td data-player="{{this.player}}">{{this.player}}</td>
+						
+
+
+						{{!-- all tr's below edited tr get updated to the same value--}}
+						<td data-name="{{this.name}}">{{this.name}}</td>
 						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
 					<tr>
 				{{/each}}
@@ -56,13 +62,18 @@
 			<table>
 				<tr>
 					<th class="th-dark">Team</th>
-					<th class="th-dark">Player</th>
+					<th class="th-dark">Number</th>
+					<th class="th-dark">Name</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team2}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
 						<td data-team="{{this.team}}">{{this.team}}</td>
 						<td data-player="{{this.player}}">{{this.player}}</td>
+
+
+						{{!-- Edits are not saving on player column --}}
+						<td data-player="{{this.name}}">{{this.name}}</td>
 						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
 					<tr>
 				{{/each}}

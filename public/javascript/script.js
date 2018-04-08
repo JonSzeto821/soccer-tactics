@@ -56,7 +56,7 @@ $(document).ready(function() {
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log(dots);
 		dots.push(
-			{player: randomNumber, team: "Real Madrid", y: 500, x: 321, id: 4});
+			{player: randomNumber, name: "Jon", team: "Real Madrid", y: 500, x: 321, id: 4});
 		alert('Player Node Added to Team 1!');
 		});
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		console.log('Player Node Added to Team 2!');
 		//console.log(team2);
 		// team2.push(
-		// 	{player: randomNumber, team: "testPush", y: randomPositionY, x: 321, id: 4});
+		// 	{player: randomNumber, name: "Test", team: "testPush", y: randomPositionY, x: 321, id: 4});
 		alert('Player Node Added to Team 2!');
 		});
 
@@ -109,8 +109,9 @@ $(document).ready(function() {
 		console.log($(this).find("[data-team]").text());
 		let team = $(this).find("[data-team]").text();
 		let player = $(this).find("[data-player]").text();
+		let name = $(this).find("[data-name]").text();
 		let id = $(this).data('player-id');
-		updateDots({id:id, player:player, team:team});
+		updateDots({id:id, player:player, team:team, name:name});
 	});
 
 	//toggle the player table accordion to open and close
