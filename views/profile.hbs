@@ -1,21 +1,22 @@
 <div class="container clearfix">
-	<h1> {{user.username}}'s Formations Page</h1>
+	<h1> {{user.username}}'s Formation Page</h1>
 	<h4 class="center">Enter a formation name and press 'Submit' to begin creating a new formation</h4>
 	{{!--{{#if user}}
 	    username: {{user.username}}
 	{{/if}}--}}
 	<form action="/newFormation" method="post">
 	  <input type="text" name="name" placeholder="Formation Name" id='formationInput'>
+	  <br>
 	  <input type="submit" value="Submit" id='formSubmit' class="form-btn-padding">
 	</form>
-
+	<hr>
 	<div class="center">
 		{{#each formations}}
 			<ul class="link-styling box">
 				<a class='' href="/formation/{{this._id}}"><li>{{this.name}}</li></a>
 			</ul>
 		{{/each}}
-		<a href="/"><button class='js-cancel-btn center form-btn-padding'>Cancel</button></a>
+		<a href="/"><button class='js-cancel-btn center form-btn-padding cancel'>Cancel</button></a>
 	</div>
 	<br>
 	<br>

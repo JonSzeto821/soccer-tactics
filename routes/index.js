@@ -98,7 +98,20 @@ router.get('/formation/:id', (req, res) => {
         Formation.findOne({ _id: req.params.id}).exec().then(frog => {
 
             req.app.locals.dots = JSON.stringify(frog.dots);
-            res.render('formation', {formation:frog, user:req.user, team1: frog.dots, team2: frog.team2, comments: pigeons})
+            console.log(frog.dots);
+            let team1 = [];
+            let team2 = [];
+            let team1Name = frog.dots[0].team
+
+            frog.dots.forEach(function(dot, i) {
+                if(team1Name == dot.team) {
+                    team1.push(dot);
+                }else{
+                    team2.push(dot);
+                }
+
+            });
+            res.render('formation', {formation:frog, user:req.user, team1: team1, team2: team2, comments: pigeons})
         }).catch(err => { throw err})
 
     
@@ -182,11 +195,19 @@ router.post('/forkForm', (req, res) => {
 
  });
 
-//Delete a formation
-router.delete('/deleteForm', (req, res) => {
-  // Formation.delete(req.params.id);
-  console.log(`Deleted formation`);
+//get deleteForm
+router.get('/deleteForm/:_id', (req, res) => {
+    console.log(req.body, req.params);
+    console.log(`Deleted formation`);
+    res.status(200).send("pong!");
+});
 
+//Delete a formation
+router.delete('/formation/:_id', (req, res) => {
+    console.log(req.body, req.params);
+    console.log(`Deleted formation SERVER SIDE!!!`);
+    // enter mongo call to delete formation, then res.redirect
+    res.status(200).send("ping!");
 });
 
 

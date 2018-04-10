@@ -9,10 +9,11 @@
 	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
 	<div class="container center">
-		<div class="form-btn-padding">
+		<div class="form-btn-padding" id="formation-top-button">
 			<button id='js-fork-btn' class="fork">Fork</button>
 			{{!-- <button class='js-edit-btn'>Edit</button> --}}
-			<button class='js-delete-btn delete'><a href="/deleteForm">Delete</a></button>
+			<a href="/deleteForm/{{formation._id}}">Delete Link Get Req</a>
+			<button class='js-delete-btn delete'>Delete button jquery ajax delete method</button>
 		</div>
 		<br>
 		<div class="team-wrap">
@@ -36,21 +37,21 @@
 		<div class="accordion-content bottom-border">
 			<table>
 				<tr>
-					<th class="th-dark">Team</th>
+					{{!-- <th class="th-dark">Team</th> --}}
 					<th class="th-dark">Number</th>
 					<th class="th-dark">Name</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team1}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
-						<td data-team="{{this.team}}">{{this.team}}</td>
+						{{!-- <td data-team="{{this.team}}">{{this.team}}</td> --}}
 						<td data-player="{{this.player}}">{{this.player}}</td>
 						
 
 
 						{{!-- all tr's below edited tr get updated to the same value--}}
 						<td data-name="{{this.name}}">{{this.name}}</td>
-						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+						<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
 					<tr>
 				{{/each}}
 			</table>
@@ -61,20 +62,20 @@
 		<div class="accordion-content bottom-border">
 			<table>
 				<tr>
-					<th class="th-dark">Team</th>
+					{{!-- <th class="th-dark">Team</th> --}}
 					<th class="th-dark">Number</th>
 					<th class="th-dark">Name</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team2}}
 					<tr data-player-id="{{this.id}}" contentEditable="true">
-						<td data-team="{{this.team}}">{{this.team}}</td>
+						{{!-- <td data-team="{{this.team}}">{{this.team}}</td> --}}
 						<td data-player="{{this.player}}">{{this.player}}</td>
 
 
 						{{!-- Edits are not saving on player column --}}
 						<td data-player="{{this.name}}">{{this.name}}</td>
-						<td contentEditable="false" class="center"><button id='js-remove-player'>Delete</button></td>
+						<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
 					<tr>
 				{{/each}}
 			</table>
@@ -83,7 +84,7 @@
 </div>
 <div class="background-color form-btn-padding center" id="formation-btn-padding">
 	<button class='js-save-btn save'>Save</button>
-	<button class='js-cancel-btn'><a href="/profile">Cancel</a></button>
+	<a href="/"><button class='js-cancel-btn'>Cancel</button></a>
 </div>
 <!--Add section to display list of all formations; similar to the home page-->
 {{!-- <div class="background-color" id="more-formations">

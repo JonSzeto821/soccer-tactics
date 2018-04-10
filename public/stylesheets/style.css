@@ -96,6 +96,8 @@ input[type=checkbox], label {
   background-color: #61a8ff;
 }
 
+
+
 #user-logout-display {
     text-align: right;
     clear: both;
@@ -107,6 +109,7 @@ input[type=checkbox], label {
   margin: auto;
   vertical-align: baseline;
   width: calc(100% - 20px);
+  max-width: 650px;
   background-color: white;
   overflow: hidden;
   padding: 10px;
@@ -114,21 +117,26 @@ input[type=checkbox], label {
   border: 0;
 }
 
+a .js-delete-btn {
+  color: black;
+}
+
 .comment-design {
   display: block;
   /*border: 1px dashed black;*/
   line-height: 40px;
   width: calc(100% - 20px);
+  max-width: 900px;
   margin: 5px auto;
   background-color: #BBEEDF;
-  padding: 5px;
+  padding: 15px;
   list-style: none;
 }
 
 .comment-author {
   font-weight: 700;
   font-style: italic;
-  color: #CCC;
+  color: #808080;
 }
 
 .background-color {
@@ -151,7 +159,7 @@ input[type=checkbox], label {
 }
 
 .fork {
-    background-color: #61a8ff;
+    background-color: #FDA12C;
 }
 
 .right {
@@ -560,4 +568,25 @@ nav ul li a i {
   top: 18px;
   width: 0%;
   left: 50%;
+}
+
+
+
+
+
+@media only screen and (min-width: 650px) {
+  #formSubmit {
+    margin-bottom: 15px;
+  }
+
+  #userFeedback {
+    margin: initial;
+    margin-left: 10px;
+    
+  }
+
+  .comment-design {
+    margin: 5px;
+  }
+
 }

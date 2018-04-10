@@ -11,13 +11,38 @@ label {
 	margin: 0;
 }
 
-.container {
-	padding-left: 10px;
-	padding-right: 10px;
-
-	/*border: 1px dashed red;*/
-	max-width: 1200px;
+h1 {
+	text-align: center;
 }
+
+h4 {
+	margin: 0 0 10px 0;
+}
+
+form {
+	text-align: center;
+}
+
+nav td {
+	padding: 0;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+nav table {
+	background-color: #002e5b;
+}
+
+input[type="submit"]{ 
+	margin: 0 0 20px 0;
+	padding: 5px 10px;
+	width: 35%;
+}
+
+
 
 #formation-btn-padding {
 	padding-top: 10px;
@@ -29,33 +54,18 @@ label {
 	text-align: center;
 }
 
-#comment-section form input[type="submit"] {
+#comment-section form input[type="submit"], #formation-top-button {
 	margin-top: 10px;
 }
 
-.form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding {
+.form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding, button.player-delete {
 	margin:0 5px;
 	/*line-height: 25px;*/
 	height: 40px;
 	width: 75px;
 	border-radius: 3px;
-	/*outline: 0;*/
+	color: black;
 	border: 1px solid black; 
-	/*border: 0; */
-}
-
-
-/*Profile Page Breakpoints*/
-h1 {
-	text-align: center;
-}
-
-h4 {
-	margin: 0px;
-}
-
-form {
-	text-align: center;
 }
 
 #formationInput {
@@ -64,11 +74,18 @@ form {
 	margin-bottom: 10px;
 	line-height: 40px;
 	width: 100%;
+	max-width: 400px;
 	font-size: 18px; 
 }
 
 #comment-section h4, #more-formations h4 {
 	padding: 5px 10px;
+}
+
+.container {
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: 1200px;
 }
 
 .link-styling {
@@ -89,11 +106,7 @@ form {
 	font-size:	20px;
 }
 
-input[type="submit"]{ 
-	margin: 0 0 20px 0;
-	padding: 5px 10px;
-	width: 35%;
-}
+
 
 
 /*Login Page*/
@@ -134,18 +147,6 @@ input[type="submit"]{
 	/*display: inline-block;*/
 }
 
-nav td {
-	padding: 0;
-}
-
-table {
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-nav table {
-	background-color: #002e5b;
-}
 
 /*NavBar*/
 .nav-link {
@@ -220,6 +221,10 @@ nav table {
 		/*border-top: 2px solid #2F4F4F;*/
 		max-width: 90%;
 		margin: auto;
+	}
+
+	button.cancel {
+	  margin-top: 15px;
 	}
 }
 

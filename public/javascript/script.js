@@ -37,10 +37,14 @@ $(document).ready(function() {
 	//Delete button
 	$('button.js-delete-btn').on('click', function() {
 		console.log('Formation Deleted!');
-		
-
-		//redirect the user back to list of formations
-
+		$.ajax({
+		    url: '',
+		    type: 'DELETE',
+		    success: function(result) {
+		        // Do something with the result
+		        console.log(result, 'hello');
+		    }
+		})
 	});
 
 	// Edit button
@@ -55,25 +59,24 @@ $(document).ready(function() {
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log(dots);
-		dots.push(
-			{player: randomNumber, name: "Jon", team: "Real Madrid", y: 500, x: 321, id: 4});
-		alert('Player Node Added to Team 1!');
-		});
+		dots.push({player: randomNumber, name: "new Player", team: "Real Madrid", y: randomNumber, x: randomNumber, id: Date.now()});
+		// use jquery to add this.new playerto the list without refresh
+		//google adding list item to table with jquery
+
+	});
 
 	//Add Player button - team2
 	$('button.js-addPlayer-btn2').on('click', function() {
 		console.log('Player Node Added to Team 2!');
+		const maximum = 99;
+		const minimum = 0;
+		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		//console.log(team2);
-		// team2.push(
-		// 	{player: randomNumber, name: "Test", team: "testPush", y: randomPositionY, x: 321, id: 4});
-		alert('Player Node Added to Team 2!');
-		});
-
-	//Get value from dropdown
-	$('#team1, #team2').change(function(){
-    	console.log($(this).val());
-    	console.log($(this).attr('id'));
+		dots.push({player: randomNumber, name: "new Player", team: "Barcelona", y: randomNumber, x: randomNumber, id: Date.now()});
 	});
+		// use jquery to add this.new playerto the list without refresh
+		//google adding list item to table with jquery
+
 
 	//Delete player node
 	/*$('button#js-remove-player').on('click', function() {
@@ -105,6 +108,8 @@ $(document).ready(function() {
 
 	//Update data in player table
 	$('tr').keyup(function(e) {
+
+		//look the variable mapping for the variables to the value in .find()
 		console.log($(this).data('player-id'));
 		console.log($(this).find("[data-team]").text());
 		let team = $(this).find("[data-team]").text();

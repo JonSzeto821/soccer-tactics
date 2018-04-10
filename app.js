@@ -46,7 +46,8 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-mongoose.connect('mongodb://localhost/boiler');
+// mongoose.connect('mongodb://localhost/boiler');
+mongoose.connect('mongodb://my-db-user:thinkful@ds139919.mlab.com:39919/thinkful-fullstack-project-db');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
