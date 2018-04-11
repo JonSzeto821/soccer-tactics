@@ -59,7 +59,7 @@ $(document).ready(function() {
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log(dots);
-		dots.push({player: randomNumber, name: "new Player", team: "Real Madrid", y: randomNumber, x: randomNumber, id: Date.now()});
+		dots.push({id: Date.now(), x: randomNumber, y: randomNumber, player: randomNumber, name: "new Player", team: "Team 1"});
 		// use jquery to add this.new playerto the list without refresh
 		//google adding list item to table with jquery
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		//console.log(team2);
-		dots.push({player: randomNumber, name: "new Player", team: "Barcelona", y: randomNumber, x: randomNumber, id: Date.now()});
+		dots.push({id: Date.now(), x: randomNumber, y: randomNumber, player: randomNumber, name: "new Player", team: "Team 2"});
 	});
 		// use jquery to add this.new playerto the list without refresh
 		//google adding list item to table with jquery

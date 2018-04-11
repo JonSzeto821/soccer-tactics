@@ -9,11 +9,34 @@ const Formation = new Schema({
     dots: {
     	type: Array,
     	default: [
-    		{id: '1',x:47,y:450,team:'Barcelona',player:12,name:'Messi'},
-    		{id: '2',x:321,y:500,team:'Real Madrid',player:7,name:'Ronaldo'},
-    		{id: '3',x:123,y:360,team:'Real Madrid',player:4,name:'Rakitic'},
-    		{id: '55', x:47,y:450,team:'Real Madrid',player:11,name:'Casemiro'},
-    		{id: '4',x:321,y:540,team:'Barcelona',player:6,name:'Busquets'}
+        // add default values below to have 12 players on each team
+            //Team 1
+    		{id: '1',x:47,y:450,team:'Team 1',player:9,name:'ST'},
+    		{id: '2',x:321,y:500,team:'Team 1',player:7,name:'LW'},
+    		{id: '3',x:123,y:360,team:'Team 1',player:4,name:'RW'},
+    		{id: '4', x:47,y:450,team:'Team 1',player:10,name:'CM'},
+    		{id: '5',x:321,y:540,team:'Team 1',player:8,name:'CM'},
+            {id: '6',x:321,y:540,team:'Team 1',player:6,name:'CDM'},
+            {id: '7',x:321,y:540,team:'Team 1',player:3,name:'LB'},
+            {id: '8',x:321,y:540,team:'Team 1',player:4,name:'CB'},
+            {id: '9',x:321,y:540,team:'Team 1',player:5,name:'CB'},
+            {id: '10',x:321,y:540,team:'Team 1',player:2,name:'RB'},
+            {id: '11',x:321,y:540,team:'Team 1',player:1,name:'GK'},
+            // Team 2
+            {id: '1',x:47,y:450,team:'Team 2',player:9,name:'ST'},
+            {id: '2',x:321,y:500,team:'Team 2',player:19,name:'LM'},
+            {id: '3',x:123,y:360,team:'Team 2',player:11,name:'RM'},
+            {id: '4', x:47,y:450,team:'Team 2',player:14,name:'CAM'},
+            {id: '5',x:321,y:540,team:'Team 2',player:23,name:'CDM'},
+            {id: '6',x:321,y:540,team:'Team 2',player:5,name:'CDM'},
+            {id: '7',x:321,y:540,team:'Team 2',player:18,name:'LB'},
+            {id: '8',x:321,y:540,team:'Team 2',player:4,name:'CB'},
+            {id: '9',x:321,y:540,team:'Team 2',player:6,name:'CB'},
+            {id: '10',x:321,y:540,team:'Team 2',player:66,name:'RB'},
+            {id: '11',x:321,y:540,team:'Team 2',player:1,name:'GK'}
+
+
+
     	]
     }
 });

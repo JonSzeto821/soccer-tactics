@@ -207,7 +207,7 @@ router.delete('/formation/:_id', (req, res) => {
     console.log(req.body, req.params);
     console.log(`Deleted formation SERVER SIDE!!!`);
     // enter mongo call to delete formation, then res.redirect
-    res.status(200).send("ping!");
+    res.status(200).send("Formation deleted through ajax!").redirect("/");
 });
 
 

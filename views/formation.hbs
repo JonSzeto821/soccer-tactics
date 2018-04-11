@@ -12,7 +12,9 @@
 		<div class="form-btn-padding" id="formation-top-button">
 			<button id='js-fork-btn' class="fork">Fork</button>
 			{{!-- <button class='js-edit-btn'>Edit</button> --}}
+			{{!-- connecting straight to the server from html --}}
 			<a href="/deleteForm/{{formation._id}}">Delete Link Get Req</a>
+			{{!-- jquery method utilizing ajax to delete the formation --}}
 			<button class='js-delete-btn delete'>Delete button jquery ajax delete method</button>
 		</div>
 		<br>
@@ -30,7 +32,7 @@
 </div>
 
 <div id='soccerField'></div>
-<div class="background-color" id="accordion-padding"></div>
+<div class="background-color center" id="accordion-padding"><span id="table-instruction">Instructions:</span> Click on any cell in the tables below to edit values</div>
 <div class="accordion">
 	<div class="col-6">
 		<div class="accordion-header">Team 1<hr></div>
@@ -39,7 +41,7 @@
 				<tr>
 					{{!-- <th class="th-dark">Team</th> --}}
 					<th class="th-dark">Number</th>
-					<th class="th-dark">Name</th>
+					<th class="th-dark">Position</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team1}}
@@ -64,7 +66,7 @@
 				<tr>
 					{{!-- <th class="th-dark">Team</th> --}}
 					<th class="th-dark">Number</th>
-					<th class="th-dark">Name</th>
+					<th class="th-dark">Position</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team2}}
