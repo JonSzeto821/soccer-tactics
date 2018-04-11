@@ -58,9 +58,21 @@ $(document).ready(function() {
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		let addPlayer = '';
 		console.log(dots);
-		dots.push({id: Date.now(), x: randomNumber, y: randomNumber, player: randomNumber, name: "new Player", team: "Team 1"});
-		// use jquery to add this.new playerto the list without refresh
+		console.log(dots.length);
+		dots.push({id: Date.now(), x: randomNumber, y: randomNumber, player: randomNumber, name: "Assign Position", team: "Team 1"});
+
+		addPlayer += `
+			<tr data-player-id="{{this.id}}" contentEditable="true" class="table-content">
+				<td data-player="{{this.player}}">{{this.player}}</td>
+				<td data-name="{{this.name}}">{{this.name}}</td>
+				<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
+			</tr>`;
+
+		 $('#team1-table').append(addPlayer);
+
+		// use jquery to add this.new player to the list without refresh
 		//google adding list item to table with jquery
 
 	});
@@ -70,9 +82,19 @@ $(document).ready(function() {
 		console.log('Player Node Added to Team 2!');
 		const maximum = 99;
 		const minimum = 0;
+		let addPlayer = '';
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		//console.log(team2);
 		dots.push({id: Date.now(), x: randomNumber, y: randomNumber, player: randomNumber, name: "new Player", team: "Team 2"});
+
+		addPlayer += `
+			<tr data-player-id="{{this.id}}" contentEditable="true" class="table-content">
+				<td data-player="{{this.player}}">{{this.player}}</td>
+				<td data-name="{{this.name}}">Assign Position</td>
+				<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
+			</tr>`;
+
+		 $('#team2-table').append(addPlayer);
 	});
 		// use jquery to add this.new playerto the list without refresh
 		//google adding list item to table with jquery
