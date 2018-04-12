@@ -200,14 +200,23 @@ router.get('/deleteForm/:_id', (req, res) => {
     console.log(req.body, req.params);
     console.log(`Deleted formation`);
     res.status(200).send("pong!");
+
 });
 
 //Delete a formation
 router.delete('/formation/:_id', (req, res) => {
-    console.log(req.body, req.params);
-    console.log(`Deleted formation SERVER SIDE!!!`);
+    // console.log(req.body, req.params);
+    console.log(req.params);
+    console.log(`Deleted formation dfgdfgdfgsdfgdfgdfsfa!!!`);
     // enter mongo call to delete formation, then res.redirect
-    res.status(200).send("Formation deleted through ajax!").redirect("/");
+    // let documentId = ObjectId(req.params);
+    let obj = {_id: req.params._id};
+    console.log(obj);
+    Formation.remove(obj, function(err) {
+        console.log(err);
+        res.end();    
+    });
+    
 });
 
 

@@ -39,15 +39,15 @@
 		<div class="accordion-content bottom-border">
 			<table id="team1-table">
 				<tr class="table-header">
-					{{!-- <th class="th-dark">Team</th> --}}
+					<th class="th-dark hidden">Team</th>
 					<th class="th-dark">Number</th>
 					<th class="th-dark">Position</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team1}}
 					<tr data-player-id="{{this.id}}" contentEditable="true" class="table-content">
-						{{!-- <td data-team="{{this.team}}">{{this.team}}</td> --}}
-						<td data-player="{{this.player}}">{{this.player}}</td> {{!--displays the player number--}}
+						<td data-team="{{this.team}}" class="hidden">{{this.team}}</td>
+						<td data-player="{{this.player}}" >{{this.player}}</td> {{!--displays the player number--}}
 						<td data-name="{{this.name}}">{{this.name}}</td> {{!--displays the player position--}}
 						<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
 					<tr>
@@ -60,16 +60,16 @@
 		<div class="accordion-content bottom-border">
 			<table id="team2-table">
 				<tr class="table-header">
-					{{!-- <th class="th-dark">Team</th> --}}
+					<th class="th-dark hidden">Team</th>
 					<th class="th-dark">Number</th>
 					<th class="th-dark">Position</th>
 					<th class="th-dark">Remove Player</th>
 				</tr>
 				{{#each team2}}
 					<tr data-player-id="{{this.id}}" contentEditable="true" class="table-content">
-						{{!-- <td data-team="{{this.team}}">{{this.team}}</td> --}}
+						<td data-team="{{this.team}}" class="hidden">{{this.team}}</td>
 						<td data-player="{{this.player}}">{{this.player}}</td> {{!--displays the player number--}}
-						<td data-player="{{this.name}}">{{this.name}}</td> {{!--displays the player position--}}
+						<td data-name="{{this.name}}">{{this.name}}</td> {{!--displays the player position--}}
 						<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
 					<tr>
 				{{/each}}
@@ -110,5 +110,19 @@
 <script type="text/javascript">
 	let dots = {{{dots}}};
 	console.log(dots);
+	let modified = false
+
+	// add
+	  window.onbeforeunload = confirmExit;
+	  function confirmExit()
+	  {
+	  	if(modified) {
+		    return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+
+
+	  	}
+
+	  }
+
 </script>
 <script src="../javascript/soccer-d3.js"></script>

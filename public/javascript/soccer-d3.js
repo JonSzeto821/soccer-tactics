@@ -213,6 +213,21 @@ function dragended(d) {
 ;
 }
 
+function addDot() {
+  console.log(dots);
+  dot = holder.append("g")
+      .attr("class", "dot")
+    .selectAll("circle")
+      .data(dots)
+    .enter().append("circle")
+      .attr("r", function(d) { return size(d.team); })
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .style("fill", function(d) { return color(d.team); })
+      .style("stroke", function(d) { return color1(d.team); })
+      .style("stroke-width", 3)
+      .call(drag);
+}
 
 
 
