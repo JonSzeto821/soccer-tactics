@@ -103,7 +103,7 @@ $(document).ready(function() {
 				<td data-name="${name}">${name}</td>
 				<td contentEditable="false" class="center"><button id='js-remove-player' class="player-delete">Delete</button></td>
 			</tr>`;
-
+			addDot();
 		 $('#team2-table').append(addPlayer);
 	});
 		// use jquery to add this.new playerto the list without refresh
