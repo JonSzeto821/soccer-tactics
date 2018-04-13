@@ -132,7 +132,7 @@ var arc2 = d3.svg.arc()
 
 // Dragging circles
 
-var color = d3.scale.ordinal().range(["maroon", "pink", "white"]);
+var color = d3.scale.ordinal().range(["blue", "white", "white"]);
 var color1 = d3.scale.ordinal().range(["mediumturquoise", "red", "black"]);
 var size = d3.scale.ordinal().range([16, 16, 12]);
 
@@ -208,9 +208,8 @@ function dragged(d) {
 function dragended(d) {
   updateDots(d);
   d3.select(this)
-  .style("opacity", 1) 
-//  .classed("dragging", false);
-;
+  .style("opacity", 1);
+  modified = true;
 }
 
 function addDot() {
@@ -227,6 +226,7 @@ function addDot() {
       .style("stroke", function(d) { return color1(d.team); })
       .style("stroke-width", 3)
       .call(drag);
+  modified = true;
 }
 
 

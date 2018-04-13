@@ -147,6 +147,7 @@ $(document).ready(function() {
   		}
     	console.log(id, dots);
 		$("table").find(`[data-player-id='${id}']`).remove();
+		modified = true;
 	});
 
 
@@ -162,6 +163,12 @@ $(document).ready(function() {
 		let id = $(this).data('player-id');
 		updateDots({id:id, player:player, team:team, name:name});
 		modified = true;
+	});
+
+	//alert user of unsubmitted comment when navigating away from page
+	$('textarea').keyup(function(e) {
+		modified = true;
+		console.log(modified);
 	});
 
 	//toggle the player table accordion to open and close
