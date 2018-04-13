@@ -13,20 +13,20 @@
 			<button id='js-fork-btn' class="fork">Fork</button>
 			{{!-- <button class='js-edit-btn'>Edit</button> --}}
 			{{!-- connecting straight to the server from html --}}
-			<a href="/deleteForm/{{formation._id}}">Delete Link Get Req</a>
+			{{!-- <a href="/deleteForm/{{formation._id}}">Delete Link Get Req</a> --}}
 			{{!-- jquery method utilizing ajax to delete the formation --}}
-			<button class='js-delete-btn delete'>Delete button jquery ajax delete method</button>
+			<button class='js-delete-btn delete'>Delete</button> 
 		</div>
 		<br>
 		<div class="team-wrap">
 			<div class="i-block">Team 1</div>
 			<br>
-			<button class='js-addPlayer-btn'>+ Player</button>
+			<button class='js-addPlayer-btn add-player'>+ Player</button>
 		</div>
 		<div class="team-wrap">
 			<div class="i-block">Team 2</div>
 			<br>
-			<button class='js-addPlayer-btn2'>+ Player</button>
+			<button class='js-addPlayer-btn2 add-player'>+ Player</button>
 		</div>
 	</div>
 </div>
@@ -93,7 +93,7 @@
 	{{!-- setup communication between client and server side --}}
 	<form action="/submitComment" method="post">
 		<textarea name="userFeedback" placeholder="Provide feedback" id="userFeedback"></textarea>
-		<input type="submit" name="submitBtn" class="form-btn-padding">
+		<input type="submit" name="submitBtn" class="form-btn-padding submit">
 	</form>
 	<ul id="comments-provided">
 		{{#each comments}}
@@ -112,12 +112,12 @@
 	console.log(dots);
 	let modified = false
 
-	// add
+	// alert user a change has been made but not saved
 	  window.onbeforeunload = confirmExit;
 	  function confirmExit()
 	  {
 	  	if(modified) {
-		    return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+		    return "You have attempted to leave this page.  If you have made any changes to the formation without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
 
 
 	  	}
