@@ -1,0 +1,87 @@
+<div class="container" id="home-welcome">
+	<h1>Welcome to Soccer Tactic Board</h1>
+	<h2>Description</h2>
+	<p>Soccer Tactic Board is an application that allows users to visualize: strategy against the opposition, attacking/defending set piece formations, and how play out in-game situations.</p>
+</div>
+
+
+<div class="container" id="feature-instruction">
+
+
+	<div class="feature-block" id='app-features'>
+		<h3>Appication Features:</h3>
+
+		{{!-- feature --}}
+		<div class="feature">
+			<h4>Feature: Fork Formation</h4>
+			<h5>Steps:</h5>
+			<ol>
+				<li>navigate to formation page</li>
+				<li>click on 'Fork'</li>
+				<li>Once prompt displays, enter in name of formation</li>
+				<li>Click 'OK'</li>
+				<li>navigate to your Profile page; forked formation will be listed with the new user input formation name</li>
+			</ol>
+		</div>
+
+		{{!-- feature --}}
+		<div class="feature">
+			<h4>Feature: Create new formation</h4>
+			<h5>Steps:</h5>
+			<ol>
+				<li>log-in to account</li>
+				<li>navigate to Profile page</li>
+				<li>Input a formation name in the input field</li>
+				<li>
+					Click 'Submit'
+					<ul>
+						<li style="list-style:none"> {{!-- put styling in css --}}
+							<img>image of Submit button *****INSERT IMAGE*****</img>
+						</li>
+					</ul>
+				</li>
+				<li>User will be directed to a default formation page to begin working on a new formation</li>
+			</ol>
+		</div>
+
+		{{!-- feature --}}
+		<div class="feature">
+			<h4>Feature: Add a player</h4>
+			<h5>Steps:</h5>
+			<ol>
+				<li>On formation page, click '+ Player' button below the corresponding Team </li>
+				<li>A new player node will be added to the tactic board visual, along with a new player row in the player table</li>
+				<li>Click 'Save' to save changes</li>
+			</ol>
+		</div>
+
+		{{!-- feature --}}
+		<div class="feature">
+			<h4>Feature: Delete a Player</h4>
+			<h5>Steps:</h5>
+			<ol>
+				<li>On formation page, navigate to Player Table</li>
+				<li>Click 'Delete' button next to the corresponding player being removed</li>
+				<li>The player will be removed from the player table, along with a node on the tactic board</li>
+				<li>Click 'Save' to save changes</li>
+			</ol>
+		</div>
+
+	</div>
+</div>
+
+<div class="container" id="page-description">
+	<div id='app-pages'>
+		<h3>Sections of the Application</h3>
+		{{!-- insert screeshots under each page description --}}
+		<h4>Profile</h4>
+		<p>Description of page: A user must be logged in to access the Profile page. The Profile page contains all formations created by the logged in user. Users can also create new formations from this page.</p>
+
+		<h4>Page: Formation</h4>
+		<p>Description: The Formation page contains the bulk of the app content. This page allows users to view, update, and create formations.</p>
+		
+		<h4>Discover Formations</h4>
+		<p>Description: The Discover Formations page contains formations created by all app users. This allows users to view and fork formations created by others. </p>
+		
+	</div>
+</div>

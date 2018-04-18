@@ -12,7 +12,11 @@ const fetch = require('node-fetch');
 
 /*https://apifootball.com/api/?action=get_countries&APIkey=xxxxxxxxxxxxxx*/
 
+//static homepage
+router.get('/home', (req, res) => {
+    res.status(200).render('home');
 
+});
 
 //load and display home page
 router.get('/', (req, res) => {
