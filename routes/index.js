@@ -18,8 +18,12 @@ router.get('/home', (req, res) => {
 
 });
 
+// router.get('/publicFormations', (req, res) => {
+//     res.status(200).render();
+// });
+
 //load and display home page
-router.get('/', (req, res) => {
+router.get('/publicFormations', (req, res) => {
     Formation.find().exec().then(formations => {
         res.render('index', {user: req.user, formations: formations});      
     }).catch(err => { throw err})
