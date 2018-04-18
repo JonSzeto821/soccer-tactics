@@ -7,21 +7,19 @@ $(document).ready(function() {
 		let newPosition = {'dots':JSON.stringify(dots)}
 		console.log(newPosition);
 
-		$.post('', newPosition, function() {
-			
+		// $.post('', newPosition, function() {
+		// });
+
+		$.ajax({
+		    url: '',
+		    type: 'PUT',
+		    data: newPosition
 		});
+
 		alert('Formation Saved!');
 	});
 
-	//Cancel button
-	$('button.js-cancel-btn').on('click', function() {
-		console.log('Formation Cancelled!');
-		//create a new post document on click of button
-		
-	});
-
-	//Fork button
-	/*create a new formation for the user of the current formation*/
+	//Fork formation 
 	$('#js-fork-btn').on('click', function() {
 		console.log('Formation Forked!');
 		console.log(dots);
@@ -35,7 +33,7 @@ $(document).ready(function() {
 		});
 	});
 
-	//Delete button
+	//Delete formation
 	$('button.js-delete-btn').on('click', function() {
 		console.log('Formation Deleted!');
 		$.ajax({
@@ -49,24 +47,29 @@ $(document).ready(function() {
 		})
 	});
 
-	// Edit button
-	// $('button.js-edit-btn').on('click', function() {
-	// 	console.log('Formation Edited!');
-	// });
-
-	//Add Player button - team1
+	//Add Player button - Team1
 	$('button.js-addPlayer-btn').on('click', function() {
 		console.log('Player Node Added to Team 1!');
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+
+		const maxX = 525;
+		const minX = 0;
+		let randomXCoord = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+
+		const maxY = 680;
+		const minY = 0;
+		let randomYCoord = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+		
 		let addPlayer = '';
 		console.log(dots);
 		console.log(dots.length);
 		let team = 'Team 1';
 		let id = Date.now();
 		let name = 'Assign Position';
-		dots.push({id: id, x: randomNumber, y: randomNumber, player: randomNumber, name: name, team: team});
+
+		dots.push({id: id, x: randomXCoord, y: randomYCoord, player: randomNumber, name: name, team: team});
 
 		addPlayer += `
 			<tr data-player-id="${id}" contentEditable="true" class="table-content">
@@ -77,24 +80,29 @@ $(document).ready(function() {
 			</tr>`;
 			addDot();
 		 $('#team1-table').append(addPlayer);
-
-		// use jquery to add this.new player to the list without refresh
-		//google adding list item to table with jquery
-
 	});
 
-	//Add Player button - team2
+	//Add Player button - Team2
 	$('button.js-addPlayer-btn2').on('click', function() {
 		console.log('Player Node Added to Team 2!');
 		const maximum = 99;
 		const minimum = 0;
+		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+
+		const maxX = 1000;
+		const minX = 526;
+		let randomXCoord = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+
+		const maxY = 680;
+		const minY = 0;
+		let randomYCoord = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+
 		let addPlayer = '';
 		let team = 'Team 2';
 		let id = Date.now();
 		let name = 'Assign Position';
-		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-		//console.log(team2);
-		dots.push({id: id, x: randomNumber, y: randomNumber, player: randomNumber, name: name, team: team});
+		
+		dots.push({id: id, x: randomXCoord, y: randomYCoord, player: randomNumber, name: name, team: team});
 
 		addPlayer += `
 			<tr data-player-id="${id}" contentEditable="true" class="table-content">
@@ -106,39 +114,16 @@ $(document).ready(function() {
 			addDot();
 		 $('#team2-table').append(addPlayer);
 	});
-		// use jquery to add this.new playerto the list without refresh
-		//google adding list item to table with jquery
-
-
-	//Delete player node
-	/*$('button#js-remove-player').on('click', function() {
-		let id = $(this).parent().parent().data('player-id');
-		console.log('Player Node Deleted!');
-		console.log($(this).parent().parent().data('player-id'));
-
-		$.ajax({
-		    url: `/formation/delete/${id}`,
-		    type: 'DELETE',
-		    success: function(result) {
-		        // Do something with the result
-		        console.log(result, 'hello');
-		        $("table").find(`[data-player-id='${id}']`).remove();
-
-
-	    }
-	});*/
 
 	//remove player from player table and player node from formation board
 	$('button#js-remove-player').on('click', function() {
 		let id = $(this).parent().parent().data('player-id');
 		console.log(id, dots);
 
-		// dots.splice(dots.findIndex(function(i){
-  //   		return i.id === id;
-  //   	}), 1);
   		for(let i=0; i<dots.length; i++) {
   			if(dots[i].id == id) {
   				console.log(dots[i])
+  				//remove node from board
   				dots.splice(i, 1);
   			}
   			console.log(dots[i]);
@@ -146,6 +131,7 @@ $(document).ready(function() {
 
   		}
     	console.log(id, dots);
+    	//remove player from table
 		$("table").find(`[data-player-id='${id}']`).remove();
 		modified = true;
 	});
@@ -153,7 +139,6 @@ $(document).ready(function() {
 
 	//Update data in player table
 	$('tr').keyup(function(e) {
-
 		//look the variable mapping for the variables to the value in .find()
 		console.log($(this).data('player-id'));
 		console.log($(this).find("[data-team]").text());
@@ -166,10 +151,10 @@ $(document).ready(function() {
 	});
 
 	//alert user of unsubmitted comment when navigating away from page
-	$('textarea').keyup(function(e) {
-		modified = true;
-		console.log(modified);
-	});
+	// $('textarea').keyup(function(e) {
+	// 	modified = true;
+	// 	console.log(modified);
+	// });
 
 	//toggle the player table accordion to open and close
 	$(".accordion").on("click", ".accordion-header", function() {
@@ -217,10 +202,10 @@ function toggleTable() {
        }
 };
 
-function editDot(d) {
-	console.log(d);
+// function editDot(d) {
+// 	console.log(d);
 
-};
+// };
 
 function updateDots(d) {
 	for(let i=0; i<dots.length; i++) {

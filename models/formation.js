@@ -16,12 +16,12 @@ const Formation = new Schema({
     		// {id: '3',x:123,y:360,team:'Team 1',player:4,name:'RW'},
     		// {id: '4', x:47,y:450,team:'Team 1',player:10,name:'CM'},
     		// {id: '5',x:321,y:540,team:'Team 1',player:8,name:'CM'},
-      //       {id: '6',x:321,y:540,team:'Team 1',player:6,name:'CDM'},
-      //       {id: '7',x:321,y:540,team:'Team 1',player:3,name:'LB'},
-      //       {id: '8',x:321,y:540,team:'Team 1',player:4,name:'CB'},
-      //       {id: '9',x:321,y:540,team:'Team 1',player:5,name:'CB'},
-      //       {id: '10',x:321,y:540,team:'Team 1',player:2,name:'RB'},
-      //       {id: '11',x:321,y:540,team:'Team 1',player:1,name:'GK'},
+            // {id: '6',x:321,y:540,team:'Team 1',player:6,name:'CDM'},
+            // {id: '7',x:321,y:540,team:'Team 1',player:3,name:'LB'},
+            // {id: '8',x:321,y:540,team:'Team 1',player:4,name:'CB'},
+            // {id: '9',x:321,y:540,team:'Team 1',player:5,name:'CB'},
+            // {id: '10',x:321,y:540,team:'Team 1',player:2,name:'RB'},
+            // {id: '11',x:321,y:540,team:'Team 1',player:1,name:'GK'},
             // Team 2
             {id: '12',x:50,y:450,team:'Team 2',player:9,name:'CB'},
             {id: '13',x:321,y:500,team:'Team 2',player:19,name:'LB'},
@@ -33,7 +33,10 @@ const Formation = new Schema({
             // {id: '19',x:321,y:540,team:'Team 2',player:4,name:'CB'},
             // {id: '20',x:321,y:540,team:'Team 2',player:6,name:'CB'},
             // {id: '21',x:321,y:540,team:'Team 2',player:66,name:'RB'},
-            // {id: '22',x:321,y:540,team:'Team 2',player:1,name:'GK'}
+            // {id: '22',x:321,y:540,team:'Team 2',player:1,name:'GK'},
+
+            //ball
+            {id: '999',x:525,y:340,team:null,player:null,name:null}
 
 
 

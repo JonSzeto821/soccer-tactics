@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
@@ -73,11 +74,10 @@ router.post('/newFormation', isLoggedIn, (req, res) => {
 });
 
 //submit a comment
-router.post('/submitComment', isLoggedIn, (req, res) => {
+router.post('/formation/:id', isLoggedIn, (req, res) => {
     let comment = new Feedback();
-    console.log('Giraffe');
-    console.log(req.body);
     comment['feedback'] = req.body.userFeedback;
+    comment['formationID'] = req.params.id;
     comment['author'] = req.user._id;
     comment['authorName'] = req.user.username;
     comment['date'] = new Date();
@@ -92,20 +92,22 @@ router.post('/submitComment', isLoggedIn, (req, res) => {
 
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
-    console.log(req.params);
-    //res.render('formation');
-    Feedback.find().exec().then(pigeons => {
-        Formation.findOne({ _id: req.params.id}).exec().then(frog => {
-
+    console.log(req.params, 'PARAMS HERE!');
+    Formation.findOne({ _id: req.params.id}).exec().then(frog => {
+        Feedback.find({formationID:req.params.id}).exec().then(pigeons => {
+        
             req.app.locals.dots = JSON.stringify(frog.dots);
             console.log(frog.dots);
             let team1 = [];
             let team2 = [];
             let team1Name = frog.dots[0].team
 
+
             frog.dots.forEach(function(dot, i) {
                 if(team1Name == dot.team) {
                     team1.push(dot);
+                }else if(dot.id == '999'){
+                    console.log('ball', dot);
                 }else{
                     team2.push(dot);
                 }
@@ -113,15 +115,11 @@ router.get('/formation/:id', (req, res) => {
             });
             res.render('formation', {formation:frog, user:req.user, team1: team1, team2: team2, comments: pigeons})
         }).catch(err => { throw err})
-
-    
-            
     }).catch(err => { throw err})
-
 });
 
 //load and display user profile page
-router.get('/profile', (req, res) => { 
+router.get('/profile',isLoggedIn, (req, res) => { 
     
     Formation.find({ author: req.user._id}).exec().then(f => {
         res.render('profile', {user: req.user, formations: f});      
@@ -160,7 +158,7 @@ router.get('/ping', (req, res) => {
 });
 
 //Save formation
-router.post('/formation/:_id', (req, res) => {
+router.put('/formation/:_id', (req, res) => {
     console.log(req.body, req.params);
     let b = {dots: JSON.parse(req.body.dots) }
     Formation.findOneAndUpdate(req.params, {$set: b}, {new: true}, function(err, doc){
@@ -207,7 +205,7 @@ router.get('/deleteForm/:_id', (req, res) => {
 router.delete('/formation/:_id', (req, res) => {
     // console.log(req.body, req.params);
     console.log(req.params);
-    console.log(`Deleted formation dfgdfgdfgsdfgdfgdfsfa!!!`);
+    console.log(`Deleted formation dfgdfg!!!`);
     // enter mongo call to delete formation, then res.redirect
     // let documentId = ObjectId(req.params);
     let obj = {_id: req.params._id};

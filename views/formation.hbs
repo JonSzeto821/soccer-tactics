@@ -79,7 +79,7 @@
 </div>
 <div class="background-color form-btn-padding center" id="formation-btn-padding">
 	<button class='js-save-btn save'>Save</button>
-	<a href="/"><button class='js-cancel-btn'>Cancel</button></a>
+	<a href="/"><button>Cancel</button></a>
 </div>
 <!--Add section to display list of all formations; similar to the home page-->
 {{!-- <div class="background-color" id="more-formations">
@@ -91,7 +91,7 @@
 <div class="background-color" id="comment-section">
 	<h4>Comments:</h4>
 	{{!-- setup communication between client and server side --}}
-	<form action="/submitComment" method="post">
+	<form action="" method="post">
 		<textarea name="userFeedback" placeholder="Provide feedback" id="userFeedback"></textarea>
 		<input type="submit" name="submitBtn" class="form-btn-padding submit">
 	</form>
