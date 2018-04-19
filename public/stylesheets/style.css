@@ -34,7 +34,7 @@ nav ul {
 }
 
 nav ul li { 
-    float: right; 
+    float: left; 
 }
 
 a {
@@ -55,10 +55,10 @@ button:hover {
 
 }
 
-td:hover {
+.accordion td:not(.center):hover {
   background-color: white;
-
 }
+
 
 th {
   border: 1px solid white;

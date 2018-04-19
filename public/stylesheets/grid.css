@@ -123,6 +123,48 @@ input[type="submit"]{
 	margin-top: 0;
 }
 
+#home-welcome {
+	/*text-align: center;*/
+	/*background-color: #58BA9F;*/
+	background-color: #F5E3A6;
+	margin: 0 10px;
+}
+
+#home-welcome ol, #home-welcome li {
+    margin: 0;
+    padding: 0;
+}
+
+#home-welcome ol {
+    counter-reset: foo;
+    display: table;
+}
+
+#home-welcome li {
+    list-style: none;
+    counter-increment: foo;
+    display: table-row;
+}
+
+#home-welcome li::before {
+    content: counter(foo) ".";
+    display: table-cell;
+    text-align: right;
+    padding-right: .3em;
+}
+
+/*#home-header, #feature-instruction, #page-description {*/
+.feature {
+	margin: 10px 0;
+}
+
+.feature h4 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #57bb9e;
+}
+
 #login-form {
 	margin: auto;
 }
