@@ -3,10 +3,21 @@
 }
 
 img {
-  width: 60%;
-  height: auto;
-  border: 1px solid black;
+  width: 100%;
+  margin: auto;
+  /*border: 1px solid black;*/
 }
+
+ @media only screen and (min-width: 650px) {
+  img {
+    width: 60%;
+    texrt-align: left;
+    /*border: 1px solid black;*/
+  }
+
+ }
+
+
 
 body {
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/

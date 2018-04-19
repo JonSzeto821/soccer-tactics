@@ -116,7 +116,7 @@ input[type="submit"]{
 
 
 /*Login Page*/
-#login-container, #register-container {
+#login-container, #register-container, #home-welcome  {
 	text-align: center;
 	/*background-color: #58BA9F;*/
 	background-color: #F5E3A6;
@@ -124,10 +124,7 @@ input[type="submit"]{
 }
 
 #home-welcome {
-	/*text-align: center;*/
-	/*background-color: #58BA9F;*/
-	background-color: #F5E3A6;
-	margin: 0 10px;
+	text-align: left;
 }
 
 #home-welcome ol, #home-welcome li {
@@ -204,14 +201,25 @@ input[type="submit"]{
 	border-bottom: 1px solid #CCC;
 }
 
+#app-pages .nav-link {
+	border-bottom: none;
+
+}
+
 .accordion hr {
 	display: none;
 }
 
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
-	.container, .lrg-max-width {
+	.container, .lrg-max-width, #home-welcome {
 		width: 95%;
+	}
+
+	#home-welcome {
+		display: block;
+		margin: auto;
+
 	}
 
 	hr {
