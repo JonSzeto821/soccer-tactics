@@ -4,7 +4,7 @@
 <div class="container" id="home-welcome">
 	<h1>Welcome to Soccer Tactic Board</h1>
 	<h2>Description</h2>
-	<p>Soccer Tactic Board is an application that allows users to visualize: strategy against the opposition, attacking/defending set piece formations, and how play out in-game situations.</p>
+	<p>Soccer Tactic Board is an application that allows users to visualize strategy against the opposition, attacking/defending set piece formations, and how to play out in-game situations.</p>
 </div>
 
 
@@ -37,14 +37,7 @@
 				<li>log-in to account</li>
 				<li>navigate to Profile page</li>
 				<li>Input a formation name in the input field</li>
-				<li>
-					Click 'Submit'
-					<ul>
-						<li style="list-style:none"> {{!-- put styling in css --}}
-							<img>image of Submit button *****INSERT IMAGE*****</img>
-						</li>
-					</ul>
-				</li>
+				<li>Click 'Submit'</li>
 				<li>User will be directed to a default formation page to begin working on a new formation</li>
 			</ol>
 		</div>
@@ -93,13 +86,14 @@
 	<div id='app-pages'>
 		<h3>Sections of the Application</h3>
 		{{!-- insert screeshots under each page description --}}
-		<h4>Profile</h4>
+		<h4><a href="/profile" class='nav-link'>Profile</a></h4>
 		<p>Description of page: A user must be logged in to access the Profile page. The Profile page contains all formations created by the logged in user. Users can also create new formations from this page.</p>
 
-		<h4>Page: Formation</h4>
+
+		<h4>Formation</h4>
 		<p>Description: The Formation page contains the bulk of the app content. This page allows users to view, update, and create formations.</p>
 		
-		<h4>Discover Formations</h4>
+		<h4><a href="/publicFormations">Formations</a></h4>
 		<p>Description: The Discover Formations page contains formations created by all app users. This allows users to view and fork formations created by others. </p>
 		
 	</div>

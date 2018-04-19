@@ -193,7 +193,7 @@ function dottype(d) {
 
 function dragstarted(d) {
   d3.event.sourceEvent.stopPropagation();
-  editDot(d);
+  // editDot(d);
   d3.select(this)
   //.classed("dragging", true);
 }
@@ -213,6 +213,7 @@ function dragended(d) {
 }
 
 function addDot() {
+  holder.selectAll('circle').remove();
   console.log(dots);
   dot = holder.append("g")
       .attr("class", "dot")

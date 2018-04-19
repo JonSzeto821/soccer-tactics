@@ -26,7 +26,11 @@ $(document).ready(function() {
 		//redirect the user back to list of formations
 		let newPosition = {'dots':JSON.stringify(dots)}
 		let name = prompt("Provide formation name", $('#formName').text());
+		if(name == null){
+			return 
+		}
 		newPosition.name = name;
+
 
 		$.post('/forkForm', newPosition, function() {
 			
@@ -42,7 +46,7 @@ $(document).ready(function() {
 		    success: function(result) {
 		        // Do something with the result
 		        console.log(result, 'Formation successfully deleted! (AJAX console log)');
-		        window.location.replace("/");
+		        window.location.replace("/profile");
 		    }
 		})
 	});

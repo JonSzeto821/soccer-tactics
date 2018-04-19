@@ -42,6 +42,9 @@ input[type="submit"]{
 	width: 35%;
 }
 
+.add-player {
+	background-color: #CCC;
+}
 
 
 #formation-btn-padding {
@@ -57,6 +60,8 @@ input[type="submit"]{
 #comment-section form input[type="submit"], #formation-top-button {
 	margin-top: 10px;
 }
+
+
 
 .form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding, button.player-delete {
 	margin:0 5px;
@@ -78,7 +83,7 @@ input[type="submit"]{
 	font-size: 18px; 
 }
 
-#comment-section h4, #more-formations h4 {
+#more-formations h4 {
 	padding: 5px 10px;
 }
 
@@ -102,8 +107,9 @@ input[type="submit"]{
 }
 
 #comment-section h4 {
-	margin: 5px 0px;
-	font-size:	20px;
+	margin: 5px 10px;
+	font-size: 20px;
+	padding: 5px 0;
 }
 
 
@@ -194,12 +200,22 @@ input[type="submit"]{
 		border-bottom: none;
 	}
 
+	#comment-section form {
+		text-align: left;
+	}
+
+
 	#comment-section {
 		width: 95%;
 		text-align: left;
 		margin: auto;
 
 	}
+
+	#comment-section h4 {
+	margin: 5px 0;
+	}
+
 
 	#comment-section input[type="textarea"] {
 		width: 70%;

@@ -2,6 +2,12 @@
   display: none;
 }
 
+img {
+  width: 60%;
+  height: auto;
+  border: 1px solid black;
+}
+
 body {
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   font-family: 'Coda', cursive;
@@ -42,6 +48,16 @@ td, th {
 
 td {
   border: 1px solid #002e5b;
+}
+
+button:hover {
+  filter: brightness(1.2);
+
+}
+
+td:hover {
+  background-color: white;
+
 }
 
 th {
@@ -113,7 +129,7 @@ input[type=checkbox], label {
   margin: auto;
   vertical-align: baseline;
   width: calc(100% - 20px);
-  max-width: 650px;
+  /*max-width: 650px;*/
   background-color: white;
   overflow: hidden;
   padding: 10px;
@@ -130,7 +146,7 @@ a .js-delete-btn {
   /*border: 1px dashed black;*/
   line-height: 40px;
   width: calc(100% - 20px);
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: 5px auto;
   background-color: #BBEEDF;
   padding: 15px;
@@ -234,6 +250,19 @@ a .js-delete-btn {
   #table-instruction {
     font-size: 18px;
   }
+
+  #userFeedback {
+  display: block;
+  margin: auto;
+  vertical-align: baseline;
+  width: calc(100% - 20px);
+  /*max-width: 650px;*/
+  background-color: white;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 3px;
+  border: 0;
+}
 }
 
 @media only screen and (min-width: 900px) {
@@ -612,12 +641,12 @@ nav ul li a i {
 
   #userFeedback {
     margin: initial;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     
   }
 
-  .comment-design {
+  /*.comment-design {
     margin: 5px;
-  }
+  }*/
 
 }
