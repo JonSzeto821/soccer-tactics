@@ -61,7 +61,7 @@ td {
   border: 1px solid #002e5b;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
   filter: brightness(1.2);
 
 }
@@ -263,17 +263,22 @@ a .js-delete-btn {
   }
 
   #userFeedback {
-  display: block;
-  margin: auto;
-  vertical-align: baseline;
-  width: calc(100% - 20px);
-  /*max-width: 650px;*/
-  background-color: white;
-  overflow: hidden;
-  padding: 10px;
-  border-radius: 3px;
-  border: 0;
-}
+    display: block;
+    /*margin: auto;*/
+    vertical-align: baseline;
+    width: calc(100% - 20px);
+    /*max-width: 650px;*/
+    background-color: white;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 3px;
+    border: 0;
+  }
+
+  .comment-design {
+    margin-left: 0;
+  }
+
 }
 
 @media only screen and (min-width: 900px) {
@@ -656,8 +661,8 @@ nav ul li a i {
     
   }
 
-  /*.comment-design {
-    margin: 5px;
-  }*/
+  .calcomment-design {
+    margin: 5px 0;
+  } 
 
 }
