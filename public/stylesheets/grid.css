@@ -7,29 +7,29 @@ html, body {
 	overflow-x: hidden; 
 }
 
-label {
-	margin: 0;
-}
-
-h1 {
+h1, form, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
 	text-align: center;
 }
 
-h4 {
-	margin: 0 0 10px 0;
+h4, table {
+	margin-bottom: 10px;
 }
 
-form {
-	text-align: center;
+img, header, nav, table, label {
+  width: 100%;
+}
+
+img {
+  margin: auto;
+}
+
+svg {
+    transform: scale(.295);
+	transform-origin: top left;
 }
 
 nav td {
 	padding: 0;
-}
-
-table {
-	width: 100%;
-	margin-bottom: 10px;
 }
 
 nav table {
@@ -37,63 +37,17 @@ nav table {
 }
 
 input[type="submit"]{ 
-	margin: 0 0 20px 0;
+	margin-bottom: 20px;
 	padding: 5px 10px;
 	width: 35%;
 }
 
-.add-player {
+ hr, .add-player {
 	background-color: #CCC;
 }
 
-
-#formation-btn-padding {
-	padding-top: 10px;
-    padding-bottom: 40px;
-}
-
-#comment-section form {
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-#comment-section form input[type="submit"], #formation-top-button {
-	margin-top: 10px;
-}
-
-
-
-.form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding, button.player-delete {
-	margin:0 5px;
-	/*line-height: 25px;*/
-	height: 40px;
-	width: 75px;
-	border-radius: 3px;
-	color: black;
-	border: 1px solid black; 
-}
-
-input[type=submit].form-btn-padding {
-	margin: 0;
-}
-
-#formationInput {
-	text-align: center;
-	padding: 5px 10px;
-	margin-bottom: 10px;
-	line-height: 40px;
-	width: 100%;
-	max-width: 400px;
-	font-size: 18px; 
-}
-
-#more-formations h4 {
-	padding: 5px 10px;
-}
-
 .container {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0 10px;
 	max-width: 1200px;
 }
 
@@ -107,7 +61,45 @@ input[type=submit].form-btn-padding {
 .link-styling li {
 	font-weight: 600;
     font-size: 26px;
+}
 
+.feature {
+	margin: 10px 0;
+}
+
+.feature h4 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #57bb9e;
+}
+
+.col-12, .col-6, #formationInput {
+	width: 100%;
+}
+
+.form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding, button.player-delete {
+	margin:0 5px;
+	height: 40px;
+	width: 75px;
+	border-radius: 3px;
+	color: black;
+	border: 1px solid black; 
+}
+
+label, input[type=submit].form-btn-padding {
+	margin: 0;
+}
+
+#formationInput {
+	margin-bottom: 10px;
+	line-height: 40px;
+	max-width: 400px;
+	font-size: 18px; 
+}
+
+#formationInput, #more-formations h4 {
+	padding: 5px 10px;
 }
 
 #comment-section h4 {
@@ -116,13 +108,21 @@ input[type=submit].form-btn-padding {
 	padding: 5px 0;
 }
 
+#formation-btn-padding {
+    padding: 10px 0 40px 0;
+}
 
+#comment-section form {
+	margin-bottom: 20px;
+}
+
+#comment-section form input[type="submit"], #formation-top-button {
+	margin-top: 10px;
+}
 
 
 /*Login Page*/
 #login-container, #register-container, #home-welcome  {
-	text-align: center;
-	/*background-color: #58BA9F;*/
 	background-color: #F5E3A6;
 	margin-top: 0;
 }
@@ -154,23 +154,7 @@ input[type=submit].form-btn-padding {
     padding-right: .3em;
 }
 
-/*#home-header, #feature-instruction, #page-description {*/
-.feature {
-	margin: 10px 0;
-}
-
-.feature h4 {
-    font-weight: 700;
-    font-size: 20px;
-    padding-top: 30px;
-    border-top: 1px solid #57bb9e;
-}
-
-#login-form {
-	margin: auto;
-}
-
-#register-form {
+#login-form, #register-form {
 	margin: auto;
 }
 
@@ -179,25 +163,11 @@ input[type=submit].form-btn-padding {
 	padding: 10px; 
 }
 
-/*Formation Page*/
-.col-12 {
-	width: 100%;
-}
-
-.col-6 {
-	/*border: 2px solid blue;*/
-	display: block;
-	width: 100%;
-}
-
-#formationName {
+/*#formationName {
 	color: red;
 	float: left;
-	/*display: inline-block;*/
-}
+}*/
 
-
-/*NavBar*/
 .nav-link {
 	color: #C73D16;
 	font-weight: 700;
@@ -207,32 +177,35 @@ input[type=submit].form-btn-padding {
 
 #app-pages .nav-link {
 	border-bottom: none;
-
 }
 
 .accordion hr {
 	display: none;
 }
 
+/*Home Page*/
+#public-form-link li {
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+#soccerField{
+    width: 310px;
+    height: 194px;
+    margin: 10px auto;
+}
+
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
-	.container, .lrg-max-width, #home-welcome {
+	hr, .container, .lrg-max-width, #home-welcome, #comment-section {
 		width: 95%;
 	}
 
-	#home-welcome {
-		display: block;
+	hr, .accordion-content, #home-welcome, #comment-section {
 		margin: auto;
-
 	}
 
-	hr {
-		width: 95%;
-		margin: auto;
-		color: #CCC;
-	}
-
-	.team1 {
+/*	.team1 {
 		float: left;
 		border: 1px solid yellow;
 	}
@@ -240,57 +213,45 @@ input[type=submit].form-btn-padding {
 	.team2 {
 		float: right;
 		border: 1px solid red;
+	}*/
+
+	img {
+	    width: 60%;
+	    text-align: left;
 	}
 
 	.col-6 {
-		/*display: inline-block;*/
 		width: 50%;
-		/*color: green;*/
-		background-color: #58BA9F;
 		margin: 0 auto;
 	}
 
-	.nav-link {
+	.nav-link, .accordion-header, .accordion-content {
 		border-bottom: none;
 	}
 
-	#comment-section form {
+	#comment-section, #comment-section form {
 		text-align: left;
-	}
-
-
-	#comment-section {
-		width: 95%;
-		text-align: left;
-		margin: auto;
-
 	}
 
 	#comment-section h4 {
-	margin: 5px 0;
+		margin: 5px 0;
 	}
-
 
 	#comment-section input[type="textarea"] {
 		width: 70%;
 	}
 
-	.accordion-header, .accordion-content {
+	.accordion-header, .accordion-content, .col-6 {
 		background-color: #58BA9F;
-		border-bottom: none;
 	}
 
 	.accordion hr {
 		width: 90%;
 		display: block;
-/*		padding-bottom: 10px;*/
 	}
 
 	.accordion-content {
-		border-bottom: none;
-		/*border-top: 2px solid #2F4F4F;*/
 		max-width: 90%;
-		margin: auto;
 	}
 
 	button.cancel {
@@ -298,25 +259,12 @@ input[type=submit].form-btn-padding {
 	}
 }
 
-/*Home Page*/
-#public-form-link li {
-    /*border: 1px solid black;*/
-    padding: 10px 15px;
-    margin: 10px 0;
-}
+
 
 /*Responsive SVG Media Queries*/
-svg {
-    transform: scale(.295);
-	transform-origin: top left;
-}
 
-#soccerField{
-    width: 310px;
-    height: 194px;
-    margin: 10px auto;
-    /*border: 2px dashed red;*/
-}
+
+
 
 @media only screen and (min-width: 420px) {
 	svg {
