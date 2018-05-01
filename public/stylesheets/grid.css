@@ -7,7 +7,7 @@ html, body {
 	overflow-x: hidden; 
 }
 
-h1, form, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
+h1, form, td, th, .center, .team-wrap, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
 	text-align: center;
 }
 
@@ -16,16 +16,20 @@ h4, table {
 }
 
 img, header, nav, table, label {
-  width: 100%;
+	width: 100%;
 }
 
-img {
-  margin: auto;
+img, .block-center, #login-form, #register-form {
+ 	margin: auto;
 }
 
 svg {
     transform: scale(.295);
 	transform-origin: top left;
+}
+
+td, th {
+  	padding: 10px;
 }
 
 nav td {
@@ -36,8 +40,11 @@ nav table {
 	background-color: #002e5b;
 }
 
+input[type="submit"], #comment-section form {
+	margin-bottom: 20px;	
+}
+
 input[type="submit"]{ 
-	margin-bottom: 20px;
 	padding: 5px 10px;
 	width: 35%;
 }
@@ -112,10 +119,6 @@ label, input[type=submit].form-btn-padding {
     padding: 10px 0 40px 0;
 }
 
-#comment-section form {
-	margin-bottom: 20px;
-}
-
 #comment-section form input[type="submit"], #formation-top-button {
 	margin-top: 10px;
 }
@@ -127,9 +130,7 @@ label, input[type=submit].form-btn-padding {
 	margin-top: 0;
 }
 
-#home-welcome {
-	text-align: left;
-}
+#home-welcome {     text-align: left; }
 
 #home-welcome ol, #home-welcome li {
     margin: 0;
@@ -154,19 +155,10 @@ label, input[type=submit].form-btn-padding {
     padding-right: .3em;
 }
 
-#login-form, #register-form {
-	margin: auto;
-}
-
 #accordion-padding {
 	line-height:10px;
 	padding: 10px; 
 }
-
-/*#formationName {
-	color: red;
-	float: left;
-}*/
 
 .nav-link {
 	color: #C73D16;
@@ -205,19 +197,8 @@ label, input[type=submit].form-btn-padding {
 		margin: auto;
 	}
 
-/*	.team1 {
-		float: left;
-		border: 1px solid yellow;
-	}
-
-	.team2 {
-		float: right;
-		border: 1px solid red;
-	}*/
-
 	img {
 	    width: 60%;
-	    text-align: left;
 	}
 
 	.col-6 {
@@ -229,7 +210,7 @@ label, input[type=submit].form-btn-padding {
 		border-bottom: none;
 	}
 
-	#comment-section, #comment-section form {
+	img, #comment-section, #comment-section form {
 		text-align: left;
 	}
 
