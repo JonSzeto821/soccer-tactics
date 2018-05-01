@@ -8,19 +8,11 @@ const router = express.Router();
 
 const fetch = require('node-fetch');
 
-//API Key= 5edd98ce34fbd27acab549e7451bbafcf13f243565ebf20828fdf4625b7e2962
-
-/*https://apifootball.com/api/?action=get_countries&APIkey=xxxxxxxxxxxxxx*/
-
 //static homepage
 router.get('/', (req, res) => {
     res.status(200).render('home');
 
 });
-
-// router.get('/publicFormations', (req, res) => {
-//     res.status(200).render();
-// });
 
 //load and display home page
 router.get('/publicFormations', (req, res) => {
@@ -52,22 +44,10 @@ router.post('/register', (req, res, next) => {
     });
 });
 
-//GET API data - do not use
-router.get('/soccer', (req, res) => {
-  fetch('https://apifootball.com/api/?action=get_countries&APIkey=5edd98ce34fbd27acab549e7451bbafcf13f243565ebf20828fdf4625b7e2962')
-    .then(res => res.json())
-    .then(json => {
-        console.log(json)
-        res.render('soccer', {'beans': '10', teams: json});
-
-    });
-});
-
 //submit new formation post
 router.post('/newFormation', isLoggedIn, (req, res) => {
     let formation = new Formation(req.body);
-    console.log('penguin');
-    console.log(req.body, req.user._id);
+
     formation['date'] = new Date();
     formation['author'] = req.user._id;
     formation['authorName'] = req.user.username;
@@ -76,7 +56,7 @@ router.post('/newFormation', isLoggedIn, (req, res) => {
             console.log(err);
             return next(err);
         }
-        console.log(f);
+        // console.log(f);
         res.redirect(`/formation/${f._id}`);
   });  
 });
@@ -91,7 +71,6 @@ router.post('/formation/:id', isLoggedIn, (req, res) => {
     comment['date'] = new Date();
     comment.save((err, f) => {
         if (err) {
-            console.log(err);
             return next(err);
         }
         res.redirect(`back`);
@@ -100,22 +79,20 @@ router.post('/formation/:id', isLoggedIn, (req, res) => {
 
 //load the formation based on id
 router.get('/formation/:id', (req, res) => {
-    console.log(req.params, 'PARAMS HERE!');
     Formation.findOne({ _id: req.params.id}).exec().then(frog => {
         Feedback.find({formationID:req.params.id}).exec().then(pigeons => {
         
             req.app.locals.dots = JSON.stringify(frog.dots);
-            console.log(frog.dots);
+            // console.log(frog.dots);
             let team1 = [];
             let team2 = [];
             let team1Name = frog.dots[0].team
-
 
             frog.dots.forEach(function(dot, i) {
                 if(team1Name == dot.team) {
                     team1.push(dot);
                 }else if(dot.id == '999'){
-                    console.log('ball', dot);
+                    // console.log('ball', dot);
                 }else{
                     team2.push(dot);
                 }
@@ -128,7 +105,6 @@ router.get('/formation/:id', (req, res) => {
 
 //load and display user profile page
 router.get('/profile',isLoggedIn, (req, res) => { 
-    
     Formation.find({ author: req.user._id}).exec().then(f => {
         res.render('profile', {user: req.user, formations: f});      
     }).catch(err => { throw err})
@@ -160,30 +136,20 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
-//Express test client to server-side connection
-router.get('/ping', (req, res) => {
-    res.status(200).send("pong!");
-});
-
 //Save formation
 router.put('/formation/:_id', (req, res) => {
-    console.log(req.body, req.params);
+    // console.log(req.body, req.params);
     let b = {dots: JSON.parse(req.body.dots) }
     Formation.findOneAndUpdate(req.params, {$set: b}, {new: true}, function(err, doc){
-    if(err){
-        console.log("Something wrong when updating data!");
-    }
-
-    console.log(doc);
+        if(err){
+            console.log("Something wrong when updating data!");
+        }
     });
 });
 
 //Fork a formation
 router.post('/forkForm', (req, res) => {
     let formation = new Formation(req.body);
-
-    console.log('Fork Form actually works!')
-    console.log(req.body, req.user._id);
 
     formation['date'] = new Date();
     formation['author'] = req.user._id;
@@ -192,34 +158,21 @@ router.post('/forkForm', (req, res) => {
     formation['dots'] = JSON.parse(req.body.dots);
     formation.save((err, f) => {
         if (err) {
-            console.log(err);
             return next(err);
         }
-        console.log(f);
-        // res.redirect('/profile');
-  });
-
+    });
  });
 
 //get deleteForm
-router.get('/deleteForm/:_id', (req, res) => {
-    console.log(req.body, req.params);
-    console.log(`Deleted formation`);
-    res.status(200).send("pong!");
-
-});
+// router.get('/deleteForm/:_id', (req, res) => {
+//     res.status(200).send("pong!");
+// });
 
 //Delete a formation
 router.delete('/formation/:_id', (req, res) => {
-    // console.log(req.body, req.params);
-    console.log(req.params);
-    console.log(`Deleted formation dfgdfg!!!`);
-    // enter mongo call to delete formation, then res.redirect
-    // let documentId = ObjectId(req.params);
     let obj = {_id: req.params._id};
-    console.log(obj);
+
     Formation.remove(obj, function(err) {
-        console.log(err);
         res.end();    
     });
     
