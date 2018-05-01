@@ -1,14 +1,8 @@
 $(document).ready(function() {
-	console.log("loading client-side js");
 
 	//Save Formation changes
 	$('button.js-save-btn').on('click', function() {
-		console.log('Formation Saved!');
 		let newPosition = {'dots':JSON.stringify(dots)}
-		console.log(newPosition);
-
-		// $.post('', newPosition, function() {
-		// });
 
 		$.ajax({
 		    url: '',
@@ -22,8 +16,6 @@ $(document).ready(function() {
 
 	//Fork formation 
 	$('#js-fork-btn').on('click', function() {
-		console.log('Formation Forked!');
-		console.log(dots);
 		//redirect the user back to list of formations
 		let newPosition = {'dots':JSON.stringify(dots)}
 		let name = prompt("Provide formation name", $('#formName').text());
@@ -40,13 +32,10 @@ $(document).ready(function() {
 
 	//Delete formation
 	$('button.js-delete-btn').on('click', function() {
-		console.log('Formation Deleted!');
 		$.ajax({
 		    url: '',
 		    type: 'DELETE',
 		    success: function(result) {
-		        // Do something with the result
-		        console.log(result, 'Formation successfully deleted! (AJAX console log)');
 		        window.location.replace("/profile");
 		    }
 		})
@@ -54,7 +43,6 @@ $(document).ready(function() {
 
 	//Add Player button - Team1
 	$('button.js-addPlayer-btn').on('click', function() {
-		console.log('Player Node Added to Team 1!');
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -68,8 +56,6 @@ $(document).ready(function() {
 		let randomYCoord = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
 		
 		let addPlayer = '';
-		console.log(dots);
-		console.log(dots.length);
 		let team = 'Team 1';
 		let id = Date.now();
 		let name = 'Assign Position';
@@ -89,7 +75,6 @@ $(document).ready(function() {
 
 	//Add Player button - Team2
 	$('button.js-addPlayer-btn2').on('click', function() {
-		console.log('Player Node Added to Team 2!');
 		const maximum = 99;
 		const minimum = 0;
 		let randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -123,19 +108,13 @@ $(document).ready(function() {
 	//remove player from player table and player node from formation board
 	$('button#js-remove-player').on('click', function() {
 		let id = $(this).parent().parent().data('player-id');
-		console.log(id, dots);
 
   		for(let i=0; i<dots.length; i++) {
   			if(dots[i].id == id) {
-  				console.log(dots[i])
-  				//remove node from board
   				dots.splice(i, 1);
   			}
-  			console.log(dots[i]);
-  			console.log(dots[i].id);
 
   		}
-    	console.log(id, dots);
     	//remove player from table
 		$("table").find(`[data-player-id='${id}']`).remove();
 		modified = true;
@@ -145,8 +124,6 @@ $(document).ready(function() {
 	//Update data in player table
 	$('tr').keyup(function(e) {
 		//look the variable mapping for the variables to the value in .find()
-		console.log($(this).data('player-id'));
-		console.log($(this).find("[data-team]").text());
 		let team = $(this).find("[data-team]").text();
 		let player = $(this).find("[data-player]").text();
 		let name = $(this).find("[data-name]").text();
@@ -155,12 +132,6 @@ $(document).ready(function() {
 		modified = true;
 	});
 
-	//alert user of unsubmitted comment when navigating away from page
-	// $('textarea').keyup(function(e) {
-	// 	modified = true;
-	// 	console.log(modified);
-	// });
-
 	//toggle the player table accordion to open and close
 	$(".accordion").on("click", ".accordion-header", function() {
  		$(this).toggleClass("active").next().slideToggle();
@@ -168,7 +139,6 @@ $(document).ready(function() {
 
 	//toggle player table based on viewport size gets readjusted
  	$(window).resize(function(e){
-        console.log($(this).width())
         toggleTable();
 	});
 });
@@ -177,7 +147,6 @@ $(document).ready(function() {
 $(document).ready(function(){
 	toggleTable();
 	$('label').click(function(){ 
-		console.log('Navbar logging!');
 		$('#nav-icon3').toggleClass('open')})
 });
 
@@ -207,30 +176,12 @@ function toggleTable() {
        }
 };
 
-// function editDot(d) {
-// 	console.log(d);
-
-// };
-
 function updateDots(d) {
 	for(let i=0; i<dots.length; i++) {
 		if(dots[i].id == d.id){
-			console.log(d);
 			for (let key in d) {
-				console.log(key);
 				dots[i][key] = d[key]
 			}
 		}
 	}
-	console.log(dots);
 };
-
-
-/*function updateDots(d) {
-	for(let i=0; i<dots.length; i++) {
-		if(dots[i].id == d.id){
-			dots[i] = d;
-		}
-	}
-};*/
-
