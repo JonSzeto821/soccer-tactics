@@ -18,3 +18,10 @@
   <li>Mongoose</li>
   <li>MongoDB</li>
 </ul>
+
+<h3>Screenshots</h3>
+<h5>Formation Page</h5>
+<img src="public/images/screenshots/formation-page.png" alt="Formation Page" width="300px"/>
+
+<h5>Formation List</h5>
+<img src="public/images/screenshots/formation-list.png" alt="Formation List" width="300px"/>
