@@ -4,6 +4,8 @@
 <p>An application that allows users to visualize strategy against the opposition, attacking/defending set piece formations, and how to play out in-game situations.</p>
 
 <h5>Application:</h5> https://soccertactics.herokuapp.com/
+<h6>Demo Account</h6>
+<h6>Username: PasswordIsTaco | Password: taco</h6>
 
 <h3>Technology</h3>
 <ul>
