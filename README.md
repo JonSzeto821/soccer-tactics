@@ -7,6 +7,20 @@
 <h6>Demo Account</h6>
 <h6>Username: PasswordIsTaco | Password: taco</h6>
 
+<p>Instructions:</p>
+<ul>
+	</li>
+		Fork Formation
+		<ol>
+			<li>Navigate to formation page</li>
+			<li>Click on 'Fork'</li>
+			<li>Once prompt displays, enter name of formation</li>
+			<li>Click 'OK'</li>
+			<li>Navigate to your Profile page; forked formation will be listed with the new user input formation name</li>
+		</ol>
+	</li>
+</ul>
+
 <h3>Technology</h3>
 <ul>
   <li>HTML (Handlebars.js)</li>
