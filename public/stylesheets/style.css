@@ -91,6 +91,10 @@ nav ul li a i {
   transition: all 0.5s ease 0s;
 }
 
+.bold {
+  font-weight: 900;
+}
+
 .comment-design {
   display: block;
   line-height: 40px;
