@@ -1,6 +1,3 @@
-console.log('soccer-d3 is logging!!!');
-
-
 var holder = d3.select("#soccerField") // select the 'body' element
       .append("svg")           // append an SVG element to the body
       .attr("width", 1050)      
@@ -145,7 +142,6 @@ var drag = d3.behavior.drag()
     .on("dragend", dragended);
 
 d3.csv("../javascript/dots.txt", dottype, function(error, oldDots) {
-  console.log(dots);
   dot = holder.append("g")
       .attr("class", "dot")
     .selectAll("circle")

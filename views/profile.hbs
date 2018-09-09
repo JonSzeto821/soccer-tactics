@@ -1,9 +1,6 @@
 <div class="container clearfix">
 	<h1> {{user.username}}'s Formation Page</h1>
 	<h4 class="center">Enter a formation name and press 'Submit' to begin creating a new formation</h4>
-	{{!--{{#if user}}
-	    username: {{user.username}}
-	{{/if}}--}}
 	<form action="/newFormation" method="post">
 	  <input type="text" name="name" placeholder="Formation Name" id='formationInput'>
 	  <br>
@@ -21,4 +18,3 @@
 	<br>
 	<br>
 </div>
-{{!-- <script type="text/javascript" src="js/myscript.js?v={{Date.now()}}"></script> --}}

@@ -7,9 +7,6 @@ const Feedback = new Schema({
     author: String,
     authorName: String,
     date: String
-    
 });
-
-
 
 module.exports = mongoose.model('userFeedback', Feedback);

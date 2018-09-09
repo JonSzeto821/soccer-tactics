@@ -1,9 +1,4 @@
-{{!-- Change the file name to public-forms.hbs and redirect to load page on '/public-formations' --}}
-
 <div class="container clearfix col-12">
-	{{!--How to get signup/signin hidden when user logged in????????????????--}}
-
-
 	<h1>Discover Formations</h1>
 	<h4 class="center">View formations created by others</h4>
 	<hr>
@@ -12,7 +7,6 @@
 		<ul class="link-styling box">
 			<a class='' href="/formation/{{this._id}}">
 				<li>{{this.name}}</li>
-				<!--Find a way to pass the formation author-->
 				<h6>by: {{this.authorName}}</h6>
 			</a>
 		</ul>

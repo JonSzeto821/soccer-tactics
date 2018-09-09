@@ -3,10 +3,6 @@
 	{{#if user}}
 	    <div class="center">Created by: {{formation.authorName}}</div>
 	{{/if}}
-	{{!--<div>
-		{{cat}}
-		{{!--formation.dots--}}
-	</div>
 	{{!-- {{create buttons for cancel save add player fork}} --}}
 	<div class="container center">
 		<div class="form-btn-padding" id="formation-top-button">
@@ -81,11 +77,7 @@
 	<button class='js-save-btn save'>Save</button>
 	<a href="/"><button>Cancel</button></a>
 </div>
-<!--Add section to display list of all formations; similar to the home page-->
-{{!-- <div class="background-color" id="more-formations">
-	<h4>See More Formations</h4>
-	<!--Display a random list of 5 links to display-->
-</div> --}}
+
 {{!-- Create a section for users to leave feedback on a formation --}}
 <hr>
 <div class="background-color" id="comment-section">
@@ -109,7 +101,6 @@
 </div>
 <script type="text/javascript">
 	let dots = {{{dots}}};
-	console.log(dots);
 	let modified = false
 
 	// alert user a change has been made but not saved
@@ -118,10 +109,7 @@
 	  {
 	  	if(modified) {
 		    return "You have attempted to leave this page.  If you have made any changes to the formation without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
-
-
 	  	}
-
 	  }
 
 </script>

@@ -24,10 +24,7 @@ $(document).ready(function() {
 		}
 		newPosition.name = name;
 
-
-		$.post('/forkForm', newPosition, function() {
-			
-		});
+		$.post('/forkForm', newPosition, function() {});
 	});
 
 	//Delete formation
