@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 //load and display home page
 router.get('/publicFormations', (req, res) => {
     Formation.find().exec().then(formations => {
-        res.render('index', {user: req.user, formations: formations});      
+        res.render('index', {user: req.user, formations: formations});
     }).catch(err => { throw err})
 });
 
@@ -58,7 +58,7 @@ router.post('/newFormation', isLoggedIn, (req, res) => {
         }
         // console.log(f);
         res.redirect(`/formation/${f._id}`);
-  });  
+  });
 });
 
 //submit a comment
@@ -81,32 +81,28 @@ router.post('/formation/:id', isLoggedIn, (req, res) => {
 router.get('/formation/:id', (req, res) => {
     Formation.findOne({ _id: req.params.id}).exec().then(frog => {
         Feedback.find({formationID:req.params.id}).exec().then(pigeons => {
-        
+
             req.app.locals.dots = JSON.stringify(frog.dots);
             // console.log(frog.dots);
             let team1 = [];
             let team2 = [];
             let team1Name = frog.dots[0].team
 
-            frog.dots.forEach(function(dot, i) {
-                if(team1Name == dot.team) {
-                    team1.push(dot);
-                }else if(dot.id == '999'){
-                    // console.log('ball', dot);
-                }else{
-                    team2.push(dot);
-                }
-
+            frog.dots.forEach((dot, i) => {
+                return  (team1Name == dot.team) ? team1.push(dot)
+                      : (dot.id == '999') ? console.log('ball', dot)
+                      : team2.push(dot);
             });
+
             res.render('formation', {formation:frog, user:req.user, team1: team1, team2: team2, comments: pigeons})
-        }).catch(err => { throw err})
-    }).catch(err => { throw err})
+        }).catch(err => {throw err})
+    }).catch(err => {throw err})
 });
 
 //load and display user profile page
-router.get('/profile',isLoggedIn, (req, res) => { 
+router.get('/profile',isLoggedIn, (req, res) => {
     Formation.find({ author: req.user._id}).exec().then(f => {
-        res.render('profile', {user: req.user, formations: f});      
+        res.render('profile', {user: req.user, formations: f});
     }).catch(err => { throw err})
 });
 
@@ -153,7 +149,7 @@ router.post('/forkForm', (req, res) => {
 
     formation['date'] = new Date();
     formation['author'] = req.user._id;
-    formation['authorName'] = req.user.username;  
+    formation['authorName'] = req.user.username;
     formation['name'] = req.body.name;
     formation['dots'] = JSON.parse(req.body.dots);
     formation.save((err, f) => {
@@ -173,9 +169,9 @@ router.delete('/formation/:_id', (req, res) => {
     let obj = {_id: req.params._id};
 
     Formation.remove(obj, function(err) {
-        res.end();    
+        res.end();
     });
-    
+
 });
 
 
