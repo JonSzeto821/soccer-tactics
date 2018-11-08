@@ -113,7 +113,7 @@ router.get('/login', (req, res) => {
 
 //log in the user
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
-    req.session.save((err) => {
+    req.session.save(err => {
         if (err) {
             return next(err);
         }
@@ -124,7 +124,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
 //logout and redirect user to home page
 router.get('/logout', (req, res, next) => {
     req.logout();
-    req.session.save((err) => {
+    req.session.save(err => {
         if (err) {
             return next(err);
         }
@@ -136,7 +136,7 @@ router.get('/logout', (req, res, next) => {
 router.put('/formation/:_id', (req, res) => {
     // console.log(req.body, req.params);
     let b = {dots: JSON.parse(req.body.dots) }
-    Formation.findOneAndUpdate(req.params, {$set: b}, {new: true}, function(err, doc){
+    Formation.findOneAndUpdate(req.params, {$set: b}, {new: true}, (err, doc) => {
         if(err){
             console.log("Something wrong when updating data!");
         }
@@ -159,19 +159,11 @@ router.post('/forkForm', (req, res) => {
     });
  });
 
-//get deleteForm
-// router.get('/deleteForm/:_id', (req, res) => {
-//     res.status(200).send("pong!");
-// });
-
 //Delete a formation
 router.delete('/formation/:_id', (req, res) => {
     let obj = {_id: req.params._id};
 
-    Formation.remove(obj, function(err) {
-        res.end();
-    });
-
+    Formation.remove(obj, err => res.end());
 });
 
 
