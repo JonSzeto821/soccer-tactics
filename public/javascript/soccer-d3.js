@@ -1,9 +1,9 @@
 var holder = d3.select("#soccerField") // select the 'body' element
       .append("svg")           // append an SVG element to the body
-      .attr("width", 1050)      
+      .attr("width", 1050)
       .attr("height", 680)
       .attr("viewBox", "0 0 1050 680")
-      .attr("preserveAspectRatio", "none"); 
+      .attr("preserveAspectRatio", "none");
 
 
 // draw a rectangle - pitch
@@ -14,7 +14,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 1050)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 
 // draw a rectangle - halves
@@ -25,7 +25,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 525)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 
 // draw a circle - center circle
@@ -46,7 +46,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 165)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 
 // draw a rectangle - penalty area 2
@@ -57,7 +57,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 165)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 // draw a rectangle - six yard box 1
 holder.append("rect")        // attach a rectangle
@@ -67,7 +67,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 55)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 // draw a rectangle - six yard box 2
 holder.append("rect")        // attach a rectangle
@@ -77,7 +77,7 @@ holder.append("rect")        // attach a rectangle
     .attr("width", 55)    // set the width
     .style("stroke-width", 5)    // set the stroke width
     .style("stroke", "#001400")    // set the line colour
-    .style("fill", "#80B280");    // set the fill colour 
+    .style("fill", "#80B280");    // set the fill colour
 
 
 // draw a circle - penalty spot 1
@@ -105,13 +105,13 @@ holder.append("circle")        // attach a circle
 // penalty box semi-circle 1
 var vis = d3.select("body").append("svg")
 var pi = Math.PI;
-    
+
 var arc = d3.svg.arc()
     .innerRadius(89)
     .outerRadius(94)
     .startAngle(0.64) //radians
     .endAngle(2.5) //just radians
-    
+
 var arc2 = d3.svg.arc()
     .innerRadius(89)
     .outerRadius(94)
@@ -136,44 +136,24 @@ var size = d3.scale.ordinal().range([16, 16, 12]);
 //var color = d3.scale.category10();
 
 var drag = d3.behavior.drag()
-    .origin(function(d) { return d; })
+    .origin(d => d)
     .on("dragstart", dragstarted)
     .on("drag", dragged)
     .on("dragend", dragended);
 
-d3.csv("../javascript/dots.txt", dottype, function(error, oldDots) {
+d3.csv("../javascript/dots.txt", dottype, (error, oldDots) => {
   dot = holder.append("g")
       .attr("class", "dot")
     .selectAll("circle")
       .data(dots)
     .enter().append("circle")
-      .attr("r", function(d) { return size(d.team); })
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
-      .style("fill", function(d) { return color(d.team); })
-      .style("stroke", function(d) { return color1(d.team); })
+      .attr("r", d => size(d.team))
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
+      .style("fill", d => color(d.team))
+      .style("stroke", d => color1(d.team))
   		.style("stroke-width", 3)
       .call(drag);
-
-    //add label on click
-    /*dot.on('click', function(){
-      console.log('Node clicked');
-      console.log(this);
-      //let playPos = prompt("Enter Position", "Striker");
-
-      //validation to check input value
-      /*if (playPos == null || playPos == "") {
-        txt = "User cancelled the prompt.";
-      } else {
-        txt = "Hello " + playPos + "! How are you today?";
-      }*/
-      //append value onto specific node
-      //if node already has label, do not prompt
-
-      //create a condition to not prompt for label on soccerball node
-
-
-    //});
 });
 
 
@@ -216,15 +196,12 @@ function addDot() {
     .selectAll("circle")
       .data(dots)
     .enter().append("circle")
-      .attr("r", function(d) { return size(d.team); })
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
-      .style("fill", function(d) { return color(d.team); })
-      .style("stroke", function(d) { return color1(d.team); })
+      .attr("r", d => size(d.team))
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
+      .style("fill", d => color(d.team))
+      .style("stroke", d => color1(d.team))
       .style("stroke-width", 3)
       .call(drag);
   modified = true;
 }
-
-
-
