@@ -1,10 +1,10 @@
 * {
  	box-sizing: border-box;
-} 
+}
 
-html, body { 
-	max-width: 100%; 
-	overflow-x: hidden; 
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 h1, form, td, th, .center, .team-wrap, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
@@ -24,12 +24,12 @@ img, .block-center, #login-form, #register-form {
 }
 
 svg {
-    transform: scale(.295);
+  transform: scale(.295);
 	transform-origin: top left;
 }
 
 td, th {
-  	padding: 10px;
+  padding: 10px;
 }
 
 nav td {
@@ -41,10 +41,10 @@ nav table {
 }
 
 input[type="submit"], #comment-section form {
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 
-input[type="submit"]{ 
+input[type="submit"]{
 	padding: 5px 10px;
 	width: 35%;
 }
@@ -67,7 +67,7 @@ input[type="submit"]{
 
 .link-styling li {
 	font-weight: 600;
-    font-size: 26px;
+  font-size: 26px;
 }
 
 .feature {
@@ -75,10 +75,10 @@ input[type="submit"]{
 }
 
 .feature h4 {
-    font-weight: 700;
-    font-size: 20px;
-    padding-top: 30px;
-    border-top: 1px solid #57bb9e;
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #57bb9e;
 }
 
 .col-12, .col-6, #formationInput {
@@ -91,7 +91,7 @@ input[type="submit"]{
 	width: 75px;
 	border-radius: 3px;
 	color: black;
-	border: 1px solid black; 
+	border: 1px solid black;
 }
 
 label, input[type=submit].form-btn-padding {
@@ -102,7 +102,7 @@ label, input[type=submit].form-btn-padding {
 	margin-bottom: 10px;
 	line-height: 40px;
 	max-width: 400px;
-	font-size: 18px; 
+	font-size: 18px;
 }
 
 #formationInput, #more-formations h4 {
@@ -116,7 +116,7 @@ label, input[type=submit].form-btn-padding {
 }
 
 #formation-btn-padding {
-    padding: 10px 0 40px 0;
+  padding: 10px 0 40px 0;
 }
 
 #comment-section form input[type="submit"], #formation-top-button {
@@ -130,34 +130,36 @@ label, input[type=submit].form-btn-padding {
 	margin-top: 0;
 }
 
-#home-welcome {     text-align: left; }
+#home-welcome {
+  text-align: left;
+}
 
 #home-welcome ol, #home-welcome li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #home-welcome ol {
-    counter-reset: foo;
-    display: table;
+  counter-reset: foo;
+  display: table;
 }
 
 #home-welcome li {
-    list-style: none;
-    counter-increment: foo;
-    display: table-row;
+  list-style: none;
+  counter-increment: foo;
+  display: table-row;
 }
 
 #home-welcome li::before {
-    content: counter(foo) ".";
-    display: table-cell;
-    text-align: right;
-    padding-right: .3em;
+  content: counter(foo) ".";
+  display: table-cell;
+  text-align: right;
+  padding-right: .3em;
 }
 
 #accordion-padding {
 	line-height:10px;
-	padding: 10px; 
+	padding: 10px;
 }
 
 .nav-link {
@@ -177,14 +179,14 @@ label, input[type=submit].form-btn-padding {
 
 /*Home Page*/
 #public-form-link li {
-    padding: 10px 15px;
-    margin: 10px 0;
+  padding: 10px 15px;
+  margin: 10px 0;
 }
 
 #soccerField{
-    width: 310px;
-    height: 194px;
-    margin: 10px auto;
+  width: 310px;
+  height: 194px;
+  margin: 10px auto;
 }
 
 /*Formation Media Query*/
@@ -240,88 +242,80 @@ label, input[type=submit].form-btn-padding {
 	}
 }
 
-
-
 /*Responsive SVG Media Queries*/
-
-
-
-
 @media only screen and (min-width: 420px) {
 	svg {
-    	transform: scale(.381);
+    transform: scale(.381);
 	}
 
 	#soccerField{
-	    width: 400px;
-	    height: 259px;
+    width: 400px;
+    height: 259px;
 	}
 }
 
 @media only screen and (min-width: 520px) {
 	svg {
-    	transform: scale(.476);
+    transform: scale(.476);
 	}
 
 	#soccerField{
-	    width: 500px;
-	    height: 324px;
+    width: 500px;
+    height: 324px;
 	}
 }
 
 @media only screen and (min-width: 620px) {
 	svg {
     transform: scale(.571);
-
 	}
 
 	#soccerField{
-	    width: 600px;
-	    height: 388px;
+    width: 600px;
+    height: 388px;
 	}
 }
 
 @media only screen and (min-width: 720px) {
 	svg {
-    	transform: scale(.667);
+    transform: scale(.667);
 	}
 
 	#soccerField{
-	    width: 700px;
-	    height: 454px;
+    width: 700px;
+    height: 454px;
 	}
 }
 
 @media only screen and (min-width: 820px) {
 	svg {
-    	transform: scale(.762);
+    transform: scale(.762);
 	}
 
 	#soccerField{
-	    width: 800px;
-	    height: 519px;
+    width: 800px;
+    height: 519px;
 	}
 }
 
 @media only screen and (min-width: 920px) {
 	svg {
-    	transform: scale(.857);
+    transform: scale(.857);
 	}
 
 	#soccerField{
-	    width: 900px;
-	    height: 583px;
+    width: 900px;
+    height: 583px;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	svg {
-    	transform: scale(1);
+    transform: scale(1);
 	}
 
 	#soccerField{
-	    width: 1050px;
-	    height: 680px;
+    width: 1050px;
+    height: 680px;
 	}
 }
-

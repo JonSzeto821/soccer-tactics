@@ -1,5 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body {
@@ -19,11 +18,7 @@ img, .block-center, #login-form, #register-form {
   margin: auto; }
 
 svg {
-  -webkit-transform: scale(0.295);
-  -ms-transform: scale(0.295);
   transform: scale(0.295);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left; }
 
 td, th {
@@ -185,64 +180,50 @@ label, input[type=submit].form-btn-padding {
     margin-top: 15px; } }
 
 /*Responsive SVG Media Queries*/
-@media only screen and (min-width: 420px) {
+@media screen and (min-width: 420px) {
   svg {
-    -webkit-transform: scale(0.381);
-    -ms-transform: scale(0.381);
     transform: scale(0.381); }
   #soccerField {
     width: 400px;
     height: 259px; } }
 
-@media only screen and (min-width: 520px) {
+@media screen and (min-width: 520px) {
   svg {
-    -webkit-transform: scale(0.476);
-    -ms-transform: scale(0.476);
     transform: scale(0.476); }
   #soccerField {
     width: 500px;
     height: 324px; } }
 
-@media only screen and (min-width: 620px) {
+@media screen and (min-width: 620px) {
   svg {
-    -webkit-transform: scale(0.571);
-    -ms-transform: scale(0.571);
     transform: scale(0.571); }
   #soccerField {
     width: 600px;
     height: 388px; } }
 
-@media only screen and (min-width: 720px) {
+@media screen and (min-width: 720px) {
   svg {
-    -webkit-transform: scale(0.667);
-    -ms-transform: scale(0.667);
     transform: scale(0.667); }
   #soccerField {
     width: 700px;
     height: 454px; } }
 
-@media only screen and (min-width: 820px) {
+@media screen and (min-width: 820px) {
   svg {
-    -webkit-transform: scale(0.762);
-    -ms-transform: scale(0.762);
     transform: scale(0.762); }
   #soccerField {
     width: 800px;
     height: 519px; } }
 
-@media only screen and (min-width: 920px) {
+@media screen and (min-width: 920px) {
   svg {
-    -webkit-transform: scale(0.857);
-    -ms-transform: scale(0.857);
     transform: scale(0.857); }
   #soccerField {
     width: 900px;
     height: 583px; } }
 
-@media only screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   svg {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
     transform: scale(1); }
   #soccerField {
     width: 1050px;
@@ -275,7 +256,6 @@ td {
   border: 1px solid #002e5b; }
 
 button:hover, input[type=submit]:hover {
-  -webkit-filter: brightness(1.2);
   filter: brightness(1.2); }
 
 th {
@@ -304,28 +284,20 @@ nav ul li a {
   line-height: 28px;
   padding: 15px 10px;
   display: inline-block;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s; }
 
 nav ul li a.nav-link:hover {
   background-color: #002e5b;
   color: #fde428;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s; }
 
 nav ul li a:hover i {
   color: #fde428;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s; }
 
 nav ul li a i {
   padding-right: 10px;
   color: #002e5b;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s; }
 
 .bold {
@@ -407,9 +379,6 @@ nav ul li a i {
   display: none; }
 
 .accordion {
-  background: -webkit-gradient(linear, left top, right bottom, from(white), to(#F8F8F8));
-  background: -webkit-linear-gradient(top left, white, #F8F8F8);
-  background: -o-linear-gradient(top left, white, #F8F8F8);
   background: linear-gradient(to bottom right, white, #F8F8F8);
   background: white;
   max-width: 100%;
@@ -517,11 +486,7 @@ nav ul li a i {
   position: relative;
   margin: 5px 0px 20px 0;
   z-index: 3;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer; }
   #nav-icon3 span {
@@ -533,11 +498,7 @@ nav ul li a i {
     border-radius: 3px;
     opacity: 1;
     left: 0;
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out; }
 
 #nav-icon3 span:nth-child(1) {
@@ -555,13 +516,9 @@ nav ul li a i {
   left: 50%; }
 
 #nav-icon3.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 #nav-icon3.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 #nav-icon3.open span:nth-child(4) {
@@ -597,9 +554,10 @@ nav ul li a i {
     padding: 15px 10px;
     display: inline-block; }
   .accordion {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
+  .accordion-header, .accordion-content {
+    background-color: #58BA9F;
+    border-bottom: none; }
   .active.accordion-header::before {
     visibility: hidden; }
   #formSubmit {

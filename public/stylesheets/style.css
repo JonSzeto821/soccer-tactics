@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 body, table, a .js-delete-btn {
@@ -23,11 +23,9 @@ nav ul {
   list-style-type: none;
 }
 
-nav ul li { 
-  float: left; 
+nav ul li {
+  float: left;
 }
-
-
 
 td {
   border: 1px solid #002e5b;
@@ -45,24 +43,24 @@ table {
   background-color: #CCC;
 }
 
-input[type=text] { 
-  border: 0px solid; 
+input[type=text] {
+  border: 0px solid;
 }
 
 input[type=text]:focus{
-    outline: none;
+  outline: none;
 }
 
 textarea:focus {
   outline: 0;
 }
 
-input[type=checkbox], label { 
-    display: none; 
+input[type=checkbox], label {
+  display: none;
 }
 
-nav ul li:last-child { 
-    padding-right: 0px; 
+nav ul li:last-child {
+  padding-right: 0px;
 }
 
 nav ul li a {
@@ -117,8 +115,9 @@ nav ul li a i {
 
 .th-dark {
   background-color: slategrey;
-  border-color: darken(@tableColour,10%);
-  color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
+  /* border-color: darken(@tableColour,50%); */
+  color: white;
+  /* > h1, > h2, > h3, > h4, > h5, > h6 { color: white; } */
 }
 
 .delete, .player-delete {
@@ -186,7 +185,7 @@ nav ul li a i {
 }
 
 .bottom-border, .accordion-header {
-  border-bottom: 1px solid black;  
+  border-bottom: 1px solid black;
 }
 
 .hidden{
@@ -251,8 +250,8 @@ nav ul li a i {
   margin-bottom: 4px;
 }
 
-.toggle-menu ul li:last-child { 
-    margin-bottom: 0px; 
+.toggle-menu ul li:last-child {
+    margin-bottom: 0px;
 }
 
 #public-form-link {
@@ -419,7 +418,7 @@ nav ul li a i {
 
   .show-div {
     color: red;
-    visibility: hidden; 
+    visibility: hidden;
   }
 
   #nav-or {
@@ -443,7 +442,7 @@ nav ul li a i {
   }
 
   #userFeedback {
-    margin: initial;    
+    margin: initial;
   }
 
   .comment-design {
@@ -452,12 +451,12 @@ nav ul li a i {
 }
 
 @media only screen and (max-width: 650px) {
-    header { 
-      padding: 20px 0px; 
+    header {
+      padding: 20px 0px;
     }
 
-    nav, nav ul li, #logo { 
-      padding: 0px; 
+    nav, nav ul li, #logo {
+      padding: 0px;
     }
 
     nav, nav ul li {
@@ -485,8 +484,8 @@ nav ul li a i {
       background-color: #002e5b;
     }
 
-    input[type=checkbox]:checked ~ nav, nav ul li a { 
-      display: block; 
+    input[type=checkbox]:checked ~ nav, nav ul li a {
+      display: block;
     }
 
     nav {
@@ -497,7 +496,7 @@ nav ul li a i {
 
     nav ul li {
       float: none;
-      display: table; 
+      display: table;
     }
 
     nav ul li a {
@@ -518,7 +517,7 @@ nav ul li a i {
 
     .hide-div {
       color: red;
-      visibility: hidden; 
+      visibility: hidden;
     }
 }
 
