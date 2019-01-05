@@ -229,20 +229,22 @@ label, input[type=submit].form-btn-padding {
     width: 1050px;
     height: 680px; } }
 
+/* FONTS */
+/* COLORS */
 * {
   margin: 0;
   padding: 0; }
 
 body, table, a .js-delete-btn {
-  color: black; }
+  color: #232B2B; }
 
 body {
-  font-family: 'Coda', cursive;
+  font-family: "Coda", cursive;
   background-color: #58BA9F; }
 
 header {
   display: table;
-  background-color: #fde428;
+  background-color: #ffff7e;
   margin-bottom: 50px; }
 
 nav ul {
@@ -259,7 +261,7 @@ button:hover, input[type=submit]:hover {
   filter: brightness(1.2); }
 
 th {
-  border: 1px solid white; }
+  border: 1px solid #FCFCFC; }
 
 table {
   background-color: #CCC; }
@@ -288,11 +290,11 @@ nav ul li a {
 
 nav ul li a.nav-link:hover {
   background-color: #002e5b;
-  color: #fde428;
+  color: #ffff7e;
   transition: all 0.5s ease 0s; }
 
 nav ul li a:hover i {
-  color: #fde428;
+  color: #ffff7e;
   transition: all 0.5s ease 0s; }
 
 nav ul li a i {
@@ -322,7 +324,7 @@ nav ul li a i {
 
 .th-dark {
   background-color: slategrey;
-  color: white; }
+  color: #FCFCFC; }
 
 .delete, .player-delete {
   background-color: #ff6961; }
@@ -355,7 +357,7 @@ nav ul li a i {
   display: inline-block; }
 
 .border, .th-dark {
-  border: 1px solid black; }
+  border: 1px solid #232B2B; }
 
 .team-wrap {
   width: 49%; }
@@ -373,20 +375,20 @@ nav ul li a i {
   margin: 20px auto; }
 
 .bottom-border, .accordion-header {
-  border-bottom: 1px solid black; }
+  border-bottom: 1px solid #232B2B; }
 
 .hidden {
   display: none; }
 
 .accordion {
-  background: linear-gradient(to bottom right, white, #F8F8F8);
-  background: white;
+  background: linear-gradient(to bottom right, #FCFCFC, #F8F8F8);
+  background: #FCFCFC;
   max-width: 100%;
   display: block;
   margin: 0 auto; }
 
 .accordion td:not(.center):hover {
-  background-color: white; }
+  background-color: #FCFCFC; }
 
 .accordion-header, .accordion-content, .box {
   background-color: #F5E3A6; }
@@ -470,7 +472,7 @@ nav ul li a i {
   vertical-align: baseline;
   width: calc(100% - 20px);
   /*max-width: 650px;*/
-  background-color: white;
+  background-color: #FCFCFC;
   overflow: hidden;
   padding: 10px;
   border-radius: 3px;
@@ -537,7 +539,7 @@ nav ul li a i {
     display: block;
     vertical-align: baseline;
     width: calc(100% - 20px);
-    background-color: white;
+    background-color: #FCFCFC;
     overflow: hidden;
     padding: 10px;
     border-radius: 3px;

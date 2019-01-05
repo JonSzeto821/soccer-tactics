@@ -1,5 +1,6 @@
 @import 'mixins';
 @import 'grid';
+@import 'variables';
 
 * {
   margin: 0;
@@ -7,17 +8,17 @@
 }
 
 body, table, a .js-delete-btn {
-  color: black;
+  color: $black;
 }
 
 body {
-  font-family: 'Coda', cursive;
-  background-color: #58BA9F;
+  font-family: $codaFont;
+  background-color: $green;
 }
 
 header {
   display: table;
-  background-color: #fde428;
+  background-color: $yellow;
   margin-bottom: 50px;
 }
 
@@ -40,7 +41,7 @@ button:hover, input[type=submit]:hover {
 }
 
 th {
-  border: 1px solid white;
+  border: 1px solid $white;
 }
 
 table {
@@ -77,12 +78,12 @@ nav ul li a {
 
 nav ul li a.nav-link:hover {
   background-color: #002e5b;
-  color: #fde428;
+  color: $yellow;
   transition: all 0.5s ease 0s;
 }
 
 nav ul li a:hover i {
-  color: #fde428;
+  color: $yellow;
   transition: all 0.5s ease 0s;
 }
 
@@ -118,7 +119,7 @@ nav ul li a i {
 
 .th-dark {
   background-color: slategrey;
-  color: white;
+  color: $white;
 }
 
 .delete, .player-delete {
@@ -162,7 +163,7 @@ nav ul li a i {
 }
 
 .border, .th-dark {
-  border: 1px solid black;
+  border: 1px solid $black;
 }
 
 .team-wrap {
@@ -186,7 +187,7 @@ nav ul li a i {
 }
 
 .bottom-border, .accordion-header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
 }
 
 .hidden{
@@ -194,15 +195,15 @@ nav ul li a i {
 }
 
 .accordion {
-  background: linear-gradient(to bottom right, white, #F8F8F8);
-  background: white;
+  background: linear-gradient(to bottom right, $white, #F8F8F8);
+  background: $white;
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
 
 .accordion td:not(.center):hover {
-  background-color: white;
+  background-color: $white;
 }
 
 .accordion-header, .accordion-content, .box {
@@ -303,7 +304,7 @@ nav ul li a i {
   vertical-align: baseline;
   width: calc(100% - 20px);
   /*max-width: 650px;*/
-  background-color: white;
+  background-color: $white;
   overflow: hidden;
   padding: 10px;
   border-radius: 3px;
@@ -385,7 +386,7 @@ nav ul li a i {
     display: block;
     vertical-align: baseline;
     width: calc(100% - 20px);
-    background-color: white;
+    background-color: $white;
     overflow: hidden;
     padding: 10px;
     border-radius: 3px;
