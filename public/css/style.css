@@ -60,7 +60,7 @@ hr, .add-player {
     font-weight: 700;
     font-size: 20px;
     padding-top: 30px;
-    border-top: 1px solid #57bb9e; }
+    border-top: 1px solid #58BA9F; }
 
 .col-12, .col-6 {
   width: 100%; }
@@ -272,6 +272,8 @@ nav ul {
 
 nav li {
   float: left; }
+  nav li:last-child {
+    padding-right: 0px; }
 
 td {
   border: 1px solid #002e5b; }
@@ -295,9 +297,6 @@ textarea:focus {
 
 input[type=checkbox], label {
   display: none; }
-
-nav ul li:last-child {
-  padding-right: 0px; }
 
 nav ul li a {
   color: #CCC;
@@ -442,14 +441,12 @@ nav ul li a i {
   display: table;
   width: 100%;
   background-clolor: blue; }
-
-.toggle-menu ul li {
-  width: 100%;
-  height: 3px;
-  margin-bottom: 4px; }
-
-.toggle-menu ul li:last-child {
-  margin-bottom: 0px; }
+  .toggle-menu ul li {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 4px; }
+    .toggle-menu ul li:last-child {
+      margin-bottom: 0px; }
 
 #public-form-link {
   text-align: left; }
@@ -525,7 +522,8 @@ nav ul li a i {
 #nav-icon3 span:nth-child(1) {
   top: 0px; }
 
-#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
   top: 18px; }
 
 #nav-icon3 span:nth-child(4) {

@@ -77,7 +77,7 @@ hr, .add-player {
     font-weight: 700;
     font-size: 20px;
     padding-top: 30px;
-    border-top: 1px solid #57bb9e;
+    border-top: 1px solid $green;
   }
 }
 
@@ -222,7 +222,7 @@ label, input[type=submit].form-btn-padding {
 	.col-6 {
 		width: 50%;
 		margin: 0 auto;
-    background-color: #58BA9F;
+    background-color: $green;
 	}
 
 	.nav-link {
@@ -250,7 +250,7 @@ label, input[type=submit].form-btn-padding {
   }
 
 	.accordion-header {
-		background-color: #58BA9F;
+		background-color: $green;
     border-bottom: none;
 	}
 
@@ -265,7 +265,7 @@ label, input[type=submit].form-btn-padding {
     margin: auto;
     border-bottom: none;
 		max-width: 90%;
-    background-color: #58BA9F;
+    background-color: $green;
 	}
 
 	button.cancel {

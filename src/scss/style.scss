@@ -29,11 +29,14 @@ nav {
   }
   li {
     float: left;
+    &:last-child {
+      padding-right: 0px;
+    }
   }
 }
 
 td {
-  border: 1px solid #002e5b;
+  border: 1px solid $navy;
 }
 
 button:hover, input[type=submit]:hover {
@@ -45,7 +48,7 @@ th {
 }
 
 table {
-  background-color: #CCC;
+  background-color: $grey;
 }
 
 input[type=text] {
@@ -63,12 +66,8 @@ input[type=checkbox], label {
   display: none;
 }
 
-nav ul li:last-child {
-  padding-right: 0px;
-}
-
 nav ul li a {
-  color: #CCC;
+  color: $grey;
   font-size: 14px;
   line-height: 28px;
   padding: 15px 10px;
@@ -77,7 +76,7 @@ nav ul li a {
 }
 
 nav ul li a.nav-link:hover {
-  background-color: #002e5b;
+  background-color: $navy;
   color: $yellow;
   transition: all 0.5s ease 0s;
 }
@@ -89,7 +88,7 @@ nav ul li a:hover i {
 
 nav ul li a i {
   padding-right: 10px;
-  color: #002e5b;
+  color: $navy;
   transition: all 0.5s ease 0s;
 }
 
@@ -240,20 +239,20 @@ nav ul li a i {
   background-color: #FC6468;
 }
 
-.toggle-menu ul {
-  display: table;
-  width: 100%;
-  background-clolor: blue;
-}
-
-.toggle-menu ul li {
-  width: 100%;
-  height: 3px;
-  margin-bottom: 4px;
-}
-
-.toggle-menu ul li:last-child {
-    margin-bottom: 0px;
+.toggle-menu {
+  ul {
+    display: table;
+    width: 100%;
+    background-clolor: blue;
+    li {
+      width: 100%;
+      height: 3px;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
 }
 
 #public-form-link {
@@ -278,7 +277,7 @@ nav ul li a i {
   float: left;
   font-size: 24px;
   text-transform: uppercase;
-  color: #002e5b;
+  color: $navy;
   font-weight: 600;
   padding: 20px 0px;
 }
@@ -343,7 +342,8 @@ nav ul li a i {
   top: 0px;
 }
 
-#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
   top: 18px;
 }
 
