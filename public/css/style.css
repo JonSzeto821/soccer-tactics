@@ -1,3 +1,5 @@
+/* FONTS */
+/* COLORS */
 * {
   box-sizing: border-box; }
 
@@ -5,13 +7,13 @@ html, body {
   max-width: 100%;
   overflow-x: hidden; }
 
-h1, form, td, th, .center, .team-wrap, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
+h1, form, td, th, .center, .team-wrap {
   text-align: center; }
 
 h4, table {
   margin-bottom: 10px; }
 
-img, header, nav, table, label {
+img, header, table, label {
   width: 100%; }
 
 img, .block-center, #login-form, #register-form {
@@ -24,16 +26,15 @@ svg {
 td, th {
   padding: 10px; }
 
-nav td {
-  padding: 0; }
-
-nav table {
-  background-color: #002e5b; }
-
-input[type="submit"], #comment-section form {
-  margin-bottom: 20px; }
+nav {
+  width: 100%; }
+  nav table {
+    background-color: #002e5b; }
+  nav td {
+    padding: 0; }
 
 input[type="submit"] {
+  margin-bottom: 20px;
   padding: 5px 10px;
   width: 35%; }
 
@@ -49,21 +50,19 @@ hr, .add-player {
   padding: 15px 0;
   font-size: 18px;
   border-radius: 3px; }
-
-.link-styling li {
-  font-weight: 600;
-  font-size: 26px; }
+  .link-styling li {
+    font-weight: 600;
+    font-size: 26px; }
 
 .feature {
   margin: 10px 0; }
+  .feature h4 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #57bb9e; }
 
-.feature h4 {
-  font-weight: 700;
-  font-size: 20px;
-  padding-top: 30px;
-  border-top: 1px solid #57bb9e; }
-
-.col-12, .col-6, #formationInput {
+.col-12, .col-6 {
   width: 100%; }
 
 .form-btn-padding button, .team-wrap button, input[type=submit].form-btn-padding, button.form-btn-padding, button.player-delete {
@@ -71,20 +70,27 @@ hr, .add-player {
   height: 40px;
   width: 75px;
   border-radius: 3px;
-  color: black;
-  border: 1px solid black; }
+  color: #232B2B;
+  border: 1px solid #232B2B; }
 
 label, input[type=submit].form-btn-padding {
   margin: 0; }
 
 #formationInput {
+  text-align: center;
+  width: 100%;
   margin-bottom: 10px;
   line-height: 40px;
   max-width: 400px;
-  font-size: 18px; }
-
-#formationInput, #more-formations h4 {
+  font-size: 18px;
   padding: 5px 10px; }
+
+#more-formations h4 {
+  padding: 5px 10px; }
+
+#comment-section form {
+  text-align: center;
+  margin-bottom: 20px; }
 
 #comment-section h4 {
   margin: 5px 10px;
@@ -98,31 +104,30 @@ label, input[type=submit].form-btn-padding {
   margin-top: 10px; }
 
 /*Login Page*/
-#login-container, #register-container, #home-welcome {
+#login-container, #register-container {
+  text-align: center;
   background-color: #F5E3A6;
   margin-top: 0; }
 
 #home-welcome {
+  background-color: #F5E3A6;
+  margin-top: 0;
   text-align: left; }
-
-#home-welcome ol, #home-welcome li {
-  margin: 0;
-  padding: 0; }
-
-#home-welcome ol {
-  counter-reset: foo;
-  display: table; }
-
-#home-welcome li {
-  list-style: none;
-  counter-increment: foo;
-  display: table-row; }
-
-#home-welcome li::before {
-  content: counter(foo) ".";
-  display: table-cell;
-  text-align: right;
-  padding-right: .3em; }
+  #home-welcome ol, #home-welcome li {
+    margin: 0;
+    padding: 0; }
+  #home-welcome ol {
+    counter-reset: foo;
+    display: table; }
+  #home-welcome li {
+    list-style: none;
+    counter-increment: foo;
+    display: table-row; }
+    #home-welcome li::before {
+      content: counter(foo) ".";
+      display: table-cell;
+      text-align: right;
+      padding-right: .3em; }
 
 #accordion-padding {
   line-height: 10px;
@@ -152,30 +157,44 @@ label, input[type=submit].form-btn-padding {
 
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
-  hr, .container, .lrg-max-width, #home-welcome, #comment-section {
+  hr {
+    margin: auto;
     width: 95%; }
-  hr, .accordion-content, #home-welcome, #comment-section {
-    margin: auto; }
   img {
-    width: 60%; }
+    width: 60%;
+    text-align: left; }
+  .container, .lrg-max-width {
+    width: 95%; }
   .col-6 {
     width: 50%;
-    margin: 0 auto; }
-  .nav-link, .accordion-header, .accordion-content {
-    border-bottom: none; }
-  img, #comment-section, #comment-section form {
-    text-align: left; }
-  #comment-section h4 {
-    margin: 5px 0; }
-  #comment-section input[type="textarea"] {
-    width: 70%; }
-  .accordion-header, .accordion-content, .col-6 {
+    margin: 0 auto;
     background-color: #58BA9F; }
+  .nav-link {
+    border-bottom: none; }
+  #home-welcome {
+    width: 95%;
+    margin: auto; }
+  #comment-section {
+    width: 95%;
+    margin: auto;
+    text-align: left; }
+    #comment-section h4 {
+      margin: 5px 0; }
+    #comment-section input[type="textarea"] {
+      width: 70%; }
+    #comment-section form {
+      text-align: left; }
+  .accordion-header {
+    background-color: #58BA9F;
+    border-bottom: none; }
   .accordion hr {
     width: 90%;
     display: block; }
   .accordion-content {
-    max-width: 90%; }
+    margin: auto;
+    border-bottom: none;
+    max-width: 90%;
+    background-color: #58BA9F; }
   button.cancel {
     margin-top: 15px; } }
 

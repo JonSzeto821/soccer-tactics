@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'variables';
 
 * {
  	box-sizing: border-box;
@@ -9,7 +10,7 @@ html, body {
 	overflow-x: hidden;
 }
 
-h1, form, td, th, .center, .team-wrap, #formationInput, #comment-section form, #login-container, #register-container, #home-welcome {
+h1, form, td, th, .center, .team-wrap {
 	text-align: center;
 }
 
@@ -17,7 +18,7 @@ h4, table {
 	margin-bottom: 10px;
 }
 
-img, header, nav, table, label {
+img, header, table, label {
 	width: 100%;
 }
 
@@ -34,24 +35,23 @@ td, th {
   padding: 10px;
 }
 
-nav td {
-	padding: 0;
+nav {
+  width: 100%;
+  table {
+    background-color: #002e5b;
+  }
+  td {
+    padding: 0;
+  }
 }
 
-nav table {
-	background-color: #002e5b;
-}
-
-input[type="submit"], #comment-section form {
-	margin-bottom: 20px;
-}
-
-input[type="submit"]{
+input[type="submit"] {
+  margin-bottom: 20px;
 	padding: 5px 10px;
 	width: 35%;
 }
 
- hr, .add-player {
+hr, .add-player {
 	background-color: #CCC;
 }
 
@@ -65,25 +65,23 @@ input[type="submit"]{
 	padding: 15px 0;
 	font-size: 18px;
 	border-radius: 3px;
-}
-
-.link-styling li {
-	font-weight: 600;
-  font-size: 26px;
+  li {
+    font-weight: 600;
+    font-size: 26px;
+  }
 }
 
 .feature {
 	margin: 10px 0;
+  h4 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #57bb9e;
+  }
 }
 
-.feature h4 {
-  font-weight: 700;
-  font-size: 20px;
-  padding-top: 30px;
-  border-top: 1px solid #57bb9e;
-}
-
-.col-12, .col-6, #formationInput {
+.col-12, .col-6 {
 	width: 100%;
 }
 
@@ -92,8 +90,8 @@ input[type="submit"]{
 	height: 40px;
 	width: 75px;
 	border-radius: 3px;
-	color: black;
-	border: 1px solid black;
+	color: $black;
+	border: 1px solid $black;
 }
 
 label, input[type=submit].form-btn-padding {
@@ -101,20 +99,31 @@ label, input[type=submit].form-btn-padding {
 }
 
 #formationInput {
+  text-align: center;
+  width: 100%;
 	margin-bottom: 10px;
 	line-height: 40px;
 	max-width: 400px;
 	font-size: 18px;
+  padding: 5px 10px;
 }
 
-#formationInput, #more-formations h4 {
-	padding: 5px 10px;
+#more-formations {
+  h4 {
+	  padding: 5px 10px;
+  }
 }
 
-#comment-section h4 {
-	margin: 5px 10px;
-	font-size: 20px;
-	padding: 5px 0;
+#comment-section {
+  form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin: 5px 10px;
+  	font-size: 20px;
+  	padding: 5px 0;
+  }
 }
 
 #formation-btn-padding {
@@ -127,36 +136,35 @@ label, input[type=submit].form-btn-padding {
 
 
 /*Login Page*/
-#login-container, #register-container, #home-welcome  {
+#login-container, #register-container {
+  text-align: center;
 	background-color: #F5E3A6;
 	margin-top: 0;
 }
 
 #home-welcome {
+  background-color: #F5E3A6;
+	margin-top: 0;
   text-align: left;
-}
-
-#home-welcome ol, #home-welcome li {
-  margin: 0;
-  padding: 0;
-}
-
-#home-welcome ol {
-  counter-reset: foo;
-  display: table;
-}
-
-#home-welcome li {
-  list-style: none;
-  counter-increment: foo;
-  display: table-row;
-}
-
-#home-welcome li::before {
-  content: counter(foo) ".";
-  display: table-cell;
-  text-align: right;
-  padding-right: .3em;
+  ol, li {
+    margin: 0;
+    padding: 0;
+  }
+  ol {
+    counter-reset: foo;
+    display: table;
+  }
+  li{
+    list-style: none;
+    counter-increment: foo;
+    display: table-row;
+    &::before {
+      content: counter(foo) ".";
+      display: table-cell;
+      text-align: right;
+      padding-right: .3em;
+    }
+  }
 }
 
 #accordion-padding {
@@ -175,14 +183,18 @@ label, input[type=submit].form-btn-padding {
 	border-bottom: none;
 }
 
-.accordion hr {
-	display: none;
+.accordion {
+  hr {
+    display: none;
+  }
 }
 
 /*Home Page*/
-#public-form-link li {
-  padding: 10px 15px;
-  margin: 10px 0;
+#public-form-link {
+  li {
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
 }
 
 #soccerField{
@@ -193,50 +205,67 @@ label, input[type=submit].form-btn-padding {
 
 /*Formation Media Query*/
 @media only screen and (min-width: 650px) {
-	hr, .container, .lrg-max-width, #home-welcome, #comment-section {
-		width: 95%;
-	}
-
-	hr, .accordion-content, #home-welcome, #comment-section {
+	hr {
 		margin: auto;
+    width: 95%;
 	}
 
 	img {
 	    width: 60%;
+      text-align: left;
+	}
+
+  .container, .lrg-max-width {
+		width: 95%;
 	}
 
 	.col-6 {
 		width: 50%;
 		margin: 0 auto;
+    background-color: #58BA9F;
 	}
 
-	.nav-link, .accordion-header, .accordion-content {
+	.nav-link {
 		border-bottom: none;
 	}
 
-	img, #comment-section, #comment-section form {
-		text-align: left;
-	}
+  #home-welcome {
+    width: 95%;
+    margin: auto;
+  }
 
-	#comment-section h4 {
-		margin: 5px 0;
-	}
+  #comment-section {
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    h4 {
+      margin: 5px 0;
+    }
+    input[type="textarea"] {
+      width: 70%;
+    }
+    form {
+      text-align: left;
+    }
+  }
 
-	#comment-section input[type="textarea"] {
-		width: 70%;
-	}
-
-	.accordion-header, .accordion-content, .col-6 {
+	.accordion-header {
 		background-color: #58BA9F;
+    border-bottom: none;
 	}
 
-	.accordion hr {
-		width: 90%;
-		display: block;
+	.accordion {
+    hr {
+      width: 90%;
+  		display: block;
+    }
 	}
 
 	.accordion-content {
+    margin: auto;
+    border-bottom: none;
 		max-width: 90%;
+    background-color: #58BA9F;
 	}
 
 	button.cancel {
@@ -321,14 +350,3 @@ label, input[type=submit].form-btn-padding {
     height: 680px;
 	}
 }
-
-// @media only screen and (min-width: 1200px) {
-// 	svg {
-//     transform: scale(1);
-// 	}
-//
-// 	#soccerField{
-//     width: 1050px;
-//     height: 680px;
-// 	}
-// }
