@@ -39,7 +39,6 @@ describe('Feedback', () => {
   it('find comment by formationID', (done) => {
     Feedback.findOne({formationID: 'formation123'}, (err, feedback) => {
       feedback.feedback.should.eql('Comment for formation');
-      // console.log("feedback: ", feedback.feedback);
       done();
     });
   });
@@ -47,25 +46,22 @@ describe('Feedback', () => {
   it('feedback should be Object', (done) => {
     Feedback.findOne({formationID: 'formation123'}, (err, feedback) => {
       feedback.should.be.a('object');
-      // console.log("feedback: ", typeof(feedback));
       done();
     });
   });
 
   it('feedback fields should be typeOf String', (done) => {
     Feedback.findOne({formationID: 'formation123'}, (err, feedback) => {
-      // feedback.feedback.should.be.type('string');
       feedback.feedback.should.be.a('string');
       feedback.formationID.should.be.a('string');
       feedback.author.should.be.a('string');
       feedback.authorName.should.be.a('string');
       feedback.date.should.be.a('string');
-      // console.log("fields: ", typeof(feedback.feedback, feedback.formationID, feedback.author, feedback.authorName, feedback.date));
       done();
     });
   });
 
-  it('should save feedback without error', (done) => {
+  /*it('should save feedback without error', (done) => {
     let feedback = new Feedback({
       feedback: 'New Comment',
       formationID: 'formation456',
@@ -75,5 +71,6 @@ describe('Feedback', () => {
     });
 
     feedback.save(done);
-  });
+  });*/
+
 });

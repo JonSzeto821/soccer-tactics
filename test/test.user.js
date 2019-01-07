@@ -1,11 +1,11 @@
-const should = require("should");
+const should = require('chai').should();
 const mongoose = require('mongoose');
 const Account = require("../models/account.js");
 
 describe('Account', () => {
 
     before((done) => {
-        const db = mongoose.connect('mongodb://localhost/test');
+        const db = mongoose.connect('mongodb://localhost/test', { useMongoClient: true });
         done();
     });
 

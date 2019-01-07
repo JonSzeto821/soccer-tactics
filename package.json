@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/mjhea0/passport-local-express4.git"
   },
-  "author": "Michael Herman <michael@mherman.org>",
+  "author": "Jon Szeto",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -32,7 +32,7 @@
     "serve-favicon": "^2.5.0",
     "should": "~2.1.0"
   },
-  "description": "View the blog post here: http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4",
+  "description": "Application designed to visualize soccer tactics and formations",
   "bugs": {
     "url": "https://github.com/mjhea0/passport-local-express4/issues"
   },
